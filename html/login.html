@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css"  href="../css/login.css" />
+    <title>Login</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+</head>
+<body>
+    <div class="container">
+        <form id="form_registo" name="form_registo" method="POST" action="../php/processar_login.php">
+            <h1> Login </h1>
+            <div class="input-box">
+                <input type = "text" name="nome" id="nome" placeholder="Nome" required>
+                <img src="../images/user.png" class="icon">
+            </div>
+            <div class="input-box">
+                <input type = "password" name="password" placeholder="Password" required id="password-input">
+                <img src="../images/ver.png" class="icon" id="btn-password" onclick="mostrarPassword()">
+            </div>
+
+            <button type="submit" name="entrar" id="entrar" class="btn-login"> Login </button>
+
+            <div class="register-link">
+                <p> Não tens conta ? <a href="registo.html" target="_self"> Criar Conta </a></p>
+                <br /><p><a href="../index.php" target="_self"> Página Principal </a></p>
+            </div>
+        </form>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>
