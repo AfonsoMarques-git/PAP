@@ -28,7 +28,7 @@ $isLoggedIn = isset($_SESSION['username']);
                     
 
                     <div class="menu-container">
-                    <nav class="events">
+                        <nav class="events">
                             <a href="html/manutencao.html">Eventos</a>
                         </nav>
                         <nav class="menu">

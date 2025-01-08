@@ -72,23 +72,15 @@ header>.actions .search{
 }
 
 .events a{
-    background-color: white;
-    padding: 10px;
-    padding-left: -5px;
-    text-decoration: none;
-    color: #000;
-    font-size: 14px;
-    font-weight: bold;
-    transition: color 0.3s;
-}
-
-.events a:hover{
-    color: white;
     background-color: #b39f7c;
     border-radius: 10px;
     padding: 10px;
-    transition: color 0.5s;
-    transition: background-color 0.5s;
+    padding-left: -5px;
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 14px;
+    font-weight: bold;
+    transition: color 0.3s;
 }
 
 .menu{
