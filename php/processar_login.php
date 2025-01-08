@@ -26,7 +26,7 @@
         $_SESSION['username'] = $username; // Opcional: para exibir o nome do usuário no menu
 
         if($username == "Admin" && $password == "administrador") {
-            header("Location: ../html/admin_menu.html");
+            header("Location: ../php/admin_menu.php");
         } else {
             header("Location: ../index.php");
         }

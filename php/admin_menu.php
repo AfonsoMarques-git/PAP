@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<?php
+session_start();
+
+if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
+    header("Location: ../html/login.html");
+    exit();
+}
+?>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
