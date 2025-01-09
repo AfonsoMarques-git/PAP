@@ -1,4 +1,3 @@
-/* Estilo geral */
 body {
     font-family: Arial, sans-serif;
     background-color: #f4f4f9;
@@ -7,7 +6,6 @@ body {
     color: #333;
 }
 
-/* Cabeçalho e navegação */
 header {
     padding-top: 0px;
     background-color: white;
@@ -37,12 +35,11 @@ nav.menu a {
 }
 
 nav.menu a:hover {
-    background-color: black;
+    background-color: #b39f7c;
     color: white;
     transition: 0.5s;
 }
 
-/* Div principal */
 div {
     max-width: 1500px;
     margin: 0 auto;

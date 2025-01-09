@@ -24,7 +24,7 @@
                         <a href="alterar_utilizador.php"> Alterar Informações de Utilizadores</a>
                         <a href="eliminar_utilizador.php"> Eliminar Utilizadores</a>
                         <a href="../php/logout.php"> Log Out</a>
-                        <a href="../html/admin_menu.html"> Voltar</a>
+                        <a href="../php/admin_menu.php"> Voltar</a>
                     </nav>
                 </div>
             </header>

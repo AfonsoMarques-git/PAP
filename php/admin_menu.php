@@ -17,8 +17,9 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
 <body>
     <div class="container">
         <h1> O que deseja fazer: </h1>
-        <button><a href="../php/menu2.php"> Gestão de Utilizadores </a></button>
-        <button><a href="../php/index_admin.php"> Gestão do website </a></button>
+        <button class="botao"><a href="../php/menu2.php"> Gestão de Utilizadores </a></button>
+        <button class="botao"><a href="../php/index_admin.php"> Gestão do website </a></button>
+        <button class="botao"><a href="../html/login.html"> Log Out </a></button>
     </div>
 </body>
 </html>

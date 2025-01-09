@@ -18,7 +18,7 @@ $isLoggedIn = isset($_SESSION['username']);
             <div class="navegacao">
                 <div class="logo">
                     <a href="index_admin.php">
-                        <img src="images/LogoCDMW.png" alt="logotipo">
+                        <img src="../images/LogoCDMW.png" alt="logotipo">
                     </a>
                 </div>
 
@@ -44,7 +44,7 @@ $isLoggedIn = isset($_SESSION['username']);
                             <?php if ($isLoggedIn): ?>
                                 <span class="user">Olá, <?php echo $_SESSION['username']; ?>!</span>
                                 <a href="logout.php" class="logout">Log Out</a>
-                                <a href="../html/admin_menu.html"> Voltar</a>
+                                <a href="../php/admin_menu.php"> Voltar</a>
                             <?php else: ?>
                                 <a href="../html/login.html" class="login">Login</a>
                                 <a href="../html/registo.html" class="registo">Registo</a>

@@ -17,7 +17,7 @@ body {
 
 .container {
     text-align: center;
-    background-color: #fff;
+    background-color: #f4f4f9;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -27,8 +27,8 @@ h1{
     padding: 20px;
 }
 
-button {
-    background-color: #2c3e50;
+.botao {
+    background-color: #ffffff;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -39,15 +39,16 @@ button {
     transition: background-color 0.3s ease;
 }
 
-button a {
-    color: #fff;
+.botao a {
+    color: black;
     text-decoration: none;
 }
 
-button:hover {
-    background-color: #0056b3;
+.botao:hover {
+    background-color:#b39f7c;
 }
 
-button a:hover {
-    text-decoration: underline;
+.botao:hover > a {
+    color: #fff;
+    text-decoration: none;
 }

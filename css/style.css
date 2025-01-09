@@ -83,6 +83,11 @@ header>.actions .search{
     transition: color 0.3s;
 }
 
+.events>a:hover{
+    background-color: #ebd0a2;
+    transition: background-color 0.5s;
+}
+
 .menu{
     flex-grow: 1;
     display: flex;

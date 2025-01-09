@@ -25,8 +25,47 @@ if (isset($_REQUEST['apagar'])) {
 } else {
     include('menu2.php');
 ?>
-<table width="600px" align="left" border=0>
-<tr><width="600px"><font face="Arial" align="center">Dados do utilizador a eliminar:</tr><br />
+
+<div class="tabela">
+    <h1> Dadosdo utilizador a eliminar: <h1>
+    <table>
+        <tr>
+            <th>Nº regitso</th>
+            <th>Nome de Utilizadores</th>
+            <th>Endereço de correio eletrónico</th>
+        </tr>
+        <?php
+        $id = $_GET['id'];
+        $nome_utilizador = $_GET['nome_utilizador'];
+        $email = $_GET['email'];
+        ?>
+        <tr>
+            <td><?php echo htmlspecialchars($id) ?></td>
+            <td><?php echo htmlspecialchars($nome_utilizador) ?></td>
+            <td><?php echo htmlspecialchars($email) ?></td>
+        </tr>
+        <tr>
+            <td>
+                <form method="POST" action="processar_eliminar.php">
+                    <p> Pretende mesmo eliminar este registo ? </p>
+                    <input type="submit" name="apagar" value="Sim" />
+                    <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>"/>
+                </form>
+            </td>
+        </tr>
+    </table>
+</div>
+
+
+
+
+
+
+
+
+<div>
+<table class="tabela">
+<tr><font face="Arial" align="center">Dados do utilizador a eliminar:</tr><br />
 
 <?php
 $id = $_GET['id'];
@@ -47,6 +86,7 @@ $email = $_GET['email'];
 </td>
 </tr>
 </table>
+</div>
 <?php 
 }
 ?>
