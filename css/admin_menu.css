@@ -39,7 +39,7 @@ h1{
     transition: background-color 0.3s ease;
 }
 
-.botao a {
+a>.botao {
     color: black;
     text-decoration: none;
 }
@@ -48,7 +48,7 @@ h1{
     background-color:#b39f7c;
 }
 
-.botao:hover > a {
+a>.botao:hover {
     color: #fff;
     text-decoration: none;
 }

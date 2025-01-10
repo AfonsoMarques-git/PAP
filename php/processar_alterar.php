@@ -74,13 +74,13 @@ if (isset($_POST['alterar'])) { // Ensure the form is submitted
                     <font face="Arial" size="2"><input class="input_alt" type="text" name="email_user" value="<?php echo $email; ?>" /></font>
                 </td>
             </tr>
-        </form>
     </table>
     <div class="botoes">
         <p>Pretende mesmo alterar este registo ?</p>
         <input class="botao_elim" type="submit" name="alterar" value="Alterar Dados"/>
         <a href="../php/alterar_utilizador.php"><button class="botao_elim"> Voltar </button></a>
     </div>
+        </form>
 </div>
 <?php
 }

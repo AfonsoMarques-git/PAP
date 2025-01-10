@@ -60,12 +60,13 @@ if (isset($_REQUEST['apagar'])) {
     <div class="botoes">
         <form method="POST" action="processar_eliminar.php" style="display: inline;">
             <p> Pretende mesmo eliminar este registo ? </p>
-            <input class="botao_elim" type="submit" name="apagar" value="Sim" />
+            <input class="botao_elim" type="submit" name="apagar" value="Sim" onclick="return confirmarEliminacao();"/>
             <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>"/>
         </form>
         <a href="../php/eliminar_utilizador.php"><button class="botao_elim">Voltar</button></a>
     </div>
 </div>
-<?php 
+<?php
 }
 ?>
+<script src="../js/main.js"></script>

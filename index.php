@@ -25,8 +25,6 @@ $isLoggedIn = isset($_SESSION['username']);
                 </div>
 
                 <div class="navegar">
-                    
-
                     <div class="menu-container">
                         <nav class="events">
                             <a href="html/manutencao.html">Eventos</a>
@@ -46,7 +44,7 @@ $isLoggedIn = isset($_SESSION['username']);
                                 <a href="php/logout.php" class="logout">Log Out</a>
                             <?php else: ?>
                                 <a href="html/login.html" class="login">Login</a>
-                                <a href="html/registo.html" class="registo">Registo</a>
+                                <a href="php/registo.php" class="registo">Registo</a>
                             <?php endif; ?>
                         </div>
                     </div>

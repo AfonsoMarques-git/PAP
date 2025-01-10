@@ -1,7 +1,9 @@
 <?php
+session_start();
 
-if (!empty($_POST) AND (empty($_POST['nome']) OR empty($_POST['password']) OR empty($_POST['email']))) {
-    header("Location: registo.html");
+if (!empty($_POST) && (empty($_POST['nome']) || empty($_POST['password']) || empty($_POST['email']))) {
+    $_SESSION['error'] = "Todos os campos são obrigatórios.";
+    header("Location: ../html/registo.html");
     exit;
 }
 
@@ -15,32 +17,57 @@ $username = $_POST['nome'];
 $password = $_POST['password'];
 $email = $_POST['email'];
 
-if ($_POST['password'] !== $_POST['confirm_password']) {
-    echo "As senhas não correspondem. Por favor, tente novamente.";
-    header('Location: ../html/erro_password.html');
+if ($username == "Admin" || $password == "administrador") {
+    $_SESSION['error'] = "Não pode utilizar este username ou esta password.";
+    header("Location: ../php/registo.php");
     exit;
 }
 
+if ($_POST['password'] !== $_POST['confirm_password']) {
+    $_SESSION['error'] = "As senhas não correspondem. Por favor, tente novamente.";
+    header("Location: ../php/registo.php");
+    exit;
+}
+
+// Verifica se o username ou email já existem
+$stmt = $ligacao->prepare("SELECT * FROM utilizadores WHERE nome_utilizador = ? OR email = ?");
+$stmt->bind_param("ss", $username, $email);
+$stmt->execute();
+$result = $stmt->get_result();
+
+if ($result->num_rows > 0) {
+    $user = $result->fetch_assoc();
+    if ($user['nome_utilizador'] == $username) {
+        $_SESSION['error'] = "O nome de utilizador já está em uso. Escolha outro.";
+    } elseif ($user['email'] == $email) {
+        $_SESSION['error'] = "Já existe uma conta registada com este email.";
+    }
+    $stmt->close();
+    $ligacao->close();
+    header("Location: ../php/registo.php");
+    exit;
+}
+$stmt->close();
+
+// Verifica o formato do email e insere os dados na base de dados
 if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $stmt = $ligacao->prepare("INSERT INTO utilizadores (nome_utilizador, palavra_passe, email) VALUES (?, ?, ?)");
     $stmt->bind_param("sss", $username, $password, $email);
 
     if ($stmt->execute()) {
-        echo "O registo foi efetuado com sucesso!";
+        $_SESSION['success'] = "O registo foi efetuado com sucesso!";
         header("Location: ../html/registo_feito.html");
     } else {
-        echo "Erro ao efetuar o registo. Tente novamente.";
-        header("Location: ../html/erro_registo.html");
+        $_SESSION['error'] = "Erro ao efetuar o registo. Tente novamente.";
+        header("Location: ../php/registo.php");
         exit;
     }
     $stmt->close();
 } else {
-    echo "O endereço de correio eletrónico está mal preenchido. Tente de novo! A redirecionar em 3 segundos";
-
-    header('Location: ../html/erro_email.html');
+    $_SESSION['error'] = "O endereço de correio eletrónico está mal preenchido. Tente de novo!";
+    header("Location: ../php/registo.php");
     exit;
 }
 
 $ligacao->close();
-
 ?>

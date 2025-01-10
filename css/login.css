@@ -4,7 +4,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Times New Roman', serif;
+    font-family: Arial, sans-serif;
 }
 
 /* Declaração de variáveis de cores */
@@ -43,7 +43,7 @@ body {
     font-size: 32px;
     color: var(--text-color);
     margin-bottom: 20px;
-    font-family: 'Times New Roman', serif;
+    font-family: Arial, sans-serif;
     font-weight: bold;
     border-bottom: 2px solid var(--accent-color);
     display: inline-block;

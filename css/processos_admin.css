@@ -151,3 +151,30 @@ table th:first-child, table td:first-child {
     color: white;
     cursor: pointer;
 }
+
+.popup {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background-color: #f8d7da; /* Vermelho claro para erros */
+    color: #721c24; /* Texto vermelho escuro */
+    padding: 15px 20px;
+    border: 1px solid #f5c6cb; /* Borda correspondente */
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    max-width: 300px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Botão para fechar */
+.popup button {
+    background: none;
+    border: none;
+    color: #721c24;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
