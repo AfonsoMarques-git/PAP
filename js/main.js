@@ -1,51 +1,25 @@
-function mostrarPassword() {
-    const inputPass = document.getElementById('password-input');
-    const btnShowPass = document.getElementById('btn-password');
+function mostrarPasswordP() {
+    const inputPassP = document.getElementById('password-input-P');
+    const btnShowPassP = document.getElementById('btn-password-P');
 
-    if (inputPass.type === 'password') {
-        inputPass.setAttribute('type', 'text');
-        btnShowPass.src = '../images/esconder.png';
+    if (inputPassP.type === 'password') {
+        inputPassP.setAttribute('type', 'text');
+        btnShowPassP.src = '../images/close_eye.png';
     } else {
-        inputPass.setAttribute('type', 'password');
-        btnShowPass.src = '../images/ver.png';
+        inputPassP.setAttribute('type', 'password');
+        btnShowPassP.src = '../images/open_eye.png';
     }
 }
 
-function mostrarPasswordC() {
-    const inputPass = document.getElementById('password-inputC');
-    const btnShowPass = document.getElementById('btn-passwordC');
+function mostrarPasswordCP() {
+    const inputPassP = document.getElementById('password-inputC-P');
+    const btnShowPassP = document.getElementById('btn-passwordC-P');
 
-    if (inputPass.type === 'password') {
-        inputPass.setAttribute('type', 'text');
-        btnShowPass.src = '../images/esconder.png';
+    if (inputPassP.type === 'password') {
+        inputPassP.setAttribute('type', 'text');
+        btnShowPassP.src = '../images/close_eye.png';
     } else {
-        inputPass.setAttribute('type', 'password');
-        btnShowPass.src = '../images/ver.png';
-    }
-}
-
-function mostrarPasswordAdmin() {
-    const inputPassAdmin = document.getElementById('password-input-Admin');
-    const btnShowPassAdmin = document.getElementById('btn-password-Admin');
-
-    if (inputPassAdmin.type === 'password') {
-        inputPassAdmin.setAttribute('type', 'text');
-        btnShowPassAdmin.src = '../images/close_eye.png';
-    } else {
-        inputPassAdmin.setAttribute('type', 'password');
-        btnShowPassAdmin.src = '../images/open_eye.png';
-    }
-}
-
-function mostrarPasswordCAdmin() {
-    const inputPassAdmin = document.getElementById('password-inputC-Admin');
-    const btnShowPassAdmin = document.getElementById('btn-passwordC-Admin');
-
-    if (inputPassAdmin.type === 'password') {
-        inputPassAdmin.setAttribute('type', 'text');
-        btnShowPassAdmin.src = '../images/close_eye.png';
-    } else {
-        inputPassAdmin.setAttribute('type', 'password');
-        btnShowPassAdmin.src = '../images/open_eye.png';
+        inputPassP.setAttribute('type', 'password');
+        btnShowPassP.src = '../images/open_eye.png';
     }
 }

@@ -21,13 +21,13 @@
             </div>
 
             <div class="input-box">
-                <input type="password" name="password" placeholder="Password" required id="password-input-Admin">
-                <img src="../images/open_eye.png" class="icon" id="btn-password-Admin" onclick="mostrarPasswordAdmin()">
+                <input type="password" name="password" placeholder="Password" required id="password-input-P">
+                <img src="../images/open_eye.png" class="icon" id="btn-password-P" onclick="mostrarPasswordP()">
             </div>
             
             <div class="input-box">
-                <input type="password" name="confirm_password" placeholder="Confirmar Password" required id="password-inputC-Admin">
-                <img src="../images/open_eye.png" class="icon" id="btn-passwordC-Admin" onclick="mostrarPasswordCAdmin()">
+                <input type="password" name="confirm_password" placeholder="Confirmar Password" required id="password-inputC-P">
+                <img src="../images/open_eye.png" class="icon" id="btn-passwordC-P" onclick="mostrarPasswordCP()">
             </div>            
 
             <div class="input-box">
