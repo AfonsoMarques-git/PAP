@@ -8,6 +8,19 @@ if (isset($_REQUEST['apagar'])) {
 
     $id = intval($_POST['id']); // Garantir que o ID é um número inteiro
 
+    // Verificar se o utilizador é Admin
+    $verificar_admin = "SELECT nome_utilizador FROM utilizadores WHERE id = $id";
+    $resultado = mysqli_query($ligacao, $verificar_admin);
+
+    if ($resultado && $linha = mysqli_fetch_assoc($resultado)) {
+        if ($linha['nome_utilizador'] === "Admin") {
+            echo 'O utilizador Admin não pode ser eliminado!';
+            echo '<a href="eliminar_utilizador.php">Voltar</a>';
+            mysqli_close($ligacao);
+            exit; // Parar a execução
+        }
+    }
+
     // Criar a consulta à base de dados
     $sql = "DELETE FROM utilizadores WHERE id = $id";
 
@@ -21,7 +34,6 @@ if (isset($_REQUEST['apagar'])) {
 
     // Fechar a conexão
     mysqli_close($ligacao);
-
 } else {
     include('menu2.php');
 ?>
@@ -44,16 +56,15 @@ if (isset($_REQUEST['apagar'])) {
             <td><?php echo htmlspecialchars($nome_utilizador) ?></td>
             <td><?php echo htmlspecialchars($email) ?></td>
         </tr>
-        <tr>
-            <td>
-                <form method="POST" action="processar_eliminar.php">
-                    <p> Pretende mesmo eliminar este registo ? </p>
-                    <input type="submit" name="apagar" value="Sim" />
-                    <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>"/>
-                </form>
-            </td>
-        </tr>
     </table>
+    <div class="botoes">
+        <form method="POST" action="processar_eliminar.php" style="display: inline;">
+            <p> Pretende mesmo eliminar este registo ? </p>
+            <input class="botao_elim" type="submit" name="apagar" value="Sim" />
+            <input type="hidden" name="id" value="<?php echo htmlspecialchars($id); ?>"/>
+        </form>
+        <a href="../php/eliminar_utilizador.php"><button class="botao_elim">Voltar</button></a>
+    </div>
 </div>
 <?php 
 }

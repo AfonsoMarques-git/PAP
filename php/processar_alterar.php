@@ -1,7 +1,6 @@
 <link rel="stylesheet" href="../css/processos_admin.css">
 <?php
 if (isset($_POST['alterar'])) { // Ensure the form is submitted
-
     // Conectar ao banco de dados
     $ligacao = mysqli_connect('localhost', 'root', '', 'gestao_utilizadores');
     if (!$ligacao) {
@@ -11,6 +10,19 @@ if (isset($_POST['alterar'])) { // Ensure the form is submitted
     // Check if ID exists in POST data
     if (isset($_POST['id'])) {
         $id = $_POST['id'];
+
+        // Verificar se o utilizador é Admin
+        $verificar_admin = "SELECT nome_utilizador FROM utilizadores WHERE id = $id";
+        $resultado = mysqli_query($ligacao, $verificar_admin);
+
+        if ($resultado && $linha = mysqli_fetch_assoc($resultado)) {
+            if ($linha['nome_utilizador'] === "Admin") {
+                echo 'Os dados do utilizador Admin não podem ser alterados!';
+                echo '<a href="alterar_utilizador.php">Voltar</a>';
+                mysqli_close($ligacao);
+                exit; // Parar a execução
+            }
+        }
 
         // Escape and sanitize user inputs
         $nome_user = mysqli_real_escape_string($ligacao, $_POST['nome_user']);
@@ -30,7 +42,8 @@ if (isset($_POST['alterar'])) { // Ensure the form is submitted
 
     // Fechar a conexão
     mysqli_close($ligacao);
-} else {
+}
+ else {
     include('menu2.php');
 ?>
 
@@ -61,13 +74,13 @@ if (isset($_POST['alterar'])) { // Ensure the form is submitted
                     <font face="Arial" size="2"><input class="input_alt" type="text" name="email_user" value="<?php echo $email; ?>" /></font>
                 </td>
             </tr>
-            <tr>
-                <td>
-                    <input type="submit" name="alterar" value="Alterar Dados">
-                </td>
-            </tr>
         </form>
     </table>
+    <div class="botoes">
+        <p>Pretende mesmo alterar este registo ?</p>
+        <input class="botao_elim" type="submit" name="alterar" value="Alterar Dados"/>
+        <a href="../php/alterar_utilizador.php"><button class="botao_elim"> Voltar </button></a>
+    </div>
 </div>
 <?php
 }

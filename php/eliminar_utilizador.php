@@ -32,14 +32,17 @@ if ($consulta) {
     echo('<tr><th>Nº registo</th><th>Nome de utilizador</th><th>Endereço de correio eletrónico</th></tr>');
     // percorrer todos os registos
     while ($mostrar = $consulta->fetch_assoc()) {
-    
         $id = $mostrar["id"];
         $nome_utilizador = $mostrar["nome_utilizador"];
         $email = $mostrar["email"];
-        // apresentar a hiperligação para cada registo
-        echo("<tr><td><a href='processar_eliminar.php?id=$id&nome_utilizador=$nome_utilizador&email=$email'>$id</a></td>
-        <td>$nome_utilizador</td><td>$email</td></tr>");
     
+        // Impedir que o Admin tenha botão para eliminar
+        if ($nome_utilizador === "Admin") {
+            echo("<tr class='links'><td>$id</td><td>$nome_utilizador</td><td>$email</td></tr>");
+        } else {
+            // Apresentar a hiperligação para cada registo
+            echo("<tr class='links'><td><a href='processar_eliminar.php?id=$id&nome_utilizador=$nome_utilizador&email=$email'><button>$id</button></a></td><td>$nome_utilizador</td><td>$email</td></tr>");
+        }
     }
     echo('</table>');
     echo('</div>');

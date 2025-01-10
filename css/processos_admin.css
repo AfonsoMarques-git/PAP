@@ -19,7 +19,7 @@ body {
 h1 {
     margin-bottom: 20px;
     font-size: 2rem;
-    color: #2c3e50;
+    color: #000000;
 }
 
 .tabela {
@@ -39,7 +39,7 @@ table {
 }
 
 table th {
-    background-color: #2c3e50;
+    background-color: #b39f7c;
     color: #ffffff;
     padding: 10px;
     text-transform: uppercase;
@@ -88,4 +88,66 @@ table th:first-child, table td:first-child {
     h1 {
         font-size: 1.5rem;
     }
+}
+
+.links>td>a>button{
+    background-color: #b9b9b9;
+    padding: 10px;
+    border-radius: 10px;
+    border: none;
+    width: 100px;
+    transition: background-color 0.3s;
+    transition: color 0.3s;
+}
+
+.links>td>a>button:hover{
+    background-color: #b39f7c;
+    cursor: pointer;
+}
+
+.links>td>a>button:hover > a{
+    color: white;
+}
+
+.links>td>a>button{
+    text-decoration: none;
+    color: black;
+}
+
+.links>td>a>button:hover{
+    color: white;
+}
+
+.links>td>a>button:hover{
+    background-color: #b39f7c;
+}
+
+.botoes {
+    margin-top: 20px;
+    text-align: center;
+}
+
+.botoes p {
+    margin-bottom: 10px;
+    font-size: 1.1rem;
+    color: #000000;
+    font-family: Arial, sans-serif;
+}
+
+.botoes .botao_elim {
+    display: inline-block;
+    margin: 0 10px;
+    text-decoration: none;
+    background-color: #b9b9b9;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    transition: background-color 0.3s;
+    transition: color 0.3s;
+}
+
+.botoes .botao_elim:hover{
+    background-color: #b39f7c;
+    color: white;
+    cursor: pointer;
 }

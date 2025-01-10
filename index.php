@@ -62,29 +62,29 @@ $isLoggedIn = isset($_SESSION['username']);
         <div class="card">
             <img src="images/baloes.png" alt="Produto 1">
             <div class="content">
-                <h3>Produto 1</h3>
-                <p>Descrição breve do produto 1.</p>
+                <h3>Balões Latéx</h3>
+                <p>Balões de látex são decorativos, ecológicos e perfeitos para dar vida às suas festas e eventos.</p>
             </div>
         </div>
         <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Produto 2">
+            <img src="images/fachas.png" alt="Produto 2">
             <div class="content">
-                <h3>Produto 2</h3>
-                <p>Descrição breve do produto 2.</p>
+                <h3>Faixa de Cetim personalizada </h3>
+                <p>Faixas de cetim elegantes e versáteis, ideais para personalizar eventos e presentes com charme.</p>
             </div>
         </div>
         <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Produto 3">
+            <img src="images/decoracaoSala.jpg" alt="Produto 3">
             <div class="content">
-                <h3>Produto 3</h3>
-                <p>Descrição breve do produto 3.</p>
+                <h3>Decoração de Sala</h3>
+                <p>Decoração de sala: transforme seu ambiente com estilo, conforto e toques personalizados.</p>
             </div>
         </div>
         <div class="card">
-            <img src="https://via.placeholder.com/300x200" alt="Produto 4">
+            <img src="images/insuflavel.jpg" alt="Produto 4">
             <div class="content">
-                <h3>Produto 4</h3>
-                <p>Descrição breve do produto 4.</p>
+                <h3>Insufláveis</h3>
+                <p>Infláveis: diversão garantida com itens temáticos, práticos e personalizados para qualquer ocasião.</p>
             </div>
         </div>
     </div>
