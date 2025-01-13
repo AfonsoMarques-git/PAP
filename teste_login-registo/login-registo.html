@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="login-registo.css">
+    <title>Login | Registo</title>
+</head>
+
+<body>
+
+    <div class="container" id="container">
+        <div class="form-container registo">
+            <form>
+                <h1>Realizar Registo</h1>
+                <input type="text" name="nome" id="nome" placeholder="Nome">
+                <input type="email" name="email" id="email" placeholder="Email">
+                <input type="password" name="password" id="password" placeholder="Password">
+                <button>Registar</button>
+            </form>
+        </div>
+        <div class="form-container login">
+            <form>
+                <h1>Login</h1>
+                <input type="text" name="nome" id="nome" placeholder="Nome">
+                <input type="password" name="password" id="password" placeholder="Password">
+                <a href="#">Esqueceu-se da sua password?</a>
+                <button>Login</button>
+            </form>
+        </div>
+        <div class="toggle-container">
+            <div class="toggle">
+                <div class="toggle-panel toggle-left">
+                    <h1>Bem-vindo de volta!</h1>
+                    <p>Insira os seus dados para usufruir do site por completo</p>
+                    <button class="btnLR" id="login">Login</button>
+                </div>
+                <div class="toggle-panel toggle-right">
+                    <h1>Seja bem-vindo!</h1>
+                    <p>Registe-se com os seus dados para usufruir do site por completo</p>
+                    <button class="btnLR" id="registo">Registar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
