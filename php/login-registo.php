@@ -2,6 +2,9 @@
 session_start();
 $error = isset($_SESSION['error']) ? $_SESSION['error'] : '';
 unset($_SESSION['error']);
+
+$success = isset($_SESSION['success']) ? $_SESSION['success'] : '';
+unset($_SESSION['success']);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -68,6 +71,15 @@ unset($_SESSION['error']);
             </div>
         </div>
     </div>
+
+    <!-- Exibir mensagem de sucesso se existirem -->
+    <?php if ($success): ?>
+    <script>
+        window.onload = function() {
+            alert("<?php echo htmlspecialchars($success); ?>");
+        };
+    </script>
+    <?php endif; ?>
 
     <script src="../js/main.js"></script>
 </body>

@@ -14,7 +14,7 @@ body {
 
 .sidebar {
   position: fixed;
-  width: 270px;
+  width: 300px;
   margin: 16px;
   border-radius: 16px;
   background: #c5a880;
@@ -218,4 +218,36 @@ body {
     bottom: 0;
     margin: 40px 0 30px;
   }
+}
+
+/* Dropdown menu styles */
+.nav-item .dropdown-menu {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: none; /* Escondido por padrão */
+  flex-direction: column;
+  background: #c5a880; /* Mesma cor de fundo da sidebar */
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.nav-item .dropdown-menu li {
+  position: relative;
+}
+
+.nav-item .dropdown-menu a {
+  color: #fff; /* Mesma cor dos links do menu */
+  display: flex;
+  gap: 12px;
+  padding: 10px 15px;
+  align-items: center;
+  text-decoration: none;
+  transition: 0.4s ease;
+  border-radius: 8px;
+}
+
+.nav-item .dropdown-menu a:hover {
+  background: #fff; /* Destaque ao passar o mouse */
+  color: #151A2D; /* Cor do texto no hover */
 }

@@ -55,8 +55,8 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
     $stmt->bind_param("sss", $username, $password, $email);
 
     if ($stmt->execute()) {
-        $_SESSION['success'] = "O registo foi efetuado com sucesso!";
-        header("Location: ../html/registo_feito.html");
+        $_SESSION['success'] = "O registo foi efetuado com sucesso! Faça login para entrar com o seu registro.";
+        header("Location: ../php/login-registo.php");
     } else {
         $_SESSION['error'] = "Erro ao efetuar o registo. Tente novamente.";
         header("Location: ../php/login-registo.php");

@@ -33,54 +33,29 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
     </header>
     <nav class="sidebar-nav">
       <ul class="nav-list primary-nav">
-        <li class="nav-item">
+        <li class="nav-item dropdown">
           <a href="#" class="nav-link">
             <span class="nav-icon material-symbols-rounded">dashboard</span>
-            <span class="nav-label">Dashboard</span>
+            <span class="nav-label">Gestão de utilizadores</span>
+            <span class="dropdown-icon material-symbols-rounded">expand_more</span>
           </a>
-          <span class="nav-tooltip">Dashboard</span>
+          <ul class="dropdown-menu">
+            <li><a href="#">banana1</a></li>
+            <li><a href="#">banana2</a></li>
+            <li><a href="#">banana3</a></li>
+          </ul>
         </li>
-        <li class="nav-item">
+        <li class="nav-item dropdown">
           <a href="#" class="nav-link">
             <span class="nav-icon material-symbols-rounded">calendar_today</span>
-            <span class="nav-label">Calendar</span>
+            <span class="nav-label">Gestão do website</span>
+            <span class="dropdown-icon material-symbols-rounded">expand_more</span>
           </a>
-          <span class="nav-tooltip">Calendar</span>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <span class="nav-icon material-symbols-rounded">notifications</span>
-            <span class="nav-label">Notifications</span>
-          </a>
-          <span class="nav-tooltip">Notifications</span>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <span class="nav-icon material-symbols-rounded">group</span>
-            <span class="nav-label">Team</span>
-          </a>
-          <span class="nav-tooltip">Team</span>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <span class="nav-icon material-symbols-rounded">insert_chart</span>
-            <span class="nav-label">Analytics</span>
-          </a>
-          <span class="nav-tooltip">Analytics</span>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <span class="nav-icon material-symbols-rounded">star</span>
-            <span class="nav-label">Bookmarks</span>
-          </a>
-          <span class="nav-tooltip">Bookmarks</span>
-        </li>
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <span class="nav-icon material-symbols-rounded">settings</span>
-            <span class="nav-label">Settings</span>
-          </a>
-          <span class="nav-tooltip">Settings</span>
+          <ul class="dropdown-menu">
+            <li><a href="#">banana1</a></li>
+            <li><a href="#">banana2</a></li>
+            <li><a href="#">banana3</a></li>
+          </ul>
         </li>
       </ul>
       <ul class="nav-list secondary-nav">
@@ -101,6 +76,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
       </ul>
     </nav>
   </aside>
+  <script src="../js/menu_admin2.js"></script>
   <script src="../js/menu_admin.js"></script>
 </body>
 

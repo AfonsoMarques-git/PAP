@@ -35,3 +35,44 @@ window.addEventListener("resize", () => {
     toggleMenu(sidebar.classList.contains("menu-active"));
   }
 });
+
+// ------------------------------------------------------------------------------------------------------//
+
+
+document.addEventListener("DOMContentLoaded", () => {
+  const dropdownItems = document.querySelectorAll(".nav-item.dropdown");
+  const sidebarToggler = document.querySelector(".sidebar-toggler");
+  const sidebar = document.querySelector(".sidebar");
+
+  // Alternar dropdown ao clicar no item principal
+  dropdownItems.forEach((item) => {
+    const navLink = item.querySelector(".nav-link");
+    const dropdownMenu = item.querySelector(".dropdown-menu");
+
+    navLink.addEventListener("click", (e) => {
+      e.preventDefault(); // Previne a navegação se o link tiver href="#"
+      // Fecha outros dropdowns antes de abrir o atual
+      dropdownItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          otherItem.querySelector(".dropdown-menu").style.display = "none";
+        }
+      });
+
+      // Alternar visibilidade do dropdown atual
+      dropdownMenu.style.display =
+        dropdownMenu.style.display === "flex" ? "none" : "flex";
+    });
+  });
+
+  // Fechar dropdowns ao minimizar o menu lateral
+  sidebarToggler.addEventListener("click", () => {
+    sidebar.classList.toggle("collapsed");
+
+    if (sidebar.classList.contains("collapsed")) {
+      dropdownItems.forEach((item) => {
+        const dropdownMenu = item.querySelector(".dropdown-menu");
+        dropdownMenu.style.display = "none";
+      });
+    }
+  });
+});
