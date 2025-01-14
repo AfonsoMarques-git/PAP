@@ -39,10 +39,12 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
             <span class="nav-label">Gestão de utilizadores</span>
             <span class="dropdown-icon material-symbols-rounded">expand_more</span>
           </a>
+          <span class="nav-tooltip">Gestão de utilizadores</span>
           <ul class="dropdown-menu">
-            <li><a href="#">banana1</a></li>
-            <li><a href="#">banana2</a></li>
-            <li><a href="#">banana3</a></li>
+            <li><a href="#">Registar</a></li>
+            <li><a href="#">Eliminar</a></li>
+            <li><a href="#">Ver lista</a></li>
+            <li><a href="#">Alterar Informações</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -51,21 +53,13 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
             <span class="nav-label">Gestão do website</span>
             <span class="dropdown-icon material-symbols-rounded">expand_more</span>
           </a>
+          <span class="nav-tooltip">Gestão do website</span>
           <ul class="dropdown-menu">
-            <li><a href="#">banana1</a></li>
-            <li><a href="#">banana2</a></li>
-            <li><a href="#">banana3</a></li>
+            <li><a href="#">Manutenção de produtos</a></li>
           </ul>
         </li>
       </ul>
       <ul class="nav-list secondary-nav">
-        <li class="nav-item">
-          <a href="#" class="nav-link">
-            <span class="nav-icon material-symbols-rounded">account_circle</span>
-            <span class="nav-label">Profile</span>
-          </a>
-          <span class="nav-tooltip">Profile</span>
-        </li>
         <li class="nav-item">
           <a href="../php/logout.php" class="nav-link">
             <span class="nav-icon material-symbols-rounded">logout</span>
@@ -76,7 +70,6 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
       </ul>
     </nav>
   </aside>
-  <script src="../js/menu_admin2.js"></script>
   <script src="../js/menu_admin.js"></script>
 </body>
 

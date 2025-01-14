@@ -36,7 +36,8 @@ window.addEventListener("resize", () => {
   }
 });
 
-// ------------------------------------------------------------------------------------------------------//
+
+// ------------------------------------------------------------------------------------------------------ //
 
 
 document.addEventListener("DOMContentLoaded", () => {
@@ -51,20 +52,14 @@ document.addEventListener("DOMContentLoaded", () => {
 
     navLink.addEventListener("click", (e) => {
       e.preventDefault(); // Previne a navegação se o link tiver href="#"
-      // Fecha outros dropdowns antes de abrir o atual
-      dropdownItems.forEach((otherItem) => {
-        if (otherItem !== item) {
-          otherItem.querySelector(".dropdown-menu").style.display = "none";
-        }
-      });
 
       // Alternar visibilidade do dropdown atual
-      dropdownMenu.style.display =
-        dropdownMenu.style.display === "flex" ? "none" : "flex";
+      const isCurrentlyOpen = dropdownMenu.style.display === "flex";
+      dropdownMenu.style.display = isCurrentlyOpen ? "none" : "flex";
     });
   });
 
-  // Fechar dropdowns ao minimizar o menu lateral
+  // Fechar todos os dropdowns ao minimizar o menu lateral
   sidebarToggler.addEventListener("click", () => {
     sidebar.classList.toggle("collapsed");
 
@@ -76,3 +71,34 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 });
+
+// Função para alternar o estado da sidebar
+sidebarToggler.addEventListener("click", () => {
+  sidebar.classList.toggle("collapsed");
+});
+
+
+// ------------------------------------------------------------------------------------------------------ //
+
+
+const dropdownLinks = document.querySelectorAll('.nav-item.dropdown > a');
+
+    dropdownLinks.forEach(link => {
+      // Adiciona um evento de clique em cada link
+      link.addEventListener('click', function (event) {
+        // Impede que o link seja seguido (evita o comportamento padrão)
+        event.preventDefault();
+
+        // Alterna a visibilidade do menu dropdown
+        const dropdownMenu = this.nextElementSibling;
+        dropdownMenu.classList.toggle('show');
+
+        // Alterna o ícone entre expand_more e expand_less
+        const icon = this.querySelector('.dropdown-icon');
+        if (icon.textContent === 'expand_more') {
+          icon.textContent = 'expand_less';
+        } else {
+          icon.textContent = 'expand_more';
+        }
+      });
+    });

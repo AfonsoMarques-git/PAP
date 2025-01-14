@@ -1,5 +1,6 @@
 /* Importing Google Fonts - Poppins */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -34,14 +35,6 @@ body {
   justify-content: space-between;
 }
 
-.sidebar-header .header-logo img {
-  height: 50px;
-  width: 50px;
-  display: block;
-  object-fit: contain;
-  border-radius: 50%;
-}
-
 .sidebar-header .toggler {
   height: 35px;
   width: 35px;
@@ -54,6 +47,30 @@ body {
   justify-content: center;
   border-radius: 8px;
   transition: 0.4s ease;
+}
+
+.sidebar-header .header-logo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 100%;
+  height: 100px;
+  transition: all 0.4s ease;
+}
+
+.sidebar-header .header-logo img {
+  width: 100px;
+  height: 100px;
+  object-fit: contain;
+}
+
+.sidebar.collapsed .header-logo {
+  justify-content: center;
+}
+
+.sidebar.collapsed .header-logo img {
+  width: 80px;
+  height: 80px;
 }
 
 .sidebar-header .sidebar-toggler {
@@ -174,9 +191,11 @@ body {
     width: calc(100% - 26px);
     max-height: calc(100vh - 26px);
   }
+
   .sidebar.menu-active {
     overflow-y: auto;
   }
+
   .sidebar .sidebar-header {
     position: sticky;
     top: 0;
@@ -185,34 +204,41 @@ body {
     background: #151A2D;
     padding: 8px 10px;
   }
+
   .sidebar-header .header-logo img {
     width: 40px;
     height: 40px;
   }
+
   .sidebar-header .sidebar-toggler,
   .sidebar-nav .nav-item:hover .nav-tooltip {
     display: none;
   }
-  
+
   .sidebar-header .menu-toggler {
     display: flex;
     height: 30px;
     width: 30px;
   }
+
   .sidebar-header .menu-toggler span {
     font-size: 1.3rem;
   }
+
   .sidebar .sidebar-nav .nav-list {
     padding: 0 10px;
   }
+
   .sidebar-nav .nav-link {
     gap: 10px;
     padding: 10px;
     font-size: 0.94rem;
   }
+
   .sidebar-nav .nav-link .nav-icon {
     font-size: 1.37rem;
   }
+
   .sidebar-nav .secondary-nav {
     position: relative;
     bottom: 0;
@@ -225,11 +251,15 @@ body {
   list-style: none;
   padding: 0;
   margin: 0;
-  display: none; /* Escondido por padrão */
+  display: none;
+  /* Escondido por padrão */
   flex-direction: column;
-  background: #c5a880; /* Mesma cor de fundo da sidebar */
+  background: #c5a880;
+  /* Mesma cor de fundo da sidebar */
   border-radius: 8px;
   overflow: hidden;
+  display: none;
+  flex-direction: column;
 }
 
 .nav-item .dropdown-menu li {
@@ -237,7 +267,8 @@ body {
 }
 
 .nav-item .dropdown-menu a {
-  color: #fff; /* Mesma cor dos links do menu */
+  color: #fff;
+  /* Mesma cor dos links do menu */
   display: flex;
   gap: 12px;
   padding: 10px 15px;
@@ -248,6 +279,8 @@ body {
 }
 
 .nav-item .dropdown-menu a:hover {
-  background: #fff; /* Destaque ao passar o mouse */
-  color: #151A2D; /* Cor do texto no hover */
+  background: #fff;
+  /* Destaque ao passar o mouse */
+  color: #151A2D;
+  /* Cor do texto no hover */
 }
