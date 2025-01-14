@@ -22,7 +22,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
   <aside class="sidebar">
     <header class="sidebar-header">
       <a href="#" class="header-logo">
-        <img src="logo.png" alt="CodingNepal">
+        <img src="../images/logo_pequeno.png" alt="Companhia da Mariposa">
       </a>
       <button class="toggler sidebar-toggler">
         <span class="material-symbols-rounded">chevron_left</span>
