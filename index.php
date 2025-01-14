@@ -34,6 +34,7 @@ $isLoggedIn = isset($_SESSION['username']);
                             <a href="html/manutencao.html">Balões</a>
                             <a href="html/manutencao.html">Casamentos</a>
                             <a href="html/manutencao.html">Aluguer</a>
+                            <a href="html/manutencao.html">Contactos</a>
                         </nav>
                     </div>
 
