@@ -197,3 +197,7 @@ header>.actions .search{
     font-size: 14px;
     color: #666;
 }
+
+.login-registo>a>img:hover{
+    content: url(../images/user_hover.png.png);
+}

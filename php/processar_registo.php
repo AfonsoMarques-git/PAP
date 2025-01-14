@@ -3,7 +3,7 @@ session_start();
 
 if (!empty($_POST) && (empty($_POST['nome']) || empty($_POST['password']) || empty($_POST['email']))) {
     $_SESSION['error'] = "Todos os campos são obrigatórios.";
-    header("Location: ../html/registo.html");
+    header("Location: ../php/login-registo.php");
     exit;
 }
 
@@ -19,13 +19,13 @@ $email = $_POST['email'];
 
 if ($username == "Admin" || $password == "administrador") {
     $_SESSION['error'] = "Não pode utilizar este username ou esta password.";
-    header("Location: ../php/registo.php");
+    header("Location: ../php/login-registo.php");
     exit;
 }
 
 if ($_POST['password'] !== $_POST['confirm_password']) {
     $_SESSION['error'] = "As senhas não correspondem. Por favor, tente novamente.";
-    header("Location: ../php/registo.php");
+    header("Location: ../php/login-registo.php");
     exit;
 }
 
@@ -44,7 +44,7 @@ if ($result->num_rows > 0) {
     }
     $stmt->close();
     $ligacao->close();
-    header("Location: ../php/registo.php");
+    header("Location: ../php/login-registo.php");
     exit;
 }
 $stmt->close();
@@ -59,13 +59,13 @@ if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
         header("Location: ../html/registo_feito.html");
     } else {
         $_SESSION['error'] = "Erro ao efetuar o registo. Tente novamente.";
-        header("Location: ../php/registo.php");
+        header("Location: ../php/login-registo.php");
         exit;
     }
     $stmt->close();
 } else {
     $_SESSION['error'] = "O endereço de correio eletrónico está mal preenchido. Tente de novo!";
-    header("Location: ../php/registo.php");
+    header("Location: ../php/login-registo.php");
     exit;
 }
 

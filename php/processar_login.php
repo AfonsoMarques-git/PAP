@@ -33,7 +33,7 @@
     } else {
         // Se o login falhar, redireciona para login.html
         $_SESSION['autenticado'] = false;
-        header("Location: ../html/login.html");
+        header("Location: ../php/login-registo.php");
         exit;
     }
 

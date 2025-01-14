@@ -43,8 +43,7 @@ $isLoggedIn = isset($_SESSION['username']);
                                 <a href="html/perfil.html"><span class="user">Olá, <?php echo $_SESSION['username']; ?>!</span></a>
                                 <a href="php/logout.php" class="logout">Log Out</a>
                             <?php else: ?>
-                                <a href="html/login.html" class="login">Login</a>
-                                <a href="php/registo.php" class="registo">Registo</a>
+                                <a href="php/login-registo.php"><img src="images/user..png" alt="Login e Registo" /></a>
                             <?php endif; ?>
                         </div>
                     </div>

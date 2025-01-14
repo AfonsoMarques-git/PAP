@@ -87,22 +87,6 @@ body {
     height: 100%;
 }
 
-.container input {
-    background-color: var(--input-bg-color);
-    border: 1px solid var(--border-color);
-    margin: 8px 0;
-    padding: 10px 15px;
-    font-size: 13px;
-    border-radius: 8px;
-    width: 100%;
-    outline: none;
-    color: var(--text-color);
-}
-
-.container input::placeholder {
-    color: var(--placeholder-color);
-}
-
 .form-container {
     position: absolute;
     top: 0;
@@ -213,4 +197,43 @@ body {
 
 .btnLR:hover{
     background-color: var(--accent-color);
+}
+
+.input-box {
+    position: relative;
+    margin: 10px 0;
+}
+
+.input-box input {
+    background-color: var(--input-bg-color);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 250px;
+    outline: none;
+    color: var(--text-color);
+}
+
+.input-box input::placeholder {
+    color: var(--placeholder-color);
+}
+
+.icon {
+    position: absolute;
+    right: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+.titulo{
+    padding-bottom: 15px;
+}
+
+.erro{
+    color: red;
+    font-weight: bold;
 }

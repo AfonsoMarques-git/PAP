@@ -1,3 +1,4 @@
+// Login e Registo olho de ver password
 function mostrarPasswordP() {
     const inputPassP = document.getElementById('password-input-P');
     const btnShowPassP = document.getElementById('btn-password-P');
@@ -11,6 +12,7 @@ function mostrarPasswordP() {
     }
 }
 
+// Registo olho de ver confirmação de password
 function mostrarPasswordCP() {
     const inputPassP = document.getElementById('password-inputC-P');
     const btnShowPassP = document.getElementById('btn-passwordC-P');
@@ -24,30 +26,20 @@ function mostrarPasswordCP() {
     }
 }
 
+// Confirmar eliminação de registo no menu Administrador
 function confirmarEliminacao() {
     return confirm("Tem a certeza que deseja apagar este registo?");
 }
 
-function exibirPopup(mensagem) {
-    // Cria o contêiner do popup
-    const popup = document.createElement('div');
-    popup.classList.add('popup');
-    popup.innerHTML = `
-        <span>${mensagem}</span>
-        <button onclick="fecharPopup(this)">×</button>
-    `;
+// Login e Registo animação
+const container = document.getElementById('container');
+const registerBtn = document.getElementById('registo');
+const loginBtn = document.getElementById('login');
 
-    // Adiciona o popup ao body
-    document.body.appendChild(popup);
+registerBtn.addEventListener('click', () => {
+    container.classList.add("active");
+});
 
-    // Remove automaticamente após 5 segundos
-    setTimeout(() => {
-        if (popup) popup.remove();
-    }, 5000);
-}
-
-function fecharPopup(button) {
-    // Remove o popup ao clicar no botão de fechar
-    const popup = button.parentElement;
-    if (popup) popup.remove();
-}
+loginBtn.addEventListener('click', () => {
+    container.classList.remove("active");
+});
