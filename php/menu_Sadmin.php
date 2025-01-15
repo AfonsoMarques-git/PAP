@@ -12,7 +12,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Página de Administrador</title>
+  <title>Página de Super Administrador</title>
   <link rel="stylesheet" href="../css/menu_admin.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -72,5 +72,4 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
   </aside>
   <script src="../js/menu_admin.js"></script>
 </body>
-
 </html>

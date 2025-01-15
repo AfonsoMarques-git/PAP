@@ -1,28 +1,39 @@
-// Login e Registo olho de ver password
 function mostrarPasswordP() {
     const inputPassP = document.getElementById('password-input-P');
     const btnShowPassP = document.getElementById('btn-password-P');
 
     if (inputPassP.type === 'password') {
         inputPassP.setAttribute('type', 'text');
-        btnShowPassP.src = '../images/close_eye.png';
+        btnShowPassP.classList.replace('fa-eye', 'fa-eye-slash');
     } else {
         inputPassP.setAttribute('type', 'password');
-        btnShowPassP.src = '../images/open_eye.png';
+        btnShowPassP.classList.replace('fa-eye-slash', 'fa-eye');
     }
 }
 
-// Registo olho de ver confirmação de password
 function mostrarPasswordCP() {
-    const inputPassP = document.getElementById('password-inputC-P');
-    const btnShowPassP = document.getElementById('btn-passwordC-P');
+    const inputPassC = document.getElementById('password-inputC-P');
+    const btnShowPassC = document.getElementById('btn-passwordC-P');
 
-    if (inputPassP.type === 'password') {
-        inputPassP.setAttribute('type', 'text');
-        btnShowPassP.src = '../images/close_eye.png';
+    if (inputPassC.type === 'password') {
+        inputPassC.setAttribute('type', 'text');
+        btnShowPassC.classList.replace('fa-eye', 'fa-eye-slash');
     } else {
-        inputPassP.setAttribute('type', 'password');
-        btnShowPassP.src = '../images/open_eye.png';
+        inputPassC.setAttribute('type', 'password');
+        btnShowPassC.classList.replace('fa-eye-slash', 'fa-eye');
+    }
+}
+
+function mostrarPasswordLogin() {
+    const inputPassLogin = document.getElementById('password-input-login');
+    const btnShowPassLogin = document.getElementById('btn-password-login');
+
+    if (inputPassLogin.type === 'password') {
+        inputPassLogin.setAttribute('type', 'text');
+        btnShowPassLogin.classList.replace('fa-eye', 'fa-eye-slash');
+    } else {
+        inputPassLogin.setAttribute('type', 'password');
+        btnShowPassLogin.classList.replace('fa-eye-slash', 'fa-eye');
     }
 }
 

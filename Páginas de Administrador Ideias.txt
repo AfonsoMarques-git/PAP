@@ -1,0 +1,55 @@
+Menu de Administrador:
+
+- Na base de dados criar um campo na tabela que indica se o utilizador é admin ou não, se o valor for 1 é admin, se o valor for 0 não é admin.
+- Super Administrador tem acesso à página do administrador normal se quiser, colocar opção para que se o super administrador quiser pode aceder à página do administrador normal com o utilizador dele
+
+- Colocar mensagem de bem vindo e o nome do admin, variando consoante qual admin faz login.
+
+
+-- CHATGPT RECOMENDAÇÃO --
+
+Layout do Super Administrador
+
+1. Menu Principal (Lateral ou Superior)
+	- Itens visíveis:
+		- Gerenciar Administradores: Criar, editar, e remover administradores (incluindo super e normais).
+		- Configurações Globais: Controle de permissões, temas, backup/restauração, e configurações avançadas.
+		- Monitoramento do Sistema: Logs de atividades, status do servidor, desempenho.
+		- Relatórios Avançados: Acesso a todos os relatórios, gráficos detalhados e exportação de dados.
+		- Gerenciamento Completo: Controle sobre usuários, pedidos, produtos ou conteúdos (conforme o sistema).
+		- Segurança: Gerenciar autenticação, logs de segurança, auditoria.
+
+2. Tela Inicial do Super Administrador
+	- Resumo Executivo:
+		- Número total de administradores (divididos por categoria).
+		- Logs de atividades recentes de administradores.
+		- Status de configurações críticas (backup recente, segurança, integrações).
+	- Painéis Gráficos:
+		- Gráficos de acesso ao sistema por usuários e administradores.
+		- Informações sobre desempenho ou métricas gerais.
+	- Atalhos Específicos:
+		- Criação rápida de usuários, administradores ou backups.
+		- Links para logs detalhados.
+
+___________________________________________________________________________________________________________________________
+
+
+Layout do Administrador Normal
+
+1. Menu Principal (Lateral ou Superior)
+	- Itens visíveis:
+		- Gerenciar Usuários: Criar, editar ou remover usuários regulares.
+		- Relatórios Básicos: Acesso a relatórios específicos (como estatísticas de vendas ou acessos).
+		- Gerenciar Conteúdo: Moderação de postagens, produtos ou páginas, dependendo do escopo.
+		- Notificações: Alertas sobre pendências, mensagens do super administrador ou do sistema.
+		- Configurações Básicas: Alterações em configurações não críticas, como temas ou idioma.
+
+Tela Inicial do Administrador Normal
+	- Resumo Operacional:
+		- Total de usuários gerenciados.
+		- Notificações pendentes (por exemplo, solicitações de usuários ou ações de moderação).
+	- Painéis Gráficos Simples:
+		- Métricas específicas, como novos cadastros, interações ou visualizações.
+	- Atalhos Simples:
+		- Acesso rápido para gerenciar usuários ou moderar conteúdos.
+

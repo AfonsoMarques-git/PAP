@@ -1,7 +1,7 @@
 const sidebar = document.querySelector(".sidebar");
 const sidebarToggler = document.querySelector(".sidebar-toggler");
 const menuToggler = document.querySelector(".menu-toggler");
-let collapsedSidebarHeight = "56px";
+let collapsedSidebarHeight = "100px";
 let fullSidebarHeight = "calc(100vh - 32px)";
 
 // Alterna o estado colapsado da sidebar
@@ -45,13 +45,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const sidebarToggler = document.querySelector(".sidebar-toggler");
   const sidebar = document.querySelector(".sidebar");
 
-  // Alternar dropdown ao clicar no item principal
   dropdownItems.forEach((item) => {
     const navLink = item.querySelector(".nav-link");
     const dropdownMenu = item.querySelector(".dropdown-menu");
 
     navLink.addEventListener("click", (e) => {
-      e.preventDefault(); // Previne a navegação se o link tiver href="#"
+      e.preventDefault();
+
+      if (sidebar.classList.contains("collapsed")) {
+        sidebar.classList.remove("collapsed");
+      }
 
       // Alternar visibilidade do dropdown atual
       const isCurrentlyOpen = dropdownMenu.style.display === "flex";

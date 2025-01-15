@@ -141,6 +141,11 @@ body {
     z-index: 1000;
 }
 
+.toggle-container .extra{
+    font-size: 10px;
+    font-weight: 600;
+}
+
 .container.active .toggle-container {
     transform: translateX(-100%);
     border-radius: 0 150px 100px 0;
@@ -236,4 +241,39 @@ body {
 .erro{
     color: red;
     font-weight: bold;
+}
+
+.input-box {
+    position: relative;
+    margin: 10px 0;
+}
+
+.input-box input {
+    background-color: var(--input-bg-color);
+    border: 1px solid var(--border-color);
+    padding: 10px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 250px;
+    outline: none;
+    color: var(--text-color);
+    padding-right: 35px; /* Espaço extra para o ícone */
+}
+
+.icon {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: var(--accent-color);
+    cursor: pointer;
+}
+
+.icon:hover {
+    color: var(--border-color);
+}
+
+.input-box input::placeholder {
+    color: var(--placeholder-color);
 }

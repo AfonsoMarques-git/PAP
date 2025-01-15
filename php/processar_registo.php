@@ -17,12 +17,6 @@ $username = $_POST['nome'];
 $password = $_POST['password'];
 $email = $_POST['email'];
 
-if ($username == "Admin" || $password == "administrador") {
-    $_SESSION['error'] = "Não pode utilizar este username ou esta password.";
-    header("Location: ../php/login-registo.php");
-    exit;
-}
-
 if ($_POST['password'] !== $_POST['confirm_password']) {
     $_SESSION['error'] = "As senhas não correspondem. Por favor, tente novamente.";
     header("Location: ../php/login-registo.php");

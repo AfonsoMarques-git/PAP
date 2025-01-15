@@ -29,16 +29,20 @@ unset($_SESSION['success']);
                 <?php endif; ?>
 
                 <div class="input-box">
+                    <i class="fa fa-user icon"></i>
                     <input type="text" name="nome" id="nome" placeholder="Nome">
                 </div>
                 <div class="input-box">
+                    <i class="fa fa-envelope icon"></i>
                     <input type="email" name="email" id="email" placeholder="Email">
                 </div>
                 <div class="input-box">
-                    <input type="password" name="password" id="password" placeholder="Password">
+                    <input type="password" name="password" id="password-input-P" placeholder="Password">
+                    <i class="fa fa-eye icon" id="btn-password-P" onclick="mostrarPasswordP()"></i>
                 </div>
                 <div class="input-box">
                     <input type="password" name="confirm_password" id="password-inputC-P" placeholder="Confirmar Password">
+                    <i class="fa fa-eye icon" id="btn-passwordC-P" onclick="mostrarPasswordCP()"></i>
                 </div>
                 <button type="submit" name="enviar" id="enviar" class="btn-criaconta">Registar</button>
             </form>
@@ -47,10 +51,12 @@ unset($_SESSION['success']);
             <form id="form_registo" name="form_registo" method="POST" action="../php/processar_login.php">
                 <h1 class="titulo">Login</h1>
                 <div class="input-box">
+                    <i class="fa fa-user icon"></i>
                     <input type="text" name="nome" id="nome" placeholder="Nome">
                 </div>
                 <div class="input-box">
-                    <input type="password" name="password" id="password-input-P" placeholder="Password">
+                    <input type="password" name="password" id="password-input-login" placeholder="Password">
+                    <i class="fa fa-eye icon" id="btn-password-login" onclick="mostrarPasswordLogin()"></i>
                 </div>
                 <a href="#">Esqueceu-se da sua password?</a>
                 <button type="submit" name="entrar" id="entrar" class="btn-login">Login</button>
