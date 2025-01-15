@@ -1,3 +1,11 @@
+Fazer até dia 20/01/2025:
+
+- Colocar o registo de utilizadores de admin na página corretamente.
+- Colocar a visualização de utilizadores de admin na página corretamente.
+- Colocar a eliminação de utilizadores de admin na página corretamente.
+- Colocar a alteração de informação de utilizadores de admin na página corretamente.
+- No menu de super administrador colocar opção de filtrar e somente aparecer os Administradores para realizar processos com os utilizadores Admin.
+
 Menu de Administrador:
 
 - Na base de dados criar um campo na tabela que indica se o utilizador é admin ou não, se o valor for 1 é admin, se o valor for 0 não é admin.
