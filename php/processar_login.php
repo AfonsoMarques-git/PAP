@@ -24,10 +24,10 @@ if ($sql->num_rows == 1) {
 
     if ($is_admin == 1) {
         header("Location: ../php/menu_admin.php");
-    } else if ($is_admin == 0) {
-        header("Location: ../index.php");
-    } else {
+    } else if ($is_admin == 2) {
         header("Location: ../php/menu_Sadmin.php");
+    } else {
+        header("Location: ../index.php");
     }
 } else {
     // Falha na autenticação
