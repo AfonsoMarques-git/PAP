@@ -58,8 +58,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
             <li><a href="#">Manutenção de produtos</a></li>
           </ul>
         </li>
-      </ul>
-      <ul class="nav-list secondary-nav">
+        <li style="flex-grow: 1;"></li>
         <li class="nav-item">
           <a href="../php/logout.php" class="nav-link">
             <span class="nav-icon material-symbols-rounded">logout</span>

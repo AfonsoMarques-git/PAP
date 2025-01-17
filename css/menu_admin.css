@@ -264,8 +264,13 @@ body {
     font-size: 1.3rem;
   }
 
-  .sidebar .sidebar-nav .nav-list {
+  .sidebar .sidebar-nav {
     padding: 0 10px;
+  }
+
+  .nav-list{
+    min-height: 200px;
+    max-height: 300px; /* mudar tamanho para relativo */
   }
 
   .sidebar-nav .nav-link {
