@@ -13,7 +13,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Página de Super Administrador</title>
-  <link rel="stylesheet" href="../css/menu_admin.css">
+  <link rel="stylesheet" href="../../css/menu_admin.css">
   <link rel="stylesheet"
     href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
 </head>
@@ -22,7 +22,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
   <aside class="sidebar">
     <header class="sidebar-header">
       <a href="#" class="header-logo">
-        <img src="../images/logo_pequeno.png" alt="Companhia da Mariposa">
+        <img src="../../images/logo_pequeno.png" alt="Companhia da Mariposa">
       </a>
       <button class="toggler sidebar-toggler">
         <span class="material-symbols-rounded">chevron_left</span>
@@ -70,6 +70,6 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
       </ul>
     </nav>
   </aside>
-  <script src="../js/menu_admin.js"></script>
+  <script src="../../js/menu_admin.js"></script>
 </body>
 </html>

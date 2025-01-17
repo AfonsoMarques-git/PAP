@@ -23,9 +23,9 @@ if ($sql->num_rows == 1) {
     $_SESSION['username'] = $nome_utilizador;
 
     if ($is_admin == 1) {
-        header("Location: ../php/menu_admin.php");
+        header("Location: ../php/Administrador/menu_admin.php");
     } else if ($is_admin == 2) {
-        header("Location: ../php/menu_Sadmin.php");
+        header("Location: ../php/Administrador/menu_Sadmin.php");
     } else {
         header("Location: ../index.php");
     }
