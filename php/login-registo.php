@@ -21,13 +21,14 @@ unset($_SESSION['success']);
 
     <div class="container" id="container">
         <div class="form-container registo">
-            <form id="form_registo" name="form_registo" method="POST" action="../php/processar_registo.php">
+            <form id="form_registo" name="form_registo" method="POST" action="../php/processar_login_registo.php">
                 <h1 class="titulo">Realizar Registo</h1>
                 
-                <?php if ($error): ?>
-                <div class="erro"><?php echo htmlspecialchars($error); ?></div>
-                <?php endif; ?>
+                <?php if (isset($_SESSION['error_registo'])): ?>
+                    <div class="erro"><?php echo htmlspecialchars($_SESSION['error_registo']); ?></div>
+                <?php unset($_SESSION['error_registo']); endif; ?>
 
+                <input type="hidden" name="form_type" value="registo">
                 <div class="input-box">
                     <i class="fa fa-user icon"></i>
                     <input type="text" name="nome" id="nome" placeholder="Nome">
@@ -48,8 +49,15 @@ unset($_SESSION['success']);
             </form>
         </div>
         <div class="form-container login">
-            <form id="form_registo" name="form_registo" method="POST" action="../php/processar_login.php">
+            <form id="form_registo" name="form_registo" method="POST" action="../php/processar_login_registo.php">
                 <h1 class="titulo">Login</h1>
+
+                <?php if (isset($_SESSION['error_login'])): ?>
+                    <div class="erro"><?php echo htmlspecialchars($_SESSION['error_login']); ?></div>
+                <?php unset($_SESSION['error_login']); endif; ?>
+
+
+                <input type="hidden" name="form_type" value="login">
                 <div class="input-box">
                     <i class="fa fa-user icon"></i>
                     <input type="text" name="nome" id="nome" placeholder="Nome">

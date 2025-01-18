@@ -54,3 +54,17 @@ registerBtn.addEventListener('click', () => {
 loginBtn.addEventListener('click', () => {
     container.classList.remove("active");
 });
+
+window.onload = function() {
+    const container = document.getElementById('container');
+    const registoErro = document.querySelector('.registo .erro');
+    const loginErro = document.querySelector('.login .erro');
+
+    if (registoErro) {
+        container.classList.add('active'); // Mostra o lado do registo
+    }
+
+    if (loginErro) {
+        container.classList.remove('active'); // Mostra o lado do login
+    }
+};

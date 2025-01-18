@@ -1,6 +1,12 @@
 <?php
 session_start();
 
+if (!empty($_POST) && (empty($_POST['nome']) || empty($_POST['password']))) {
+    $_SESSION['error'] = "É necessário preencher os campos.";
+    header("Location: ../php/login-registo.php");
+    exit;
+}
+
 $ligacao = new mysqli('localhost', 'root', '', 'gestao_utilizadores');
 
 if ($ligacao->connect_error) {
