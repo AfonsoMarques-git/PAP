@@ -134,7 +134,16 @@ body {
   transition: opacity 0.3s ease;
 }
 
+.sidebar .sidebar-nav .nav-link .nav-label-logout {
+  transition: opacity 0.3s ease;
+}
+
 .sidebar.collapsed .sidebar-nav .nav-link .nav-label {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.sidebar.collapsed .sidebar-nav .nav-link .nav-label-logout {
   opacity: 0;
   pointer-events: none;
 }
@@ -242,7 +251,7 @@ body {
     border-radius: 16px;
     background: #151A2D;
     padding: 8px 10px;
- }
+  }
 
   .sidebar-header .header-logo img {
     width: 80px;
@@ -264,13 +273,8 @@ body {
     font-size: 1.3rem;
   }
 
-  .sidebar .sidebar-nav {
+  .sidebar .sidebar-nav .nav-list {
     padding: 0 10px;
-  }
-
-  .nav-list{
-    min-height: 200px;
-    max-height: 300px; /* mudar tamanho para relativo */
   }
 
   .sidebar-nav .nav-link {
@@ -284,8 +288,8 @@ body {
   }
 
   .sidebar-nav .secondary-nav {
-    position: relative;
+    position: sticky;
     bottom: 0;
-    margin: 40px 0 30px;
+    margin: 0;
   }
 }
