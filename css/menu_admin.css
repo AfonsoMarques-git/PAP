@@ -9,13 +9,15 @@
 }
 
 body {
+  display: flex;
+  justify-content: space-between;
   min-height: 100vh;
   background-color: white;
 }
 
 .sidebar {
-  position: fixed;
-  width: 300px;
+  position: sticky;
+  width: 350px;
   margin: 16px;
   border-radius: 16px;
   background: #c5a880;

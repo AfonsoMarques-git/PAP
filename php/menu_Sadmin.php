@@ -36,15 +36,28 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
         <li class="nav-item dropdown">
           <a href="#" class="nav-link">
             <span class="nav-icon material-symbols-rounded">dashboard</span>
-            <span class="nav-label">Gestão de utilizadores</span>
+            <span class="nav-label">Gestão de Administradores</span>
             <span class="dropdown-icon material-symbols-rounded">expand_more</span>
           </a>
-          <span class="nav-tooltip">Gestão de utilizadores</span>
+          <span class="nav-tooltip">Gestão de Administradores</span>
           <ul class="dropdown-menu">
-            <li><a href="registo_admin.php">Registar</a></li>
+            <li><a onclick="loadRegisto()">Registar</a></li>
             <li><a href="#">Eliminar</a></li>
             <li><a href="#">Ver lista</a></li>
-            <li><a href="#">Alterar Informações</a></li>
+            <li><a href="#">Editar dados</a></li>
+          </ul>
+        </li>
+        <li class="nav-item dropdown">
+          <a href="#" class="nav-link">
+            <span class="nav-icon material-symbols-rounded">dashboard</span>
+            <span class="nav-label">Gestão de Utilizadores</span>
+            <span class="dropdown-icon material-symbols-rounded">expand_more</span>
+          </a>
+          <span class="nav-tooltip">Gestão de Utilizadores</span>
+          <ul class="dropdown-menu">
+            <li><a href="#">Eliminar</a></li>
+            <li><a href="#">Ver lista</a></li>
+            <li><a href="#">Editar dados</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
@@ -70,6 +83,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
       </ul>
     </nav>
   </aside>
+  <div id="container"></div>
   <script src="../js/menu_admin.js"></script>
 </body>
 </html>

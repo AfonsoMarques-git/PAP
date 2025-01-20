@@ -105,3 +105,21 @@ const dropdownLinks = document.querySelectorAll('.nav-item.dropdown > a');
         }
       });
     });
+
+// ------------------------------------------------------------------------------------------------------ //
+
+
+function loadRegisto() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function () {
+    const container = document.getElementById("container");
+    container.innerHTML = this.responseText;
+
+    // Reaplicar estilos, caso necessário
+    container.style.margin = "auto";
+    container.style.padding = "auto";
+    container.style.width = "500px";
+  };
+  xhttp.open("GET", "registo_admin.php");
+  xhttp.send();
+}
