@@ -21,7 +21,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
 <body>
   <aside class="sidebar">
     <header class="sidebar-header">
-      <a href="#" class="header-logo">
+      <a href="menu_Sadmin.php" class="header-logo">
         <img src="../images/logo_pequeno.png" alt="Companhia da Mariposa">
       </a>
       <button class="toggler sidebar-toggler">
@@ -58,11 +58,12 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
             <li><a href="#">Manutenção de produtos</a></li>
           </ul>
         </li>
-        <li style="flex-grow: 1;"></li>
+      </ul>
+      <ul class="nav-list secondary-nav">
         <li class="nav-item">
           <a href="../php/logout.php" class="nav-link">
             <span class="nav-icon material-symbols-rounded">logout</span>
-            <span class="nav-label">Logout</span>
+            <span class="nav-label-logout">Logout</span>
           </a>
           <span class="nav-tooltip">Logout</span>
         </li>
@@ -71,5 +72,4 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
   </aside>
   <script src="../js/menu_admin.js"></script>
 </body>
-
 </html>

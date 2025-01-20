@@ -1,6 +1,8 @@
 <?php
 session_start();
 
+$is_admin = $_POST['is_admin'] ?? 0; // Define como 0 (normal) caso não seja enviado
+
 // Verificar se o formulário foi enviado
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $form_type = $_POST['form_type'] ?? ''; // Identificar se é login ou registo
@@ -57,17 +59,27 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $password = $_POST['password'] ?? '';
         $confirm_password = $_POST['confirm_password'] ?? '';
         $email = $_POST['email'] ?? '';
-
+    
         // Validar campos
-        if (empty($username) || empty($password || empty($email))) {
-            $_SESSION['error_registo'] = "É necessário preencher todos os campos.";
-            header("Location: ../php/login-registo.php");
+        if (empty($username) || empty($password) || empty($email)) {
+            if ($is_admin == 1 || $is_admin == 2) {  // Registo de administrador ou sub-administrador
+                $_SESSION['error_registo_admin'] = "É necessário preencher todos os campos."; 
+                header("Location: ../php/registo_admin.php");
+            } else {  // Registo normal
+                $_SESSION['error_registo_normal'] = "É necessário preencher todos os campos."; 
+                header("Location: login-registo.php");
+            }
             exit;
         }
-
+        
         if ($password !== $confirm_password) {
-            $_SESSION['error_registo'] = "As senhas não correspondem.";
-            header("Location: ../php/login-registo.php");
+            if ($is_admin == 1 || $is_admin == 2) {
+                $_SESSION['error_registo_admin'] = "As senhas não correspondem."; 
+                header("Location: ../php/registo_admin.php");
+            } else {
+                $_SESSION['error_registo_normal'] = "As senhas não correspondem."; 
+                header("Location: login-registo.php");
+            }
             exit;
         }
 
@@ -80,9 +92,21 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if ($result->num_rows > 0) {
             $user = $result->fetch_assoc();
             if ($user['nome_utilizador'] === $username) {
-                $_SESSION['error_registo'] = "O nome de utilizador já está em uso.";
+                if ($is_admin == 1 || $is_admin == 2) {
+                    $_SESSION['error_registo_admin'] = "O nome de utilizador já está em uso.";
+                    header("Location: ../php/registo_admin.php");
+                } else {
+                    $_SESSION['error_registo_normal'] = "O nome de utilizador já está em uso.";
+                    header("Location: login-registo.php");
+                }
             } elseif ($user['email'] === $email) {
-                $_SESSION['error_registo'] = "Já existe uma conta com este email.";
+                if ($is_admin == 1 || $is_admin == 2) {
+                    $_SESSION['error_registo_admin'] = "Já existe uma conta com este email.";
+                    header("Location: ../php/registo_admin.php");
+                } else {
+                    $_SESSION['error_registo_normal'] = "Já existe uma conta com este email.";
+                    header("Location: login-registo.php");
+                }
             }
             $stmt->close();
             $ligacao->close();
@@ -93,20 +117,31 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
         // Verificar formato do email e inserir os dados
         if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-            $stmt = $ligacao->prepare("INSERT INTO utilizadores (nome_utilizador, palavra_passe, email) VALUES (?, ?, ?)");
-            $stmt->bind_param("sss", $username, $password, $email);
+            $stmt = $ligacao->prepare("INSERT INTO utilizadores (nome_utilizador, palavra_passe, email, is_admin) VALUES (?, ?, ?, ?)");
+            $stmt->bind_param("sssi", $username, $password, $email, $is_admin);
 
-            if ($stmt->execute()) {
+        if ($stmt->execute()) {
                 $_SESSION['success'] = "Registo efetuado com sucesso! Faça login.";
                 header("Location: ../php/login-registo.php");
-            } else {
-                $_SESSION['error_registo'] = "Erro ao efetuar o registo. Tente novamente.";
-                header("Location: ../php/login-registo.php");
-            }
-            $stmt->close();
         } else {
-            $_SESSION['error_registo'] = "Endereço de email inválido.";
-            header("Location: ../php/login-registo.php");
+            if ($is_admin == 1 || $is_admin == 2) {
+            $_SESSION['error_registo_admin'] = "Erro ao efetuar o registo. Tente novamente.";
+            header("Location: ../php/registo_admin.php");
+        } else {
+            $_SESSION['error_registo_normal'] = "Erro ao efetuar o registo. Tente novamente.";
+            header("Location: login-registo.php");
+        }
+}
+$stmt->close();
+
+        } else {
+            if ($is_admin == 2 || $is_admin == 1) {
+                $_SESSION['error_registo'] = "Endereço de email inválido.";
+                header("Location: ../php/registo_admin.php");
+            } elseif ($is_admin == 0) {
+                $_SESSION['error_registo'] = "Endereço de email inválido.";
+                header("Location: login-registo.php");
+            }
         }
         $ligacao->close();
         exit;

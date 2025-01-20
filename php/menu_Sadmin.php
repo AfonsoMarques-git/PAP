@@ -41,7 +41,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
           </a>
           <span class="nav-tooltip">Gestão de utilizadores</span>
           <ul class="dropdown-menu">
-            <li><a href="#">Registar</a></li>
+            <li><a href="registo_admin.php">Registar</a></li>
             <li><a href="#">Eliminar</a></li>
             <li><a href="#">Ver lista</a></li>
             <li><a href="#">Alterar Informações</a></li>

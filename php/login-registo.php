@@ -7,7 +7,7 @@ $success = isset($_SESSION['success']) ? $_SESSION['success'] : '';
 unset($_SESSION['success']);
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-PT">
 
 <head>
     <meta charset="UTF-8">
@@ -24,10 +24,12 @@ unset($_SESSION['success']);
             <form id="form_registo" name="form_registo" method="POST" action="../php/processar_login_registo.php">
                 <h1 class="titulo">Realizar Registo</h1>
                 
-                <?php if (isset($_SESSION['error_registo'])): ?>
-                    <div class="erro"><?php echo htmlspecialchars($_SESSION['error_registo']); ?></div>
-                <?php unset($_SESSION['error_registo']); endif; ?>
+                <?php if (isset($_SESSION['error_registo_normal'])): ?>
+                    <div class="erro"><?php echo htmlspecialchars($_SESSION['error_registo_normal']); ?></div>
+                <?php unset($_SESSION['error_registo_normal']); endif; ?>
 
+
+                <input type="hidden" name="is_admin" value="0"> <!-- Para registo normal -->
                 <input type="hidden" name="form_type" value="registo">
                 <div class="input-box">
                     <i class="fa fa-user icon"></i>
