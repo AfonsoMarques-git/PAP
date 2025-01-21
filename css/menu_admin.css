@@ -18,10 +18,10 @@ body {
 .sidebar {
   position: sticky;
   width: 350px;
-  margin: 16px;
-  border-radius: 16px;
+  border-top-right-radius: 15px;
+  border-bottom-right-radius: 15px;
   background: #c5a880;
-  height: calc(100vh - 32px);
+  height: 100vh;
   transition: all 0.4s ease;
 }
 

@@ -118,8 +118,23 @@ function loadRegisto() {
     // Reaplicar estilos, caso necessário
     container.style.margin = "auto";
     container.style.padding = "auto";
-    container.style.width = "500px";
+    container.style.width = "700px";
   };
-  xhttp.open("GET", "registo_admin.php");
+  xhttp.open("GET", "../php/processos_admin/registo_admin.php");
+  xhttp.send();
+}
+
+function loadElim() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function () {
+    const container = document.getElementById("container");
+    container.innerHTML = this.responseText;
+
+    // Reaplicar estilos, caso necessário
+    container.style.margin = "auto";
+    container.style.padding = "auto";
+    container.style.width = "1200px";
+  };
+  xhttp.open("GET", "../php/processos_admin/elim_user.php");
   xhttp.send();
 }

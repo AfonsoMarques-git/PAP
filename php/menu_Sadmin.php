@@ -42,7 +42,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
           <span class="nav-tooltip">Gestão de Administradores</span>
           <ul class="dropdown-menu">
             <li><a onclick="loadRegisto()">Registar</a></li>
-            <li><a href="#">Eliminar</a></li>
+            <li><a onclick="loadElim()">Eliminar</a></li>
             <li><a href="#">Ver lista</a></li>
             <li><a href="#">Editar dados</a></li>
           </ul>

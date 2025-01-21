@@ -38,8 +38,11 @@ function mostrarPasswordLogin() {
 }
 
 // Confirmar eliminação de registo no menu Administrador
-function confirmarEliminacao() {
-    return confirm("Tem a certeza que deseja apagar este registo?");
+function confirmarEliminacao(userId) {
+    if (confirm("Tem certeza que deseja eliminar este utilizador?")) {
+        // If confirmed, redirect to the delete script
+        window.location.href = 'eliminar_utilizador.php?id=' + userId;
+    }
 }
 
 // Login e Registo animação
