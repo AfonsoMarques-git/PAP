@@ -5,14 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar Utilizador</title>
     <link rel="stylesheet" href="../css/elim_user.css">
-    <script>
-        function confirmarEliminacao(userId) {
-            if (confirm("Tem certeza que deseja eliminar este utilizador?")) {
-                // Se confirmado, redireciona para o script de eliminação
-                window.location.href = 'process_elim.php?id=' + userId;
-            }
-        }
-    </script>
 </head>
 <body>
     <?php
@@ -30,7 +22,7 @@
     ?>
 
     <div class="tabela">
-        <h1>Selecionar utilizador para eliminar</h1>
+        <h1>Eliminação de Administradores</h1>
         <table>
             <tr>
                 <th>Número de Registo</th>
@@ -48,17 +40,26 @@
                         $email = $mostrar['email'];
                         $is_admin = $mostrar['is_admin'];
 
-                        $tipo_utilizador = $is_admin == 1 ? 'Administrador' : 'User  Normal';
+                        $tipo_utilizador = $is_admin == 1 ? 'Administrador' : 'User Normal';
 
+                        // O utilizador "Admin" não pode ser eliminado
                         if ($nome_utilizador === 'Admin') {
-                            echo "<tr><td>$id</td><td>$nome_utilizador</td><td>$email</td></tr>";
+                            echo "<tr>
+                                    <td>$id</td>
+                                    <td>$nome_utilizador</td>
+                                    <td>$email</td>
+                                    <td>$tipo_utilizador</td>
+                                    <td>Não permitido</td>
+                                </tr>";
                         } else {
                             echo "<tr class='links'>
                                     <td>$id</td>
                                     <td>$nome_utilizador</td>
                                     <td>$email</td>
                                     <td>$tipo_utilizador</td>
-                                    <td><button onclick='confirmarEliminacao($id)'>Eliminar</button></td>
+                                    <td>
+                                        <a href='processar_eliminar.php?id=$id' onclick=\"return confirm('Deseja realmente excluir este utilizador?')\">Eliminar</a>
+                                    </td>
                                 </tr>";
                         }
                     }
