@@ -28,7 +28,8 @@ unset($_SESSION['success_registo_admin']);
                 <?php if (isset($_SESSION['success_registo_admin'])): ?>
                     <div class="sucesso"><?php echo htmlspecialchars($_SESSION['success_registo_admin']); ?></div>
                     <?php unset($_SESSION['success_registo_admin']); 
-                    endif; ?>
+                    endif; 
+                ?>
 
                 <!-- Campo hidden para definir o tipo de formulário -->
                 <input type="hidden" name="form_type" value="registo">
@@ -36,37 +37,37 @@ unset($_SESSION['success_registo_admin']);
                 <!-- Input Nome -->
                 <div class="input-box">
                     <i class="fa fa-user icon"></i>
-                    <input type="text" name="nome" id="nome" placeholder="Nome" required>
+                    <input type="text" name="nome" id="nome" placeholder="Nome" >
                 </div>
                 
                 <!-- Input Email -->
                 <div class="input-box">
                     <i class="fa fa-envelope icon"></i>
-                    <input type="email" name="email" id="email" placeholder="Email" required>
+                    <input type="email" name="email" id="email" placeholder="Email" >
                 </div>
                 
                 <!-- Input Password -->
                 <div class="input-box">
-                    <input type="password" name="password" id="password-input-P" placeholder="Password" required>
+                    <input type="password" name="password" id="password-input-P" placeholder="Password" >
                     <i class="fa fa-eye icon" id="btn-password-P" onclick="mostrarPasswordP()"></i>
                 </div>
                 
                 <!-- Confirmar Password -->
                 <div class="input-box">
-                    <input type="password" name="confirm_password" id="password-inputC-P" placeholder="Confirmar Password" required>
+                    <input type="password" name="confirm_password" id="password-inputC-P" placeholder="Confirmar Password" >
                     <i class="fa fa-eye icon" id="btn-passwordC-P" onclick="mostrarPasswordCP()"></i>
                 </div>
 
                 <!-- Radio Buttons para tipo de Admin -->
                 <div class="input-box-radio">
                     <label class="radio-button">
-                        <input type="radio" name="is_admin" value="1" required>
+                        <input type="radio" name="is_admin" value="1" >
                         <span class="radio"></span>
                         Administrador
                     </label>
 
                     <label class="radio-button">
-                        <input type="radio" name="is_admin" value="2" required>
+                        <input type="radio" name="is_admin" value="2" >
                         <span class="radio"></span>
                         Super Administrador
                     </label>

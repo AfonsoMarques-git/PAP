@@ -10,12 +10,15 @@
 
 body {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  margin: 0;
+  padding: 0;
   min-height: 100vh;
-  background-color: white;
+  background-color: white; /* Fundo claro */
 }
 
 .sidebar {
+  flex-shrink: 0; /* Sidebar mantém seu tamanho fixo */
   position: sticky;
   width: 350px;
   border-top-right-radius: 15px;
@@ -23,6 +26,13 @@ body {
   background: #c5a880;
   height: 100vh;
   transition: all 0.4s ease;
+}
+
+#container {
+  flex-grow: 1; /* O conteúdo ocupa o espaço restante */
+  padding: 20px;
+  margin: 0 auto; /* Centraliza o conteúdo horizontalmente */
+  max-width: 1200px; /* Limite para o conteúdo */
 }
 
 .sidebar.collapsed {

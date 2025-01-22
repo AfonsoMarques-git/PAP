@@ -43,7 +43,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
           <ul class="dropdown-menu">
             <li><a onclick="loadRegisto()">Registar</a></li>
             <li><a onclick="loadElim()">Eliminar</a></li>
-            <li><a href="#">Ver lista</a></li>
+            <li><a onclick="loadVer()">Ver lista</a></li>
             <li><a href="#">Editar dados</a></li>
           </ul>
         </li>

@@ -89,8 +89,3 @@ document.getElementById('enviar').addEventListener('click', function() {
     };
     xhr.send(formData);
 });
-
-// Função para carregar o Ajax após redirecionamento, se necessário
-function loadElim() {
-    // Lógica para carregar algo após a eliminação ou outro processo Ajax
-}

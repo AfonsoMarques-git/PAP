@@ -148,3 +148,17 @@ function loadElim() {
   xhttp.open("GET", "../php/processos_admin/elim_user.php");
   xhttp.send();
 }
+
+function loadVer() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function () {
+    const container = document.getElementById("container");
+    container.innerHTML = this.responseText;
+
+    container.style.margin = "auto";
+    container.style.padding = "auto";
+    container.style.width = "1200px";
+  };
+  xhttp.open("GET", "../php/processos_admin/ver_user.php");
+  xhttp.send();
+}
