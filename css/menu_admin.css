@@ -239,6 +239,7 @@ body {
   /* Destaque ao passar o mouse */
   color: #151A2D;
   /* Cor do texto no hover */
+  cursor: pointer;
 }
 
 /* Responsive media query code for small screens */
