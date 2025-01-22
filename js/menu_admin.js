@@ -130,10 +130,20 @@ function loadElim() {
     const container = document.getElementById("container");
     container.innerHTML = this.responseText;
 
-    // Reaplicar estilos, caso necessário
     container.style.margin = "auto";
     container.style.padding = "auto";
     container.style.width = "1200px";
+
+    // Garantir que o CSS está carregado
+    const cssId = "elim_user_css"; // ID único para o arquivo CSS
+    if (!document.getElementById(cssId)) {
+      const head = document.head;
+      const link = document.createElement("link");
+      link.id = cssId;
+      link.rel = "stylesheet";
+      link.href = "../css/elim_user.css";
+      head.appendChild(link);
+    }
   };
   xhttp.open("GET", "../php/processos_admin/elim_user.php");
   xhttp.send();

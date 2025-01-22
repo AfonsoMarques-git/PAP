@@ -63,3 +63,34 @@ window.onload = function() {
         container.classList.remove('active'); // Mostra o lado do login
     }
 };
+
+
+document.getElementById('enviar').addEventListener('click', function() {
+    var form = document.forms['form_registo'];
+    var formData = new FormData(form);
+
+    // Usar Ajax para enviar o formulário
+    var xhr = new XMLHttpRequest();
+    xhr.open('POST', '../php/processar_registo_admin.php', true);
+    xhr.onreadystatechange = function() {
+        if (xhr.readyState == 4 && xhr.status == 200) {
+            var response = JSON.parse(xhr.responseText);
+
+            if (response.status === 'error') {
+                // Exibir a mensagem de erro abaixo do título
+                document.getElementById('error-message').textContent = response.message;
+            } else if (response.status === 'success') {
+                // Exibir mensagem de sucesso em um alert
+                alert(response.message);
+                // Redirecionar para a página menu_Sadmin.php após sucesso
+                window.location.href = 'menu_Sadmin.php';
+            }
+        }
+    };
+    xhr.send(formData);
+});
+
+// Função para carregar o Ajax após redirecionamento, se necessário
+function loadElim() {
+    // Lógica para carregar algo após a eliminação ou outro processo Ajax
+}

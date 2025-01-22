@@ -16,25 +16,27 @@
             die('Não foi possível conectar à base de dados: ' . $ligacao->connect_error);
         }
 
-        // Consultar utilizadores
-        $sql = 'SELECT * FROM utilizadores WHERE is_admin != 2 ORDER BY id ASC';
-        $consulta = $ligacao->query($sql);
+        // Consultar utilizadores com is_admin igual a 1
+        $sql_admins = 'SELECT * FROM utilizadores WHERE is_admin = 1 ORDER BY id ASC';
+        $consulta_admins = $ligacao->query($sql_admins);
+
+        // Verificar se existem administradores
+        $tem_administradores = $consulta_admins->num_rows > 0;
     ?>
 
     <div class="tabela">
         <h1>Eliminação de Administradores</h1>
-        <table>
-            <tr>
-                <th>Número de Registo</th>
-                <th>Nome de Utilizador</th>
-                <th>Endereço Eletrónico</th>
-                <th>Tipo de Utilizador</th>
-                <th></th>
-            </tr>
-            <?php
-                if ($consulta) {
-                    // Mostrar registos
-                    while ($mostrar = $consulta->fetch_assoc()) {
+        <?php if ($tem_administradores): ?>
+            <table>
+                <tr>
+                    <th>Número de Registo</th>
+                    <th>Nome de Utilizador</th>
+                    <th>Endereço Eletrónico</th>
+                    <th>Tipo de Utilizador</th>
+                    <th></th>
+                </tr>
+                <?php
+                    while ($mostrar = $consulta_admins->fetch_assoc()) {
                         $id = $mostrar['id'];
                         $nome_utilizador = $mostrar['nome_utilizador'];
                         $email = $mostrar['email'];
@@ -63,17 +65,17 @@
                                 </tr>";
                         }
                     }
-                } else {
-                    echo "<tr>
-                            <td colspan='5'>A base de dados não contém registos</td>
-                        </tr>";
-                }
+                ?>
+            </table>
+        <?php else: ?>
+            <p>Não há registos de administradores na base de dados.</p>
+        <?php endif; ?>
 
-                // Liberar memória e fechar ligação
-                $consulta->free_result();
-                $ligacao->close();
-            ?>
-        </table>
+        <?php
+            // Liberar memória e fechar ligação
+            $consulta_admins->free_result();
+            $ligacao->close();
+        ?>
     </div>
 </body>
 </html>
