@@ -1,15 +1,14 @@
 <?php
 session_start();
-$error = isset($_SESSION['error_registo_admin']) ? $_SESSION['error_registo_admin'] : '';
-unset($_SESSION['error_registo_admin']);
+$error = isset($_SESSION['error_menu']) ? $_SESSION['error_menu'] : '';
+unset($_SESSION['error_menu']);
 
-$success = isset($_SESSION['success_registo_admin']) ? $_SESSION['success_registo_admin'] : '';
-unset($_SESSION['success_registo_admin']);
+$success = isset($_SESSION['success_menu']) ? $_SESSION['success_menu'] : '';
+unset($_SESSION['success_menu']);
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-PT">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -17,19 +16,21 @@ unset($_SESSION['success_registo_admin']);
     <link rel="stylesheet" href="../css/registo_admin.css">
     <title>Registar Administradores</title>
 </head>
-
 <body>
     <div class="container" id="container">
         <div class="form-container registo">
-            <form id="form_registo" name="form_registo" method="POST" action="../php/processar_registo_admin.php">
+            <form id="form_registo" name="form_registo" method="POST" action="../php/processos/processar_registo_admin.php">
                 <h1 class="titulo">Realizar Registo</h1>
 
                 <!-- Mostrar mensagem de sucesso -->
-                <?php if (isset($_SESSION['success_registo_admin'])): ?>
-                    <div class="sucesso"><?php echo htmlspecialchars($_SESSION['success_registo_admin']); ?></div>
-                    <?php unset($_SESSION['success_registo_admin']); 
-                    endif; 
-                ?>
+                <?php if ($success): ?>
+                    <div class="sucesso"><?php echo htmlspecialchars($success); ?></div>
+                <?php endif; ?>
+
+                <!-- Mostrar mensagem de erro -->
+                <?php if ($error): ?>
+                    <div class="erro"><?php echo htmlspecialchars($error); ?></div>
+                <?php endif; ?>
 
                 <!-- Campo hidden para definir o tipo de formulário -->
                 <input type="hidden" name="form_type" value="registo">
@@ -37,40 +38,25 @@ unset($_SESSION['success_registo_admin']);
                 <!-- Input Nome -->
                 <div class="input-box">
                     <i class="fa fa-user icon"></i>
-                    <input type="text" name="nome" id="nome" placeholder="Nome" >
+                    <input type="text" name="nome" id="nome" placeholder="Nome">
                 </div>
                 
                 <!-- Input Email -->
                 <div class="input-box">
                     <i class="fa fa-envelope icon"></i>
-                    <input type="email" name="email" id="email" placeholder="Email" >
+                    <input type="email" name="email" id="email" placeholder="Email">
                 </div>
                 
                 <!-- Input Password -->
                 <div class="input-box">
-                    <input type="password" name="password" id="password-input-P" placeholder="Password" >
+                    <input type="password" name="password" id="password-input-P" placeholder="Password">
                     <i class="fa fa-eye icon" id="btn-password-P" onclick="mostrarPasswordP()"></i>
                 </div>
                 
                 <!-- Confirmar Password -->
                 <div class="input-box">
-                    <input type="password" name="confirm_password" id="password-inputC-P" placeholder="Confirmar Password" >
+                    <input type="password" name="confirm_password" id="password-inputC-P" placeholder="Confirmar Password">
                     <i class="fa fa-eye icon" id="btn-passwordC-P" onclick="mostrarPasswordCP()"></i>
-                </div>
-
-                <!-- Radio Buttons para tipo de Admin -->
-                <div class="input-box-radio">
-                    <label class="radio-button">
-                        <input type="radio" name="is_admin" value="1" >
-                        <span class="radio"></span>
-                        Administrador
-                    </label>
-
-                    <label class="radio-button">
-                        <input type="radio" name="is_admin" value="2" >
-                        <span class="radio"></span>
-                        Super Administrador
-                    </label>
                 </div>
 
                 <!-- Botão para Submissão -->
@@ -81,5 +67,4 @@ unset($_SESSION['success_registo_admin']);
 
     <script src="../js/main.js"></script>
 </body>
-
 </html>

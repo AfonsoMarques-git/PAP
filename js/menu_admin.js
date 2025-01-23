@@ -2,7 +2,7 @@ const sidebar = document.querySelector(".sidebar");
 const sidebarToggler = document.querySelector(".sidebar-toggler");
 const menuToggler = document.querySelector(".menu-toggler");
 let collapsedSidebarHeight = "100px";
-let fullSidebarHeight = "calc(100vh - 32px)";
+let fullSidebarHeight = "100vh";
 
 // Alterna o estado colapsado da sidebar
 sidebarToggler.addEventListener("click", () => {
@@ -120,7 +120,7 @@ function loadRegisto() {
     container.style.padding = "auto";
     container.style.width = "700px";
   };
-  xhttp.open("GET", "../php/processos_admin/registo_admin.php");
+  xhttp.open("GET", "../php/registo_admin.php");
   xhttp.send();
 }
 
@@ -145,7 +145,7 @@ function loadElim() {
       head.appendChild(link);
     }
   };
-  xhttp.open("GET", "../php/processos_admin/elim_user.php");
+  xhttp.open("GET", "../php/elim_user.php");
   xhttp.send();
 }
 
@@ -159,7 +159,7 @@ function loadVer() {
     container.style.padding = "auto";
     container.style.width = "1200px";
   };
-  xhttp.open("GET", "../php/processos_admin/ver_user.php");
+  xhttp.open("GET", "../php/ver_user.php");
   xhttp.send();
 }
 
@@ -173,6 +173,6 @@ function loadEdit() {
     container.style.padding = "auto";
     container.style.width = "1200px";
   };
-  xhttp.open("GET", "../php/processos_admin/alter_user.php");
+  xhttp.open("GET", "../php/alter_user.php");
   xhttp.send();
 }

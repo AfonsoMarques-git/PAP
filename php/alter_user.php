@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Eliminar Utilizador</title>
-    <link rel="stylesheet" href="../css/elim_user.css">
+    <link rel="stylesheet" href="../css/alter_user.css">
 </head>
 
 <body>
@@ -53,7 +53,7 @@
                             <td>$nome_utilizador</td>
                             <td>$email</td>
                             <td>$tipo_utilizador</td>
-                            <td> <a href='processar_eliminar.php?id=$id'>Editar</a> </td>
+                            <td> <a href='processos/processar_alterar.php?id=$id'>Editar</a> </td>
                         </tr>";
                 }
 

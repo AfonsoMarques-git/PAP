@@ -6,8 +6,25 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
   header("Location: ../php/login-registo.php");
   exit();
 }
+
+if (isset($_SESSION['success_menu'])) {
+  echo '<div class="mensagem sucesso">' . htmlspecialchars($_SESSION['success_menu']) . '</div>';
+  unset($_SESSION['success_menu']);
+}
+
+if (isset($_SESSION['error_menu'])) {
+  echo '<div class="mensagem erro">' . htmlspecialchars($_SESSION['error_menu']) . '</div>';
+  unset($_SESSION['error_menu']);
+}
+
+// Mensagens de erro ou sucesso
+$error = isset($_SESSION['error_menu']) ? $_SESSION['error_menu'] : '';
+unset($_SESSION['error_menu']);
+
+$success = isset($_SESSION['success_menu']) ? $_SESSION['success_menu'] : '';
+unset($_SESSION['success_menu']);
 ?>
-<html lang="en">
+<html lang="pt-PT">
 
 <head>
   <meta charset="UTF-8">
@@ -19,6 +36,15 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
 </head>
 
 <body>
+  <!-- Exibição de mensagens de sucesso ou erro -->
+  <?php if (!empty($success)): ?>
+    <div class="mensagem"><?php echo htmlspecialchars($success); ?></div>
+  <?php elseif (!empty($error)): ?>
+    <div class="mensagem" style="background-color: #f8d7da; color: #721c24; border-color: #f5c6cb;">
+      <?php echo htmlspecialchars($error); ?>
+    </div>
+  <?php endif; ?>
+
   <aside class="sidebar">
     <header class="sidebar-header">
       <a href="menu_Sadmin.php" class="header-logo">
@@ -83,7 +109,20 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
       </ul>
     </nav>
   </aside>
-  <div id="container"></div>
+  <div id="container">
+    <h1></h1>
+  </div>
+  
+  <!-- Script para remover a mensagem após 3 segundos -->
+  <script>
+    setTimeout(() => {
+      const mensagem = document.querySelector('.mensagem');
+      if (mensagem) {
+        mensagem.style.opacity = '0';
+        setTimeout(() => mensagem.remove(), 500);
+      }
+    }, 3000);
+  </script>
   <script src="../js/menu_admin.js"></script>
 </body>
 </html>

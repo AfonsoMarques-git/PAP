@@ -24,6 +24,12 @@
 
     // Verificar se existem administradores
     $tem_administradores = $consulta_admins->num_rows > 0;
+
+    // Capturar mensagem da URL, se existir
+    $mensagem = $_GET['mensagem'] ?? '';
+    if ($mensagem) {
+        echo '<div class="mensagem">' . htmlspecialchars($mensagem) . '</div>';
+    }
     ?>
 
     <div class="tabela">
@@ -46,17 +52,14 @@
 
                     $tipo_utilizador = $is_admin == 1 ? 'Administrador' : 'User Normal';
 
-                    // O utilizador "Admin" não pode ser eliminado
-            
                     echo "<tr class='links'>
                             <td>$id</td>
                             <td>$nome_utilizador</td>
                             <td>$email</td>
                             <td>$tipo_utilizador</td>
-                            <td> <a href='processar_eliminar.php?id=$id' onclick=\"return confirm('Deseja realmente excluir este utilizador?')\">Eliminar</a> </td>
+                            <td> <a href='processos/processar_eliminar.php?id=$id' onclick=\"return confirm('Deseja realmente excluir este utilizador?')\">Eliminar</a> </td>
                         </tr>";
                 }
-
                 ?>
             </table>
         <?php else: ?>
@@ -69,6 +72,17 @@
         $ligacao->close();
         ?>
     </div>
+
+    <script>
+        // Remove a mensagem após 3 segundos
+        setTimeout(() => {
+            const mensagem = document.querySelector('.mensagem');
+            if (mensagem) {
+                mensagem.style.opacity = '0';
+                setTimeout(() => mensagem.remove(), 500);
+            }
+        }, 3000);
+    </script>
 </body>
 
 </html>
