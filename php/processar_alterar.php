@@ -1,87 +1,72 @@
-<link rel="stylesheet" href="../css/processos_admin.css">
-<?php
-if (isset($_POST['alterar'])) { // Ensure the form is submitted
-    // Conectar ao banco de dados
-    $ligacao = mysqli_connect('localhost', 'root', '', 'gestao_utilizadores');
-    if (!$ligacao) {
-        die('Não foi possível ligar à base de dados: ' . mysqli_connect_error());
-    }
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Utilizador</title>
+    <link rel="stylesheet" href="../css/processos_admin.css">
+</head>
+<body>
+    <?php
+        // Ligar à base de dados
+        $ligacao = new mysqli('localhost', 'root', '', 'gestao_utilizadores');
 
-    // Check if ID exists in POST data
-    if (isset($_POST['id'])) {
-        $id = $_POST['id'];
-
-        // Verificar se o utilizador é Admin
-        $verificar_admin = "SELECT nome_utilizador FROM utilizadores WHERE id = $id";
-        $resultado = mysqli_query($ligacao, $verificar_admin);
-
-        if ($resultado && $linha = mysqli_fetch_assoc($resultado)) {
-            if ($linha['nome_utilizador'] === "Admin") {
-                echo 'Os dados do utilizador Admin não podem ser alterados!';
-                echo '<a href="alterar_utilizador.php">Voltar</a>';
-                mysqli_close($ligacao);
-                exit; // Parar a execução
-            }
+        // Verificar a ligação
+        if ($ligacao->connect_error) {
+            die('Não foi possível conectar à base de dados: ' . $ligacao->connect_error);
         }
 
-        // Escape and sanitize user inputs
-        $nome_user = mysqli_real_escape_string($ligacao, $_POST['nome_user']);
-        $email_user = mysqli_real_escape_string($ligacao, $_POST['email_user']);
-        
-        // Create and execute the update query
-        $sql = "UPDATE utilizadores SET nome_utilizador='$nome_user', email='$email_user' WHERE id='$id'";
-        if (mysqli_query($ligacao, $sql)) {
-            echo 'Alterado com sucesso! ';
-            echo '<a href="alterar_utilizador.php">Clique para continuar</a>';
+        // Obter o ID do utilizador
+        $id = $_GET['id'] ?? null;
+
+        // Obter os dados do utilizador
+        $sql = "SELECT * FROM utilizadores WHERE id = ?";
+        $stmt = $ligacao->prepare($sql);
+        $stmt->bind_param('i', $id);
+        $stmt->execute();
+        $resultado = $stmt->get_result();
+
+        if ($resultado->num_rows === 1) {
+            $utilizador = $resultado->fetch_assoc();
         } else {
-            echo 'Erro ao alterar os dados: ' . mysqli_error($ligacao);
+            die('Utilizador não encontrado.');
         }
-    } else {
-        echo 'ID do utilizador não fornecido!';
-    }
 
-    // Fechar a conexão
-    mysqli_close($ligacao);
-}
- else {
-    include('menu2.php');
-?>
+        // Atualizar os dados do utilizador
+        if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+            $novo_nome = $_POST['nome_utilizador'];
+            $novo_email = $_POST['email'];
 
-<div class="tabela">
-    <h1> Dados do utilizador a editar: </h1>
-    <table>
-        <tr>
-            <th>Nº registo</th>
-            <th>Nome de Utilizador</th>
-            <th>Endereço de correio eletrónico</th>
-        </tr>
-        <?php
-        // Validate and fetch GET parameters
-        $id = isset($_GET['id']) ? $_GET['id'] : '';
-        $nome_utilizador = isset($_GET['nome_utilizador']) ? $_GET['nome_utilizador'] : '';
-        $email = isset($_GET['email']) ? $_GET['email'] : '';
-        ?>
-        <form method="post">
-            <tr>
-                <td>
-                    <font face="Arial" size="2"><?php echo $id; ?></font>
-                </td>
-                <td>
-                    <input type="hidden" name="id" value="<?php echo $id; ?>">
-                    <font face="Arial" size="2"><input class="input_alt" type="text" name="nome_user" value="<?php echo $nome_utilizador; ?>" /></font>
-                </td>
-                <td>
-                    <font face="Arial" size="2"><input class="input_alt" type="text" name="email_user" value="<?php echo $email; ?>" /></font>
-                </td>
-            </tr>
-    </table>
-    <div class="botoes">
-        <p>Pretende mesmo alterar este registo ?</p>
-        <input class="botao_elim" type="submit" name="alterar" value="Alterar Dados"/>
-        <a href="../php/alterar_utilizador.php"><button class="botao_elim"> Voltar </button></a>
-    </div>
+            // Atualizar na base de dados
+            $sql_update = "UPDATE utilizadores SET nome_utilizador = ?, email = ? WHERE id = ?";
+            $stmt_update = $ligacao->prepare($sql_update);
+            $stmt_update->bind_param('ssi', $novo_nome, $novo_email, $id);
+
+            if ($stmt_update->execute()) {
+                echo '<p>Utilizador atualizado com sucesso!</p>';
+            } else {
+                echo '<p>Erro ao atualizar os dados do utilizador.</p>';
+            }
+
+            $stmt_update->close();
+        }
+
+        $stmt->close();
+        $ligacao->close();
+    ?>
+
+    <div class="formulario">
+        <h1>Editar Utilizador</h1>
+        <form action="" method="post">
+            <label for="nome_utilizador">Nome de Utilizador:</label>
+            <input type="text" id="nome_utilizador" name="nome_utilizador" value="<?= htmlspecialchars($utilizador['nome_utilizador']) ?>" required>
+
+            <label for="email">Endereço Eletrónico:</label>
+            <input type="email" id="email" name="email" value="<?= htmlspecialchars($utilizador['email']) ?>" required>
+
+            <button type="submit">Guardar Alterações</button>
         </form>
-</div>
-<?php
-}
-?>
+        <a href="processos_admin/alter_user.php">Voltar</a>
+    </div>
+</body>
+</html>

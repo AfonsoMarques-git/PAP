@@ -162,3 +162,17 @@ function loadVer() {
   xhttp.open("GET", "../php/processos_admin/ver_user.php");
   xhttp.send();
 }
+
+function loadEdit() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function () {
+    const container = document.getElementById("container");
+    container.innerHTML = this.responseText;
+
+    container.style.margin = "auto";
+    container.style.padding = "auto";
+    container.style.width = "1200px";
+  };
+  xhttp.open("GET", "../php/processos_admin/alter_user.php");
+  xhttp.send();
+}

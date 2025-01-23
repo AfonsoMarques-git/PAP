@@ -27,7 +27,7 @@
     ?>
 
     <div class="tabela">
-        <h1>Selecione um administrador para eliminar</h1>
+        <h1>Selecione um administrador para alterar os dados</h1>
         <?php if ($tem_administradores): ?>
             <table>
                 <tr>
@@ -53,7 +53,7 @@
                             <td>$nome_utilizador</td>
                             <td>$email</td>
                             <td>$tipo_utilizador</td>
-                            <td> <a href='processar_eliminar.php?id=$id' onclick=\"return confirm('Deseja realmente excluir este utilizador?')\">Eliminar</a> </td>
+                            <td> <a href='processar_eliminar.php?id=$id'>Editar</a> </td>
                         </tr>";
                 }
 
