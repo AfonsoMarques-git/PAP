@@ -1,0 +1,114 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --background-color: #ffffff;
+    --text-color: #333;
+    --accent-color: #c5a880; /* Ouro suave */
+    --button-color: #e9dccb;
+    --input-bg-color: #fff;
+    --placeholder-color: #999;
+    --border-color: #d8c3a5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+h1 {
+    margin-bottom: 20px;
+    font-size: 2rem;
+    color: black;
+}
+
+.tabela {
+    width: 90%;
+    max-width: 1200px;
+    background: var(--input-bg-color);
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    overflow-x: auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--accent-color);
+    color: #ffffff;
+    padding: 10px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+table td {
+    padding: 10px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+table tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+table tr:nth-child(even) {
+    background-color: #f1f1f1;
+}
+
+table tr:hover {
+    background-color: #dff6ff;
+    cursor: pointer;
+}
+
+table th:first-child, table td:first-child {
+    text-align: center;
+}
+
+/* Estilo do link "Eliminar" */
+.tabela .links a {
+    display: inline-block;
+    padding: 8px 12px;
+    color: #fff;
+    background-color: #ff4d4d; /* Vermelho para indicar ação crítica */
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tabela .links a:hover {
+    background-color: #e63939; /* Vermelho mais escuro para hover */
+    transform: scale(1.05); /* Leve aumento no hover */
+}
+
+.tabela .links a:active {
+    background-color: #cc3333; /* Vermelho mais profundo para o estado ativo */
+    transform: scale(1); /* Remove o efeito de aumento */
+}
+
+
+@media (max-width: 768px) {
+    table th, table td {
+        padding: 8px;
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.5rem;
+    }
+}
