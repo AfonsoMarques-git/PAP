@@ -35,15 +35,15 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             $_SESSION['username'] = $nome_utilizador;
 
             if ($is_admin == 1) {
-                header("Location: ../php/menu_admin.php");
+                header("Location: ../menu_admin.php");
             } elseif ($is_admin == 2) {
-                header("Location: ../php/menu_Sadmin.php");
+                header("Location: ../menu_Sadmin.php");
             } else {
                 header("Location: ../index.php");
             }
         } else {
             $_SESSION['error_login'] = "Nome de utilizador ou senha incorretos.";
-            header("Location: ../php/login-registo.php");
+            header("Location: ../login-registo.php");
         }
         $sql->close();
         $ligacao->close();
@@ -60,13 +60,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Validar campos
         if (empty($username) || empty($password) || empty($confirm_password) || empty($email)) {
             $_SESSION['error_registo_normal'] = "É necessário preencher todos os campos.";
-            header("Location: ../php/login-registo.php");
+            header("Location: ../login-registo.php");
             exit;
         }
 
         if ($password !== $confirm_password) {
             $_SESSION['error_registo_normal'] = "As senhas não correspondem.";
-            header("Location: ../php/login-registo.php");
+            header("Location: ../login-registo.php");
             exit;
         }
 
@@ -85,7 +85,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             }
             $stmt->close();
             $ligacao->close();
-            header("Location: ../php/login-registo.php");
+            header("Location: ../login-registo.php");
             exit;
         }
         $stmt->close();
@@ -97,20 +97,20 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
             if ($stmt->execute()) {
                 $_SESSION['success'] = "Registo efetuado com sucesso!";
-                header("Location: ../php/login-registo.php");
+                header("Location: ../login-registo.php");
             } else {
                 $_SESSION['error_registo_normal'] = "Erro ao efetuar o registo. Tente novamente.";
-                header("Location: ../php/login-registo.php");
+                header("Location: ../login-registo.php");
             }
             $stmt->close();
         } else {
             $_SESSION['error_registo_normal'] = "Endereço de email inválido.";
-            header("Location: ../php/login-registo.php");
+            header("Location: ../login-registo.php");
         }
         $ligacao->close();
         exit;
     }
 }
-header("Location: ../php/login-registo.php");
+header("Location: ../login-registo.php");
 exit;
 ?>

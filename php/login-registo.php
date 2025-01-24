@@ -21,7 +21,7 @@ unset($_SESSION['success']);
 
     <div class="container" id="container">
         <div class="form-container registo">
-            <form id="form_registo" name="form_registo" method="POST" action="../php/processar_login_registo.php">
+            <form id="form_registo" name="form_registo" method="POST" action="../php/processos/processar_login_registo.php">
                 <h1 class="titulo">Realizar Registo</h1>
                 
                 <?php if (isset($_SESSION['error_registo_normal'])): ?>
@@ -51,7 +51,7 @@ unset($_SESSION['success']);
             </form>
         </div>
         <div class="form-container login">
-            <form id="form_registo" name="form_registo" method="POST" action="../php/processar_login_registo.php">
+            <form id="form_registo" name="form_registo" method="POST" action="../php/processos/processar_login_registo.php">
                 <h1 class="titulo">Login</h1>
 
                 <?php if (isset($_SESSION['error_login'])): ?>
