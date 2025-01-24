@@ -2,27 +2,38 @@
 <?php
 session_start();
 
+$ligacao = new mysqli('localhost', 'root', '', 'gestao_utilizadores');
+if ($ligacao->connect_error) {
+  die('Não foi possível ligar à base de dados: ' . $ligacao->connect_error);
+}
+
+// Verifica se o usuário está autenticado
 if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
   header("Location: ../php/login-registo.php");
   exit();
 }
 
+// Busca o número de utilizadores no banco de dados
+$total_users = "Erro ao obter dados.";
+$query = "SELECT COUNT(*) AS total_users FROM utilizadores";
+$resultado = mysqli_query($ligacao, $query);
+if ($resultado) {
+  $linha = mysqli_fetch_assoc($resultado);
+  $total_users = $linha['total_users'];
+} else {
+  $total_users = "Erro: " . mysqli_error($ligacao);
+}
+
+// Mensagens de sucesso ou erro
 if (isset($_SESSION['success_menu'])) {
-  echo '<div class="mensagem sucesso">' . htmlspecialchars($_SESSION['success_menu']) . '</div>';
+  $success = $_SESSION['success_menu'];
   unset($_SESSION['success_menu']);
 }
 
 if (isset($_SESSION['error_menu'])) {
-  echo '<div class="mensagem erro">' . htmlspecialchars($_SESSION['error_menu']) . '</div>';
+  $error = $_SESSION['error_menu'];
   unset($_SESSION['error_menu']);
 }
-
-// Mensagens de erro ou sucesso
-$error = isset($_SESSION['error_menu']) ? $_SESSION['error_menu'] : '';
-unset($_SESSION['error_menu']);
-
-$success = isset($_SESSION['success_menu']) ? $_SESSION['success_menu'] : '';
-unset($_SESSION['success_menu']);
 ?>
 <html lang="pt-PT">
 
@@ -110,14 +121,23 @@ unset($_SESSION['success_menu']);
     </nav>
   </aside>
   <div id="container">
+    <div class="titles">
+      <h1>Dashboard</h1>
+      <p>Vendas & Utilizadores</p>
+    </div>
     <div class="items-main">
-    <div class="item1">.</div>
-    <div class="item2">.</div>
-    <div class="item3">.</div>
-    <div class="item4">.</div>
+      <div class="item1">
+        <div class="text">
+          <h2>120 000<!--<?php echo htmlspecialchars($total_users); ?>--></h2>
+          <p>Utilizadores</p>
+        </div>
+        <span class="material-symbols-rounded">groups</span>
+      </div>
+      <div class="item2">.</div>
+      <div class="item3">.</div>
     </div>
   </div>
-  
+
   <!-- Script para remover a mensagem após 3 segundos -->
   <script>
     setTimeout(() => {
@@ -130,4 +150,5 @@ unset($_SESSION['success_menu']);
   </script>
   <script src="../js/menu_admin.js"></script>
 </body>
+
 </html>
