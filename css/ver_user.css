@@ -3,11 +3,14 @@
 :root {
     --background-color: #ffffff;
     --text-color: #333;
-    --accent-color: #c5a880; /* Ouro suave */
-    --button-color: #e9dccb;
-    --input-bg-color: #fff;
-    --placeholder-color: #999;
+    --accent-color: #c5a880;
+    --card-bg-color: #f9f9f9;
+    --shadow-color: rgba(0, 0, 0, 0.1);
     --border-color: #d8c3a5;
+    --editBtn-color: #4199c8;
+    --deleteBtn-color: #cb1212;
+    --deleteBtnBorder-color: #883030;
+    --editBtnBorder-color: #336c8a;
 }
 
 * {
@@ -22,93 +25,81 @@ body {
     color: var(--text-color);
     line-height: 1.6;
     display: flex;
-    align-items: center;
-    height: 100vh;
+    min-height: 100vh;
 }
 
-h1 {
-    margin-bottom: 20px;
-    font-size: 2rem;
-    color: black;
+.card-grid{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
 }
 
-.tabela {
-    width: 90%;
-    max-width: 1200px;
-    background: var(--input-bg-color);
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+.card {
+    background-color: var(--card-bg-color);
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px var(--shadow-color);
+    width: 400px;
     padding: 20px;
-    overflow-x: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-table {
-    width: 100%;
-    border-collapse: collapse;
-    text-align: left;
+.card h2 {
+    font-size: 1.5rem;
+    padding-bottom: 10px;
+    color: var(--accent-color);
 }
 
-table th {
-    background-color: var(--accent-color);
-    color: #ffffff;
-    padding: 10px;
-    text-transform: uppercase;
-    font-size: 0.9rem;
+.buttons {
+  display: flex;
+  width: 100%;
+  justify-content: space-evenly;
+  padding-top: 20px;
+  gap: 10px; /* Adiciona um espaçamento entre os botões */
 }
 
-table td {
-    padding: 10px;
-    border-bottom: 1px solid var(--border-color);
+.buttons a {
+  width: 45%; /* Ajusta a largura para manter os botões consistentes */
+  text-decoration: none; /* Remove o sublinhado dos links */
 }
 
-table tr:nth-child(odd) {
-    background-color: #f9f9f9;
+.editBtn,
+.deleteBtn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px; /* Espaço entre o texto e o ícone */
+  width: 100%;
+  height: 40px; /* Define uma altura consistente para os botões */
+  padding: 10px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: transform 0.2s, box-shadow 0.2s;
+  cursor: pointer;
 }
 
-table tr:nth-child(even) {
-    background-color: #f1f1f1;
+.editBtn {
+  background-color: var(--editBtn-color);
+  color: white;
+  border: 1px solid var(--editBtnBorder-color);
 }
 
-table tr:hover {
-    background-color: #dff6ff;
-    cursor: pointer;
+.deleteBtn {
+  background-color: var(--deleteBtn-color);
+  color: white;
+  border: 1px solid var(--deleteBtnBorder-color);
 }
 
-table th:first-child, table td:first-child {
-    text-align: center;
+.editBtn:hover,
+.deleteBtn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 6px var(--shadow-color);
 }
 
-/* Estilo do link "Eliminar" */
-.tabela .links a {
-    display: inline-block;
-    padding: 8px 12px;
-    color: #fff;
-    background-color: #ff4d4d; /* Vermelho para indicar ação crítica */
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: 500;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-}
-
-.tabela .links a:hover {
-    background-color: #e63939; /* Vermelho mais escuro para hover */
-    transform: scale(1.05); /* Leve aumento no hover */
-}
-
-.tabela .links a:active {
-    background-color: #cc3333; /* Vermelho mais profundo para o estado ativo */
-    transform: scale(1); /* Remove o efeito de aumento */
-}
-
-
-@media (max-width: 768px) {
-    table th, table td {
-        padding: 8px;
-        font-size: 0.9rem;
-    }
-
-    h1 {
-        font-size: 1.5rem;
-    }
+.editBtn:active,
+.deleteBtn:active {
+  transform: translateY(0);
+  box-shadow: none;
 }

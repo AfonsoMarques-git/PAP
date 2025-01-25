@@ -14,13 +14,22 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
     $confirm_password = $_POST['confirm_password'] ?? '';
     $email = $_POST['email'] ?? '';
+    $tipo_utilizador = $_POST['user-type'];
+
+    if ($tipo_utilizador == null || !in_array($tipo_utilizador, ['0', '1'])) {
+        $_SESSION['erro_menu'] = 'Selecione um tipo de utilizador válido';
+        header('../menu_Sadmin.php');
+        exit;
+    }
+
+    $tipo_utilizador = (int)$tipo_utilizador;
 
     // Validar campos
-    if (empty($username) || empty($password) || empty($confirm_password) || empty($email)) {
+    if (empty($username) || empty($password) || empty($confirm_password) || empty($email) || $tipo_utilizador === null) {
         $_SESSION['error_menu'] = "É necessário preencher todos os campos.";
         header('Location: ../menu_Sadmin.php');
         exit;
-    }
+    }    
 
     if ($password !== $confirm_password) {
         $_SESSION['error_menu'] = "As senhas não correspondem.";
@@ -49,8 +58,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     // Inserir os dados
     if (filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $stmt = $ligacao->prepare("INSERT INTO utilizadores (nome_utilizador, palavra_passe, email, is_admin) VALUES (?, ?, ?, 1)");
-        $stmt->bind_param("sss", $username, $password, $email);
+        $stmt = $ligacao->prepare("INSERT INTO utilizadores (nome_utilizador, palavra_passe, email, is_admin) VALUES (?, ?, ?, ?)");
+        $stmt->bind_param("sssi", $username, $password, $email, $tipo_utilizador);
 
         if ($stmt->execute()) {
             $_SESSION['success_menu'] = 'Registro realizado com sucesso!';

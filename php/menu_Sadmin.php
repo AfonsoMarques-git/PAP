@@ -15,7 +15,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
 
 // Busca o número de utilizadores no banco de dados
 $total_users = "Erro ao obter dados.";
-$query = "SELECT COUNT(*) AS total_users FROM utilizadores";
+$query = "SELECT COUNT(*) AS total_users FROM utilizadores WHERE is_admin != 2";
 $resultado = mysqli_query($ligacao, $query);
 if ($resultado) {
   $linha = mysqli_fetch_assoc($resultado);
@@ -42,8 +42,8 @@ if (isset($_SESSION['error_menu'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Super Administrador</title>
   <link rel="stylesheet" href="../css/menu_admin.css">
-  <link rel="stylesheet"
-    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -72,34 +72,19 @@ if (isset($_SESSION['error_menu'])) {
       <ul class="nav-list primary-nav">
         <li class="nav-item dropdown">
           <a href="#" class="nav-link">
-            <span class="nav-icon material-symbols-rounded">dashboard</span>
-            <span class="nav-label">Gestão de Administradores</span>
-            <span class="dropdown-icon material-symbols-rounded">expand_more</span>
-          </a>
-          <span class="nav-tooltip">Gestão de Administradores</span>
-          <ul class="dropdown-menu">
-            <li><a onclick="loadRegisto()">Registar</a></li>
-            <li><a onclick="loadElim()">Eliminar</a></li>
-            <li><a onclick="loadVer()">Ver lista</a></li>
-            <li><a onclick="loadEdit()">Editar dados</a></li>
-          </ul>
-        </li>
-        <li class="nav-item dropdown">
-          <a href="#" class="nav-link">
-            <span class="nav-icon material-symbols-rounded">dashboard</span>
+            <span class="nav-icon material-symbols-rounded">group</span>
             <span class="nav-label">Gestão de Utilizadores</span>
             <span class="dropdown-icon material-symbols-rounded">expand_more</span>
           </a>
-          <span class="nav-tooltip">Gestão de Utilizadores</span>
+          <span class="nav-tooltip">Gestão de Utilizaddores</span>
           <ul class="dropdown-menu">
-            <li><a href="#">Eliminar</a></li>
-            <li><a href="#">Ver lista</a></li>
-            <li><a href="#">Editar dados</a></li>
+            <li><a onclick="loadRegisto()">Registar</a></li>
+            <li><a onclick="loadVer()">Ver lista</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link">
-            <span class="nav-icon material-symbols-rounded">calendar_today</span>
+            <span class="nav-icon material-symbols-rounded">work</span>
             <span class="nav-label">Gestão do website</span>
             <span class="dropdown-icon material-symbols-rounded">expand_more</span>
           </a>
@@ -120,21 +105,42 @@ if (isset($_SESSION['error_menu'])) {
       </ul>
     </nav>
   </aside>
+
   <div id="container">
+    <div class="group">
+      <input id="query" class="input" type="search" placeholder="Search..." name="searchbar" />
+      <button onclick="loadRegisto()">
+        <i class='bx bx-plus'></i>
+        <span> Criar </span>
+      </button>
+    </div>
+
     <div class="titles">
       <h1>Dashboard</h1>
       <p>Vendas & Utilizadores</p>
     </div>
     <div class="items-main">
-      <div class="item1">
+      <div class="item1" onclick="loadVer()">
         <div class="text">
-          <h2>120 000<!--<?php echo htmlspecialchars($total_users); ?>--></h2>
+          <h2><?php echo htmlspecialchars($total_users); ?></h2>
           <p>Utilizadores</p>
         </div>
         <span class="material-symbols-rounded">groups</span>
       </div>
-      <div class="item2">.</div>
-      <div class="item3">.</div>
+      <div class="item2">
+        <div class="text">
+          <h2>175</h2>
+          <p>Vendas Efetuadas</p>
+        </div>
+        <span class="material-symbols-rounded">shopping_cart_checkout</span>
+      </div>
+      <div class="item3">
+        <div class="text">
+          <h2>300</h2>
+          <p>Encomendas</p>
+        </div>
+        <span class="material-symbols-rounded">inventory_2</span>
+      </div>
     </div>
   </div>
 

@@ -159,7 +159,7 @@ function loadVer() {
     container.style.padding = "auto";
     container.style.width = "1200px";
   };
-  xhttp.open("GET", "../php/ver_user.php");
+  xhttp.open("GET", "../php/lista_users.php");
   xhttp.send();
 }
 

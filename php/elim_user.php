@@ -19,7 +19,7 @@
     }
 
     // Consultar utilizadores com is_admin igual a 1
-    $sql_admins = 'SELECT * FROM utilizadores WHERE is_admin = 1 ORDER BY id ASC';
+    $sql_admins = 'SELECT * FROM utilizadores WHERE is_admin != 2 ORDER BY nome_utilizador ASC';
     $consulta_admins = $ligacao->query($sql_admins);
 
     // Verificar se existem administradores
@@ -33,7 +33,7 @@
     ?>
 
     <div class="tabela">
-        <h1>Selecione um administrador para eliminar</h1>
+        <h1>Eliminar Utilizadores</h1>
         <?php if ($tem_administradores): ?>
             <table>
                 <tr>
@@ -50,7 +50,7 @@
                     $email = $mostrar['email'];
                     $is_admin = $mostrar['is_admin'];
 
-                    $tipo_utilizador = $is_admin == 1 ? 'Administrador' : 'User Normal';
+                    $tipo_utilizador = $is_admin == 1 ? 'Administrador' : 'Cliente';
 
                     echo "<tr class='links'>
                             <td>$id</td>
