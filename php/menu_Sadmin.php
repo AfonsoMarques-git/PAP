@@ -108,7 +108,7 @@ if (isset($_SESSION['error_menu'])) {
 
   <div id="container">
     <div class="group">
-      <input id="query" class="input" type="search" placeholder="Search..." name="searchbar" />
+      <input id="query" class="input" type="text" placeholder="Search..." name="searchbar" />
       <button onclick="loadRegisto()">
         <i class='bx bx-plus'></i>
         <span> Criar </span>
