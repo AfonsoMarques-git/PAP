@@ -8,12 +8,14 @@ $isLoggedIn = isset($_SESSION['username']);
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <title>Página Principal</title>
 </head>
+
 <body>
     <div class="container">
         <header>
@@ -41,7 +43,8 @@ $isLoggedIn = isset($_SESSION['username']);
                     <div class="actions">
                         <div class="login-registo">
                             <?php if ($isLoggedIn): ?>
-                                <a href="html/perfil.html"><span class="user">Olá, <?php echo $_SESSION['username']; ?>!</span></a>
+                                <a href="html/perfil.html"><span class="user">Olá,
+                                        <?php echo $_SESSION['username']; ?>!</span></a>
                                 <a href="php/logout.php" class="logout">Log Out</a>
                             <?php else: ?>
                                 <a href="php/login-registo.php"><img src="images/user..png" alt="Login e Registo" /></a>
@@ -57,34 +60,53 @@ $isLoggedIn = isset($_SESSION['username']);
         </div>
     </div>
     <div class="contentor">
-        <div class="card">
-            <img src="images/baloes.png" alt="Produto 1">
-            <div class="content">
-                <h3>Balões Latéx</h3>
-                <p>Balões de látex são decorativos, ecológicos e perfeitos para dar vida às suas festas e eventos.</p>
+        <div class="event-cards">
+            <div class="card-events">
+                <div class="left">
+                    <img src="images/casamento_card.jpg" alt="Casamento">
+                </div>
+                <div class="right">
+                    <h1>Casamentos</h1>
+                    <p>O casamento deve ser um compromisso feliz e espontâneo. Não um encargo pesado, uma obrigação. No
+                        casamento deve haver união, porque quando duas pessoas se juntam é para remar na mesma direção.
+                        O
+                        casamento é apenas o começo! Um laço de amor que pode guardar um presente maravilhoso para o
+                        futuro.
+                    </p>
+                    <button>Planeie um casamento</button>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <img src="images/fachas.png" alt="Produto 2">
-            <div class="content">
-                <h3>Faixa de Cetim personalizada </h3>
-                <p>Faixas de cetim elegantes e versáteis, ideais para personalizar eventos e presentes com charme.</p>
+
+            <div class="card-events">
+                <div class="left">
+                    <img src="images/batizado_card.jpg" alt="Outros eventos">
+                </div>
+                <div class="right">
+                    <h1>Batizados</h1>
+                    <p>O batizado deve ser um compromisso de fé e alegria. Não apenas uma formalidade, mas um momento
+                        especial de dedicação e esperança. No batismo, há união, porque é o início de uma jornada
+                        espiritual compartilhada com Deus. O batizado é apenas o começo! Um laço de fé que guarda um
+                        presente maravilhoso para o futuro.</p>
+                    <button>Planeie outro evento</button>
+                </div>
             </div>
-        </div>
-        <div class="card">
-            <img src="images/decoracaoSala.jpg" alt="Produto 3">
-            <div class="content">
-                <h3>Decoração de Sala</h3>
-                <p>Decoração de sala: transforme seu ambiente com estilo, conforto e toques personalizados.</p>
-            </div>
-        </div>
-        <div class="card">
-            <img src="images/insuflavel.jpg" alt="Produto 4">
-            <div class="content">
-                <h3>Insufláveis</h3>
-                <p>Infláveis: diversão garantida com itens temáticos, práticos e personalizados para qualquer ocasião.</p>
+
+            <div class="card-events">
+                <div class="left">
+                    <img src="images/outros_eventos_card.jpg" alt="Outros eventos">
+                </div>
+                <div class="right">
+                    <h1>Outros eventos</h1>
+                    <p>Outros eventos como festas de aniversário, chás revelação e eventos corporativos são momentos de
+                        alegria e união. Cada celebração é uma oportunidade de criar memórias e fortalecer laços. Mais
+                        que
+                        datas no calendário, são instantes que dão sentido à vida. Comemore, compartilhe e torne cada
+                        momento inesquecível.</p>
+                    <button>Planeie outro evento</button>
+                </div>
             </div>
         </div>
     </div>
 </body>
+
 </html>

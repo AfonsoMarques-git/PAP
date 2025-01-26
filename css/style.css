@@ -80,12 +80,13 @@ header>.actions .search{
     color: #ffffff;
     font-size: 14px;
     font-weight: bold;
-    transition: color 0.3s;
+    transition: color 0.3s, transform 0.3s;
 }
 
 .events>a:hover{
     background-color: #ebd0a2;
     transition: background-color 0.5s;
+    transform: scale(1.05);
 }
 
 .menu{
@@ -156,48 +157,93 @@ header>.actions .search{
 }
 
 .contentor {
+    display: flex;
+    flex-direction: column;
     max-width: 100%;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 30px;
-    padding: 20px;
-}
-
-.card {
-    margin-top: 100px;
-    background: white;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    overflow: hidden;
-    transition: transform 0.3s;
-}
-
-.card:hover {
-    transform: translateY(-10px);
-}
-
-.card img {
-    width: 100%;
-    height: 200px;
-    object-fit: cover;
-}
-
-.card .content {
-    padding: 15px;
-    text-align: center;
-}
-
-.card .content h3 {
-    font-size: 18px;
-    margin-bottom: 10px;
-    color: #333;
-}
-
-.card .content p {
-    font-size: 14px;
-    color: #666;
+    padding: 50px;
 }
 
 .login-registo>a>img:hover{
     content: url(../images/user_hover.png.png);
+}
+
+/* Estilo Geral dos Cards */
+.event-cards {
+    display: flex; /* Alterado para flex para que os cards fiquem em linha */
+    flex-direction: row; /* Define a direção como horizontal */
+    gap: 40px; /* Espaço entre os cards */
+    margin-top: 30px;
+    overflow-x: auto; /* Adiciona rolagem horizontal caso os cards excedam a largura */
+    padding: 10px; /* Padding para dar espaçamento interno */
+}
+
+.card-events {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    border-radius: 15px;
+    background-color: #ffffff;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s, box-shadow 0.3s;
+    overflow: hidden;
+    max-width: 550px; /* Define um tamanho máximo para os cards */
+    gap: 20px;
+}
+
+.card-batizado {
+    flex-direction: row-reverse; /* Mantém o estilo invertido para o card de batizado */
+}
+
+.left {
+    flex: 1;
+}
+
+.right {
+    flex: 2;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.card-events img {
+    width: 100%;
+    height: 350px;
+    border-radius: 15px;
+    object-fit: cover;
+}
+
+.card-events h1 {
+    font-size: 25px; /* Ajustado para harmonizar no layout */
+    font-weight: 600;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.card-events p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #555555;
+}
+
+/* Estilo dos Botões */
+.card-events button {
+    background-color: #b39f7c;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    align-self: flex-start;
+}
+
+.card-events button:hover {
+    background-color: #ebd0a2;
+    transform: scale(1.05);
 }
