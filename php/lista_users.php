@@ -41,10 +41,8 @@
                     ?>
 
                     <div class="card">
-                        <div class="card-title">
-                            <h2><?php echo $nome_utilizador; ?></h2>
-                            <p><strong>ID:</strong> <?php echo $id; ?></p>
-                        </div>
+                        <h2><?php echo $nome_utilizador; ?></h2>
+                        <p><strong>ID:</strong> <?php echo $id; ?></p>
                         <p><strong>Email:</strong> <?php echo $email; ?></p>
                         <p><strong>Tipo de Utilizador:</strong> <?php echo $tipo_utilizador; ?></p>
                         <div class="buttons">

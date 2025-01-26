@@ -48,7 +48,7 @@ body {
 .card h2 {
     font-size: 1.5rem;
     padding-bottom: 10px;
-    color: var(--accent-color);
+    color: black;
 }
 
 .buttons {
