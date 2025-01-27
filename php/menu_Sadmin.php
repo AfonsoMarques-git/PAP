@@ -7,13 +7,11 @@ if ($ligacao->connect_error) {
   die('Não foi possível ligar à base de dados: ' . $ligacao->connect_error);
 }
 
-// Verifica se o usuário está autenticado
 if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
   header("Location: ../php/login-registo.php");
   exit();
 }
 
-// Busca o número de utilizadores no banco de dados
 $total_users = "Erro ao obter dados.";
 $query = "SELECT COUNT(*) AS total_users FROM utilizadores WHERE is_admin != 2";
 $resultado = mysqli_query($ligacao, $query);
