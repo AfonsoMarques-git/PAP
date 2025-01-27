@@ -8,7 +8,6 @@
 body {
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
     align-items: center;
     min-height: 100vh;
     background-color: #f4f4f4;
@@ -168,14 +167,15 @@ header>.actions .search{
     content: url(../images/user_hover.png.png);
 }
 
-/* Estilo Geral dos Cards */
+
 .event-cards {
-    display: flex; /* Alterado para flex para que os cards fiquem em linha */
-    flex-direction: row; /* Define a direção como horizontal */
-    gap: 40px; /* Espaço entre os cards */
+    display: flex;
+    flex-direction: row;
+    gap: 40px;
     margin-top: 30px;
-    overflow-x: auto; /* Adiciona rolagem horizontal caso os cards excedam a largura */
-    padding: 10px; /* Padding para dar espaçamento interno */
+    overflow-x: auto;
+    padding: 10px;
+    flex-wrap: wrap;
 }
 
 .card-events {
@@ -189,12 +189,13 @@ header>.actions .search{
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s, box-shadow 0.3s;
     overflow: hidden;
-    max-width: 550px; /* Define um tamanho máximo para os cards */
+    flex: 1;
+    min-width: 400px;
     gap: 20px;
 }
 
 .card-batizado {
-    flex-direction: row-reverse; /* Mantém o estilo invertido para o card de batizado */
+    flex-direction: row-reverse;
 }
 
 .left {
@@ -224,7 +225,7 @@ header>.actions .search{
 }
 
 .card-events p {
-    font-size: 14px;
+    font-size: 18px;
     line-height: 1.5;
     color: #555555;
 }

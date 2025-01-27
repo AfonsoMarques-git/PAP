@@ -71,7 +71,7 @@
             <label for="is_admin">Tipo de Utilizador</label>
             <select id="is_admin" name="is_admin" required>
                 <option value="1" <?= $utilizador['is_admin'] == 1 ? 'selected' : '' ?>>Administrador</option>
-                <option value="0" <?= $utilizador['is_admin'] == 0 ? 'selected' : '' ?>>Utilizador</option>
+                <option value="0" <?= $utilizador['is_admin'] == 0 ? 'selected' : '' ?>>Cliente</option>
             </select>
 
             <button type="submit">Guardar Alterações</button>

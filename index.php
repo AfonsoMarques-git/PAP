@@ -47,7 +47,7 @@ $isLoggedIn = isset($_SESSION['username']);
                                         <?php echo $_SESSION['username']; ?>!</span></a>
                                 <a href="php/logout.php" class="logout">Log Out</a>
                             <?php else: ?>
-                                <a href="php/login-registo.php"><img src="images/user..png" alt="Login e Registo" /></a>
+                                <a href="php/login-registo.php" title="Login / Registo"><img src="images/user..png" alt="Login e Registo" /></a>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -87,7 +87,7 @@ $isLoggedIn = isset($_SESSION['username']);
                         especial de dedicação e esperança. No batismo, há união, porque é o início de uma jornada
                         espiritual compartilhada com Deus. O batizado é apenas o começo! Um laço de fé que guarda um
                         presente maravilhoso para o futuro.</p>
-                    <button>Planeie outro evento</button>
+                    <button>Planeie um batizado</button>
                 </div>
             </div>
 
