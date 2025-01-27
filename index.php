@@ -32,11 +32,11 @@ $isLoggedIn = isset($_SESSION['username']);
                             <a href="">Compra e Aluguer</a>
                         </nav>
                         <nav class="menu">
-                            <a href="html/manutencao.html">Personalizáveis</a>
-                            <a href="html/manutencao.html">Balões</a>
-                            <a href="html/manutencao.html">Casamentos</a>
-                            <a href="html/manutencao.html">Aluguer</a>
-                            <a href="html/manutencao.html">Contactos</a>
+                            <a href="">Personalizáveis</a>
+                            <a href="">Balões</a>
+                            <a href="">Casamentos</a>
+                            <a href="">Aluguer</a>
+                            <a href="">Contactos</a>
                         </nav>
                     </div>
 
@@ -47,7 +47,8 @@ $isLoggedIn = isset($_SESSION['username']);
                                         <?php echo $_SESSION['username']; ?>!</span></a>
                                 <a href="php/logout.php" class="logout">Log Out</a>
                             <?php else: ?>
-                                <a href="php/login-registo.php" title="Login / Registo"><img src="images/user..png" alt="Login e Registo" /></a>
+                                <a href="php/login-registo.php" title="Login / Registo"><img src="images/user..png"
+                                        alt="Login e Registo" /></a>
                             <?php endif; ?>
                         </div>
                     </div>
@@ -104,6 +105,21 @@ $isLoggedIn = isset($_SESSION['username']);
                         momento inesquecível.</p>
                     <button>Planeie outro evento</button>
                 </div>
+            </div>
+        </div>
+
+        <div class="gallery">
+            <div class="item-galeria">
+                <img src="images/aneis_ramo.jpg" alt="Casamento - mãos com alianças">
+            </div>
+            <div class="item-galeria">
+                <img src="images/bebe_batizado.jpg" alt="Nascimento - bebê recém-nascido">
+            </div>
+            <div class="item-galeria">
+                <img src="images/criancas_brincar.jpg" alt="Infância - crianças brincando com bolhas">
+            </div>
+            <div class="item-galeria">
+                <img src="images/coracao_faisca.jpg" alt="Celebração - coração com luz de faíscas">
             </div>
         </div>
     </div>

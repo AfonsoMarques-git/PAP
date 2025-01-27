@@ -91,6 +91,7 @@ if (isset($_SESSION['error_menu'])) {
           <span class="nav-tooltip">Gestão do website</span>
           <ul class="dropdown-menu">
             <li><a href="#">Manutenção de produtos</a></li>
+            <li><a href="gestao_imagens.php">Gestão de imagens</a></li>
           </ul>
         </li>
       </ul>

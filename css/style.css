@@ -13,35 +13,35 @@ body {
     background-color: #f4f4f4;
 }
 
-header>.actions .auth-container{
+header>.actions .auth-container {
     margin-top: 50px;
 }
 
-header>.actions .search{
+header>.actions .search {
     margin-top: 50px;
 }
 
 
-.logo>a> img {
+.logo>a>img {
     width: 250px;
     height: auto;
     z-index: 10;
 }
 
-.container{
+.container {
     background: url('../images/fundo_home3.jpg');
     height: 100vh;
     width: 100%;
     background-size: cover;
 }
 
-.navegacao{
+.navegacao {
     display: flex;
     justify-content: space-between;
     padding: 40px;
 }
 
-.navegar{
+.navegar {
     display: flex;
     gap: 30px;
     align-items: center;
@@ -59,7 +59,7 @@ header>.actions .search{
     z-index: 10;
 }
 
-.events{
+.events {
     background-color: white;
     width: auto;
     height: 50px;
@@ -70,7 +70,7 @@ header>.actions .search{
     z-index: 10;
 }
 
-.events a{
+.events a {
     background-color: #b39f7c;
     border-radius: 10px;
     padding: 10px;
@@ -82,13 +82,13 @@ header>.actions .search{
     transition: color 0.3s, transform 0.3s;
 }
 
-.events>a:hover{
+.events>a:hover {
     background-color: #ebd0a2;
     transition: background-color 0.5s;
     transform: scale(1.05);
 }
 
-.menu{
+.menu {
     flex-grow: 1;
     display: flex;
     gap: 40px;
@@ -141,7 +141,7 @@ header>.actions .search{
     color: #b39f7c;
 }
 
-.titulo{
+.titulo {
     padding: 150px;
     padding-left: 0;
     padding-top: 200px;
@@ -149,7 +149,7 @@ header>.actions .search{
     font-size: 50px;
 }
 
-.titulo>h1{
+.titulo>h1 {
     color: rgb(255, 255, 255);
     padding-left: 200px;
     width: 900px;
@@ -163,7 +163,7 @@ header>.actions .search{
     padding: 50px;
 }
 
-.login-registo>a>img:hover{
+.login-registo>a>img:hover {
     content: url(../images/user_hover.png.png);
 }
 
@@ -218,7 +218,8 @@ header>.actions .search{
 }
 
 .card-events h1 {
-    font-size: 25px; /* Ajustado para harmonizar no layout */
+    font-size: 25px;
+    /* Ajustado para harmonizar no layout */
     font-weight: 600;
     color: #333333;
     margin-bottom: 10px;

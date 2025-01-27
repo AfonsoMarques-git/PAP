@@ -21,7 +21,7 @@ if (!isset($_SESSION['autenticado']) || $_SESSION['autenticado'] !== true) {
 <body>
   <aside class="sidebar">
     <header class="sidebar-header">
-      <a href="menu_Sadmin.php" class="header-logo">
+      <a href="menu_admin.php" class="header-logo">
         <img src="../images/logo_pequeno.png" alt="Companhia da Mariposa">
       </a>
       <button class="toggler sidebar-toggler">
