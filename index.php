@@ -23,7 +23,7 @@ $isLoggedIn = isset($_SESSION['username']);
             <div class="navegacao">
                 <div class="logo">
                     <a href="index.php">
-                        <img src="images/LogoCMW.png" alt="logotipo">
+                        <img src="images/logo_grande_branco.png" alt="logotipo">
                     </a>
                 </div>
 
@@ -34,7 +34,7 @@ $isLoggedIn = isset($_SESSION['username']);
                         </nav>
                         <nav class="menu">
                             <a href="https://casamentos.companhiadamariposa.pt/" target="_self">Casamentos</a>
-                            <a href="">Galeria</a>
+                            <a href="php/galeria.php">Galeria</a>
                             <a href="">Contactos</a>
                         </nav>
                     </div>
@@ -113,30 +113,32 @@ $isLoggedIn = isset($_SESSION['username']);
             <h1>Eventos Mais Recentes</h1>
             <p>Veja a nossa galeria de fotografias</p>
         </div>
-        
+
         <div class="gallery">
-                <div class="img1"><img src="images/aneis_ramo.jpg" alt="Casamento"></div>
-                <div class="img2"><img src="images/bebe_batizado.jpg" alt="Batizado"></div>
-                <div class="img3"><img src="images/criancas_brincar.jpg" alt="Festa"></div>
-                <div class="img4"><img src="images/coracao_faisca.jpg" alt="Aniversário"></div>
+            <a href="php/galeria.php" class="img1"><img src="images/casamento_img2.jpg" alt="Casamento"></a>
+            <a href="php/galeria.php" class="img2"><img src="images/batizado_img3.jpg" alt="Batizado"></a>
+            <a href="php/galeria.php" class="img3"><img src="images/festa_empresarial2.jpg" alt="Festa"></a>
+            <a href="php/galeria.php" class="img4"><img src="images/coracao_faisca.jpg" alt="Aniversário"></a>
         </div>
     </div>
     <footer>
         <div id="footer_content">
             <div id="footer_contacts">
-                <img src="images/logo_ideia_small_white-nb.png" alt="Logótipo">
-                <p>It's all about your dreams.</p>
+                <a href="index.php"><img src="images/logo_pequeno_branco.png" alt="Logótipo"></a>
+                <p>A transformar sonhos em realidade!</p>
 
                 <div id="footer_social_media">
-                    <a href="#" class="footer-link" id="instagram">
+                    <a href="https://www.instagram.com/companhia_da_mariposa.pt/" target="_blank" class="footer-link"
+                        id="instagram">
                         <i class='bx bxl-instagram'></i>
                     </a>
 
-                    <a href="#" class="footer-link" id="facebook">
+                    <a href="https://www.facebook.com/CompanhiaDaMariposa" target="_blank" class="footer-link"
+                        id="facebook">
                         <i class='bx bxl-facebook'></i>
                     </a>
 
-                    <a href="#" class="footer-link" id="whatsapp">
+                    <a href="https://wa.me/+351933514971" target="_blank" class="footer-link" id="whatsapp">
                         <i class='bx bxl-whatsapp'></i>
                     </a>
                 </div>
@@ -154,7 +156,7 @@ $isLoggedIn = isset($_SESSION['username']);
                     <a href="#" class="footer-link"><i class='bx bxl-gmail'></i>info@companhiadamariposa.pt</a>
                 </li>
                 <li>
-                    <a href="tel:+351934558971" class="footer-link"><i class='bx bxs-phone'></i>+351 934558971</a>
+                    <a href="tel:+351934558971" class="footer-link"><i class='bx bxs-phone'></i>+351 933514971</a>
                 </li>
                 <li>
                     <a href="#" class="footer-link"><i class='bx bxs-map'></i>Centro Comercial Passerelle</a>
