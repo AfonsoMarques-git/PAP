@@ -3,7 +3,7 @@
 :root {
     --background-color: #ffffff;
     --text-color: #333;
-    --accent-color: #c5a880; /* Ouro suave */
+    --accent-color: #c5a880;
     --button-color: #e9dccb;
     --input-bg-color: #fff;
     --placeholder-color: #999;
@@ -59,7 +59,7 @@ body {
 .input-box input {
     width: 100%;
     padding: 10px 15px;
-    padding-right: 35px; /* Espaço extra para o ícone */
+    padding-right: 35px;
     border: 1px solid var(--border-color);
     border-radius: 8px;
     font-size: 14px;

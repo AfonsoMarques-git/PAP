@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+:root {
+    --background-color: #ffffff;
+    --text-color: #333;
+    --accent-color: #c5a880;
+    --button-color: #e9dccb;
+    --input-bg-color: #fff;
+    --placeholder-color: #999;
+    --border-color: #d8c3a5;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    background-color: var(--background-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    background-color: var(--input-bg-color);
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+    padding: 30px 20px;
+    width: 800px;
+    max-width: 100%;
+}
+
+h1 {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+
+p {
+    text-align: center;
+    font-size: 14px;
+    color: green;
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: var(--text-color);
+}
+
+input[type="file"],
+select {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 14px;
+    color: var(--text-color);
+    background-color: var(--input-bg-color);
+    margin-bottom: 20px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+input[type="file"]:focus,
+select:focus {
+    border-color: var(--accent-color);
+    box-shadow: 0 0 5px var(--border-color);
+}
+
+button {
+    background-color: var(--accent-color);
+    color: #fff;
+    font-size: 14px;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #b89470;
+}
+
+.input-file-container {
+    position: relative;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.input-file-label {
+    display: block;
+    background-color: var(--accent-color);
+    color: #fff;
+    font-size: 14px;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    text-align: center;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.input-file-label:hover {
+    background-color: #b89470;
+}
+
+input[type="file"] {
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+}
+
+/* Estilos para imagens */
+.imagens {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    justify-content: space-evenly;
+}
+
+.imagens div {
+    text-align: center;
+}
+
+.imagens h3 {
+    font-size: 16px;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.imagens img {
+    flex: 1;
+    max-width: 200px;
+    height: 150px;
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.imagens img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+a {
+    display: block;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    text-decoration: none;
+    color: var(--accent-color);
+    font-weight: 500;
+    transition: color 0.3s ease;
+}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Eliminar Utilizador</title>
+    <title>Lista de Utilizadores</title>
     <link rel="stylesheet" href="../css/ver_user.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
@@ -28,6 +28,13 @@
     ?>
 
     <div class="container">
+        <div class="group">
+            <input id="query" class="input" type="text" placeholder="Procurar..." name="searchbar" />
+            <button onclick="loadRegisto()">
+                <i class='bx bx-plus'></i>
+                <span> Criar </span>
+            </button>
+        </div>
         <?php if ($tem_administradores): ?>
             <div class="card-grid">
                 <?php

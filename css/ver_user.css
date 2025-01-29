@@ -1,54 +1,54 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
 
 :root {
-    --background-color: #ffffff;
-    --text-color: #333;
-    --accent-color: #c5a880;
-    --card-bg-color: #f9f9f9;
-    --shadow-color: rgba(0, 0, 0, 0.1);
-    --border-color: #d8c3a5;
-    --editBtn-color: #4199c8;
-    --deleteBtn-color: #cb1212;
-    --deleteBtnBorder-color: #883030;
-    --editBtnBorder-color: #336c8a;
+  --background-color: #ffffff;
+  --text-color: #333;
+  --accent-color: #c5a880;
+  --card-bg-color: #f9f9f9;
+  --shadow-color: rgba(0, 0, 0, 0.1);
+  --border-color: #d8c3a5;
+  --editBtn-color: #4199c8;
+  --deleteBtn-color: #cb1212;
+  --deleteBtnBorder-color: #883030;
+  --editBtnBorder-color: #336c8a;
 }
 
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: 'Poppins', Arial, sans-serif;
-    background-color: var(--background-color);
-    color: var(--text-color);
-    line-height: 1.6;
-    display: flex;
-    min-height: 100vh;
+  font-family: 'Poppins', Arial, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  display: flex;
+  min-height: 100vh;
 }
 
-.card-grid{
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
-    gap: 20px;
+.card-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
 }
 
 .card {
-    background-color: var(--card-bg-color);
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    box-shadow: 0 4px 6px var(--shadow-color);
-    width: 400px;
-    padding: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  background-color: var(--card-bg-color);
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  box-shadow: 0 4px 6px var(--shadow-color);
+  width: 400px;
+  padding: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .card h2 {
-    font-size: 1.5rem;
-    padding-bottom: 10px;
-    color: black;
+  font-size: 1.5rem;
+  padding-bottom: 10px;
+  color: black;
 }
 
 .buttons {
@@ -56,12 +56,15 @@ body {
   width: 100%;
   justify-content: space-evenly;
   padding-top: 20px;
-  gap: 10px; /* Adiciona um espaçamento entre os botões */
+  gap: 10px;
+  /* Adiciona um espaçamento entre os botões */
 }
 
 .buttons a {
-  width: 45%; /* Ajusta a largura para manter os botões consistentes */
-  text-decoration: none; /* Remove o sublinhado dos links */
+  width: 45%;
+  /* Ajusta a largura para manter os botões consistentes */
+  text-decoration: none;
+  /* Remove o sublinhado dos links */
 }
 
 .editBtn,
@@ -69,9 +72,11 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 5px; /* Espaço entre o texto e o ícone */
+  gap: 5px;
+  /* Espaço entre o texto e o ícone */
   width: 100%;
-  height: 40px; /* Define uma altura consistente para os botões */
+  height: 40px;
+  /* Define uma altura consistente para os botões */
   padding: 10px;
   font-size: 16px;
   font-weight: 600;
@@ -102,4 +107,77 @@ body {
 .deleteBtn:active {
   transform: translateY(0);
   box-shadow: none;
+}
+
+.group {
+  display: flex;
+  line-height: 28px;
+  align-items: center;
+  position: relative;
+  margin: 10px;
+  flex-grow: 1;
+  gap: 20px;
+  margin-bottom: 200px;
+}
+
+.input {
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  width: 100%;
+  height: 45px;
+  padding-left: 2.5rem;
+  border-radius: 12px;
+  background-color: #e8d2b3;
+  outline: none;
+  color: black;
+  transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
+  cursor: text;
+  z-index: 0;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  /* Sombra */
+}
+
+.input:hover {
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+.input::placeholder {
+  color: black;
+}
+
+.group button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border: none;
+  background-color: #2d9f23;
+  border-radius: 0.9em;
+  cursor: pointer;
+  padding: 10px;
+  transition: all ease-in-out 0.2s;
+  font-size: 16px;
+  width: 200px;
+  height: 45px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.group button i {
+  width: 20px;
+  font-size: 20px;
+  color: white;
+}
+
+.group button span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #fff;
+  font-weight: 600;
+}
+
+.group button:hover {
+  background-color: #2d9f23;
+  box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
 }

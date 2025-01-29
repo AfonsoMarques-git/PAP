@@ -106,14 +106,6 @@ if (isset($_SESSION['error_menu'])) {
   </aside>
 
   <div id="container">
-    <div class="group">
-      <input id="query" class="input" type="text" placeholder="Search..." name="searchbar" />
-      <button onclick="loadRegisto()">
-        <i class='bx bx-plus'></i>
-        <span> Criar </span>
-      </button>
-    </div>
-
     <div class="titles">
       <h1>Dashboard</h1>
       <p>Vendas & Utilizadores</p>
