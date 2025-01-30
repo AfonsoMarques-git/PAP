@@ -23,7 +23,7 @@ $isLoggedIn = isset($_SESSION['username']);
             <div class="navegacao">
                 <div class="logo">
                     <a href="../index.php">
-                        <img src="../images/logo_grande_branco.png" alt="logotipo">
+                        <img src="../images/LogoBranca.png" alt="logotipo">
                     </a>
                 </div>
 
@@ -76,8 +76,24 @@ $isLoggedIn = isset($_SESSION['username']);
                     <img src="../images/casamento_card.jpg">
                 </div>
 
+                <div class="item batizado">
+                    <img src="../images/batizado_card.jpg">
+                </div>
+
+                <div class="item festa_empresarial">
+                    <img src="../images/festa_empresarial.jpg">
+                </div>
+
                 <div class="item casamento">
                     <img src="../images/casamento_img2.jpg">
+                </div>
+
+                <div class="item batizado">
+                    <img src="../images/batizado_img2.jpg">
+                </div>
+
+                <div class="item festa_empresarial">
+                    <img src="../images/festa_empresarial2.jpg">
                 </div>
 
                 <div class="item casamento">
@@ -85,22 +101,7 @@ $isLoggedIn = isset($_SESSION['username']);
                 </div>
 
                 <div class="item batizado">
-                    <img src="../images/batizado_card.jpg">
-                </div>
-                <div class="item batizado">
-                    <img src="../images/batizado_img2.jpg">
-                </div>
-
-                <div class="item batizado">
                     <img src="../images/batizado_img3.jpg">
-                </div>
-
-                <div class="item festa_empresarial">
-                    <img src="../images/festa_empresarial.jpg">
-                </div>
-
-                <div class="item festa_empresarial">
-                    <img src="../images/festa_empresarial2.jpg">
                 </div>
 
                 <div class="item festa_empresarial">
@@ -116,7 +117,7 @@ $isLoggedIn = isset($_SESSION['username']);
     <footer>
         <div id="footer_content">
             <div id="footer_contacts">
-                <a href="index.php"><img src="../images/logo_pequeno_branco.png" alt="Logótipo"></a>
+                <a href="index.php"><img src="../images/LogoBranca.png" alt="Logótipo"></a>
                 <p>A transformar sonhos em realidade!</p>
 
                 <div id="footer_social_media">

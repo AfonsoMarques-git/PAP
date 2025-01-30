@@ -23,22 +23,23 @@ $isLoggedIn = isset($_SESSION['username']);
             <div class="navegacao">
                 <div class="logo">
                     <a href="index.php">
-                        <img src="images/logo_grande_branco.png" alt="logotipo">
+                        <img src="images/LogoBranca.png" alt="logotipo">
                     </a>
                 </div>
 
-                <div class="navegar">
-                    <div class="menu-container">
-                        <nav class="events">
-                            <a href="">Compra e Aluguer</a>
-                        </nav>
-                        <nav class="menu">
-                            <a href="https://casamentos.companhiadamariposa.pt/" target="_self">Casamentos</a>
-                            <a href="php/galeria.php">Galeria</a>
-                            <a href="">Contactos</a>
-                        </nav>
+                <div class="navbar">
+                    <div class="hamburger-menu">
+                        <span></span>
+                        <span></span>
+                        <span></span>
                     </div>
-
+                    <nav class="menu">
+                        <a href="">Compra e Aluguer</a>
+                        <a href="https://casamentos.companhiadamariposa.pt/" target="_self">Casamentos</a>
+                        <a href="php/galeria.php">Galeria</a>
+                        <a href="#">Sobre nós</a>
+                        <a href="">Contactos</a>
+                    </nav>
                     <div class="actions">
                         <div class="login-registo">
                             <?php if ($isLoggedIn): ?>
@@ -52,7 +53,6 @@ $isLoggedIn = isset($_SESSION['username']);
                         </div>
                     </div>
                 </div>
-
             </div>
         </header>
         <div class="titulo">
@@ -63,7 +63,6 @@ $isLoggedIn = isset($_SESSION['username']);
         <div class="event-cards">
             <div class="card-events">
                 <div class="left">
-                    <!-- Imagem Casamento -->
                     <img src="images/temp/casamento_card.jpg?time=<?php echo time(); ?>" alt="Casamento"
                         onerror="this.src='images/casamento_card.jpg?time=<?php echo time(); ?>'">
                 </div>
@@ -79,7 +78,6 @@ $isLoggedIn = isset($_SESSION['username']);
 
             <div class="card-events">
                 <div class="left">
-                    <!-- Imagem Batizado -->
                     <img src="images/temp/batizado_card.jpg?time=<?php echo time(); ?>" alt="Batizado"
                         onerror="this.src='images/batizado_card.jpg?time=<?php echo time(); ?>'">
                 </div>
@@ -124,7 +122,7 @@ $isLoggedIn = isset($_SESSION['username']);
     <footer>
         <div id="footer_content">
             <div id="footer_contacts">
-                <a href="index.php"><img src="images/logo_pequeno_branco.png" alt="Logótipo"></a>
+                <a href="index.php"><img src="images/LogoBranca.png" alt="Logótipo"></a>
                 <p>A transformar sonhos em realidade!</p>
 
                 <div id="footer_social_media">

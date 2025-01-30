@@ -89,3 +89,16 @@ document.getElementById('enviar').addEventListener('click', function() {
     };
     xhr.send(formData);
 });
+
+// menu hamburguer
+
+xampp/htdocs/Pap/js/main.js
+document.addEventListener('DOMContentLoaded', () => {
+    const hamburgerMenu = document.querySelector('.hamburger-menu');
+    const menu = document.querySelector('.menu');
+
+    hamburgerMenu.addEventListener('click', () => {
+        hamburgerMenu.classList.toggle('active');
+        menu.classList.toggle('active');
+    });
+});

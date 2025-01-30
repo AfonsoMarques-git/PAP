@@ -20,87 +20,43 @@ body {
     background-color: #f4f4f4;
 }
 
-header>.actions .auth-container {
-    margin-top: 50px;
-}
-
-header>.actions .search {
-    margin-top: 50px;
-}
-
-
 .logo>a>img {
-    width: 250px;
+    width: 200px;
     height: auto;
     z-index: 10;
 }
 
 .container {
-    background: url('../images/fundo_home3.jpg');
-    height: 100vh;
-    width: 100%;
+    background-image: url('../images/fundo_home3.jpg');
     background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
 }
 
 .navegacao {
     display: flex;
     justify-content: space-between;
-    padding: 40px;
-}
-
-.navegar {
-    display: flex;
-    gap: 30px;
     align-items: center;
-}
-
-.menu-container {
-    background: rgba(255, 255, 255);
-    width: auto;
-    height: 50px;
-    padding: 20px;
-    padding-left: 0px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    z-index: 10;
-}
-
-.events {
-    background-color: white;
-    width: auto;
-    height: 50px;
-    padding: 20px;
-    border-radius: 15px;
-    display: flex;
-    align-items: center;
-    z-index: 10;
-}
-
-.events a {
-    background-color: #b39f7c;
-    border-radius: 10px;
-    padding: 10px;
-    padding-left: -5px;
-    text-decoration: none;
-    color: #ffffff;
-    font-size: 14px;
-    font-weight: bold;
-    transition: color 0.3s, transform 0.3s;
-}
-
-.events>a:hover {
-    background-color: #ebd0a2;
-    transition: background-color 0.5s;
-    transform: scale(1.05);
+    padding: 50px;
 }
 
 .menu {
-    flex-grow: 1;
     display: flex;
+    gap: 30px;
+    align-items: center;
+    background: white;
+    width: auto;
+    height: 50px;
+    padding: 20px;
+    padding: 0 40px 0 40px;
+    border-radius: 15px;
+    z-index: 10;
     gap: 40px;
-    padding-right: 10px;
-    padding-left: 10px;
 }
 
 .menu a {
@@ -117,23 +73,19 @@ header>.actions .search {
 
 .actions {
     display: flex;
-    gap: 30px;
-    padding-right: 10px;
-    padding-left: 10px;
     z-index: 10;
 }
 
 .actions .login-registo {
     display: flex;
-    justify-content: space-between;
-    background-color: rgba(255, 255, 255);
+    align-items: center;
+    background-color: white;
     width: auto;
     border-radius: 15px;
-    padding: 20px;
-    gap: 25px;
     align-items: center;
     z-index: 10;
     height: 50px;
+    padding: 20px;
 }
 
 .actions .login-registo a {
@@ -146,6 +98,16 @@ header>.actions .search {
 
 .actions .login-registo a:hover {
     color: #b39f7c;
+}
+
+.login-registo>a>img:hover {
+    content: url(../images/user_hover.png.png);
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    gap: 40px;
 }
 
 .titulo {
@@ -162,6 +124,22 @@ header>.actions .search {
     width: 900px;
 }
 
+@media (max-width: 1070px) {
+    .container {
+        height: auto;
+        background-size: cover;
+    }
+
+    .titulo {
+        font-size: 40px;
+        padding: 10px;
+    }
+
+    .titulo h1 {
+        font-size: 60px;
+    }
+}
+
 .contentor {
     display: flex;
     flex-direction: column;
@@ -169,11 +147,6 @@ header>.actions .search {
     gap: 30px;
     padding: 50px;
 }
-
-.login-registo>a>img:hover {
-    content: url(../images/user_hover.png.png);
-}
-
 
 .event-cards {
     display: flex;
@@ -461,4 +434,64 @@ footer {
 
 .gallery-title p{
     font-size: 20px;
+}
+
+
+/* Hamburger Menu Styles */
+.hamburger-menu {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.hamburger-menu span {
+    width: 100%;
+    height: 3px;
+    background-color: white;
+    transition: all 0.3s;
+}
+
+@media (max-width: 1070px) {
+    .menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #fff;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .actions{
+        display: none;
+    }
+
+    .menu a {
+        padding: 15px;
+        border-bottom: 1px solid #ddd;
+    }
+
+    .hamburger-menu {
+        display: flex;
+    }
+
+    .hamburger-menu.active span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    .hamburger-menu.active span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger-menu.active span:nth-child(3) {
+        transform: rotate(-45deg) translate(5px, -5px);
+    }
+
+    .menu.active {
+        display: flex;
+    }
 }
