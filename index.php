@@ -22,42 +22,31 @@ $isLoggedIn = isset($_SESSION['username']);
         <header>
             <div class="navegacao">
                 <div class="logo">
-                    <a href="index.php">
-                        <img src="images/LogoBranca.png" alt="logotipo">
-                    </a>
+                    <a href="">Companhia da Mariposa</a>
                 </div>
-
-                <div class="navbar">
-                    <div class="hamburger-menu">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                    </div>
-                    <nav class="menu">
-                        <a href="">Compra e Aluguer</a>
-                        <a href="https://casamentos.companhiadamariposa.pt/" target="_self">Casamentos</a>
-                        <a href="php/galeria.php">Galeria</a>
-                        <a href="#">Sobre nós</a>
-                        <a href="">Contactos</a>
-                    </nav>
-                    <div class="actions">
-                        <div class="login-registo">
-                            <?php if ($isLoggedIn): ?>
-                                <a href="html/perfil.html"><span class="user">Olá,
-                                        <?php echo $_SESSION['username']; ?>!</span></a>
-                                <a href="php/logout.php" class="logout">Log Out</a>
-                            <?php else: ?>
-                                <a href="php/login-registo.php" title="Login / Registo"><img src="images/user..png"
-                                        alt="Login e Registo" /></a>
-                            <?php endif; ?>
-                        </div>
-                    </div>
+                <div class="hamburger-menu">
+                    <span></span>
+                    <span></span>
+                    <span></span>
                 </div>
+                <nav class="menu">
+                    <a href="https://casamentos.companhiadamariposa.pt/" target="_self">Casamentos</a>
+                    <a href="php/galeria.php">Galeria</a>
+                    <a href="">Contactos</a>
+                    <a href="">Compra e Aluguer</a>
+                    <div class="login-registo">
+                        <?php if ($isLoggedIn): ?>
+                            <a href="html/perfil.html"><span class="user">Olá,
+                                    <?php echo $_SESSION['username']; ?>!</span></a>
+                            <a href="php/logout.php" class="logout">Log Out</a>
+                        <?php else: ?>
+                            <a href="php/login-registo.php" title="Login / Registo">Login / Registo </a>
+                        <?php endif; ?>
+                    </div>
+                </nav>
             </div>
         </header>
-        <div class="titulo">
-            <h1>Organize o seu evento</h1>
-        </div>
+        <section><h1>Organize já <br /> o seu evento</h1></section>
     </div>
     <div class="contentor">
         <div class="event-cards">
