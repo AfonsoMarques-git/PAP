@@ -1,7 +1,4 @@
 <?php
-// Inicia a sessão
-session_start();
-
 // Verifica se o usuário está logado
 $isLoggedIn = isset($_SESSION['username']);
 ?>
@@ -10,51 +7,17 @@ $isLoggedIn = isset($_SESSION['username']);
 <html>
 
 <head>
-    <link rel="stylesheet" type="text/css" href="../css/galeria.css">
+    <link rel="stylesheet" type="text/css" href="css/galeria.css">
+    <link rel="stylesheet" type="text/css" href="css/header.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio</title>
+    <title>Galeria de Fotos</title>
 </head>
 
 <body>
     <div class="container">
-        <header>
-            <div class="navegacao">
-                <div class="logo">
-                    <a href="../index.php">
-                        <img src="../images/LogoBranca.png" alt="logotipo">
-                    </a>
-                </div>
-
-                <div class="navegar">
-                    <div class="menu-container">
-                        <nav class="events">
-                            <a href="">Compra e Aluguer</a>
-                        </nav>
-                        <nav class="menu">
-                            <a href="https://casamentos.companhiadamariposa.pt/" target="_self">Casamentos</a>
-                            <a href="galeria.php">Galeria</a>
-                            <a href="">Contactos</a>
-                        </nav>
-                    </div>
-
-                    <div class="actions">
-                        <div class="login-registo">
-                            <?php if ($isLoggedIn): ?>
-                                <a href="html/perfil.html"><span class="user">Olá,
-                                        <?php echo $_SESSION['username']; ?>!</span></a>
-                                <a href="php/logout.php" class="logout">Log Out</a>
-                            <?php else: ?>
-                                <a href="php/login-registo.php" title="Login / Registo"><img src="../images/user..png"
-                                        alt="Login e Registo" /></a>
-                            <?php endif; ?>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-        </header>
+        <?php include 'header.php'; ?>
         <div class="section-head">
             <p>Página Principal > Galeria</p>
             <h1>Galeria de fotos</h1>
@@ -73,39 +36,39 @@ $isLoggedIn = isset($_SESSION['username']);
             <div class="gallery">
 
                 <div class="item casamento">
-                    <img src="../images/casamento_card.jpg">
+                    <img src="images/casamento_card.jpg">
                 </div>
 
                 <div class="item batizado">
-                    <img src="../images/batizado_card.jpg">
+                    <img src="images/batizado_card.jpg">
                 </div>
 
                 <div class="item festa_empresarial">
-                    <img src="../images/festa_empresarial.jpg">
+                    <img src="images/festa_empresarial.jpg">
                 </div>
 
                 <div class="item casamento">
-                    <img src="../images/casamento_img2.jpg">
+                    <img src="images/casamento_img2.jpg">
                 </div>
 
                 <div class="item batizado">
-                    <img src="../images/batizado_img2.jpg">
+                    <img src="images/batizado_img2.jpg">
                 </div>
 
                 <div class="item festa_empresarial">
-                    <img src="../images/festa_empresarial2.jpg">
+                    <img src="images/festa_empresarial2.jpg">
                 </div>
 
                 <div class="item casamento">
-                    <img src="../images/casamento_img3.jpg">
+                    <img src="images/casamento_img3.jpg">
                 </div>
 
                 <div class="item batizado">
-                    <img src="../images/batizado_img3.jpg">
+                    <img src="images/batizado_img3.jpg">
                 </div>
 
                 <div class="item festa_empresarial">
-                    <img src="../images/festa_empresarial3.jpg">
+                    <img src="images/festa_empresarial3.jpg">
                 </div>
 
             </div>
@@ -117,7 +80,7 @@ $isLoggedIn = isset($_SESSION['username']);
     <footer>
         <div id="footer_content">
             <div id="footer_contacts">
-                <a href="index.php"><img src="../images/LogoBranca.png" alt="Logótipo"></a>
+                <a href="index.php"><img src="images/Log0_Branco.png" alt="Logótipo"></a>
                 <p>A transformar sonhos em realidade!</p>
 
                 <div id="footer_social_media">
@@ -179,7 +142,7 @@ $isLoggedIn = isset($_SESSION['username']);
     </footer>
 
 
-    
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js"></script>

@@ -40,8 +40,9 @@ if (isset($_SESSION['error_menu'])) {
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Super Administrador</title>
   <link rel="stylesheet" href="../css/menu_admin.css">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@24,400,0,0">
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
 </head>
 
 <body>
@@ -57,7 +58,7 @@ if (isset($_SESSION['error_menu'])) {
   <aside class="sidebar">
     <header class="sidebar-header">
       <a href="menu_Sadmin.php" class="header-logo">
-        <img src="../images/logo_pequeno.png" alt="Companhia da Mariposa">
+        <img src="../images/Log0_Branco.png" alt="Companhia da Mariposa">
       </a>
       <button class="toggler sidebar-toggler">
         <span class="material-symbols-rounded">chevron_left</span>

@@ -89,17 +89,3 @@ document.getElementById('enviar').addEventListener('click', function() {
     };
     xhr.send(formData);
 });
-
-// menu hamburguer
-
-document.addEventListener('DOMContentLoaded', () => {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const menu = document.querySelector('.menu');
-    const actions = document.querySelector('.actions');
-
-    hamburgerMenu.addEventListener('click', () => {
-        hamburgerMenu.classList.toggle('active');
-        menu.classList.toggle('active');
-        actions.classList.toggle('active');
-    });
-});

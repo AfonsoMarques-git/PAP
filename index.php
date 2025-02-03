@@ -1,7 +1,4 @@
 <?php
-// Inicia a sessão
-session_start();
-
 // Verifica se o usuário está logado
 $isLoggedIn = isset($_SESSION['username']);
 ?>
@@ -13,41 +10,22 @@ $isLoggedIn = isset($_SESSION['username']);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
+    <link rel="stylesheet" type="text/css" href="css/header.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Página Principal</title>
 </head>
 
 <body>
     <div class="container">
-        <header>
-            <div class="navegacao">
-                <div class="logo">
-                    <a href="">Companhia da Mariposa</a>
-                </div>
-                <div class="hamburger-menu">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-                <nav class="menu">
-                    <a href="https://casamentos.companhiadamariposa.pt/" target="_self">Casamentos</a>
-                    <a href="php/galeria.php">Galeria</a>
-                    <a href="">Contactos</a>
-                    <a href="">Compra e Aluguer</a>
-                    <div class="login-registo">
-                        <?php if ($isLoggedIn): ?>
-                            <a href="html/perfil.html"><span class="user">Olá,
-                                    <?php echo $_SESSION['username']; ?>!</span></a>
-                            <a href="php/logout.php" class="logout">Log Out</a>
-                        <?php else: ?>
-                            <a href="php/login-registo.php" title="Login / Registo">Login / Registo </a>
-                        <?php endif; ?>
-                    </div>
-                </nav>
-            </div>
-        </header>
-        <section><h1>Organize já <br /> o seu evento</h1></section>
+        <?php include 'header.php'; ?>
+        <section>
+            <h1>Organize já <br /> o seu evento</h1>
+        </section>
     </div>
+
+    <!-- Full-screen overlay for the menu -->
+    <div id="menu-overlay"></div>
+
     <div class="contentor">
         <div class="event-cards">
             <div class="card-events">
@@ -111,7 +89,7 @@ $isLoggedIn = isset($_SESSION['username']);
     <footer>
         <div id="footer_content">
             <div id="footer_contacts">
-                <a href="index.php"><img src="images/LogoBranca.png" alt="Logótipo"></a>
+                <a href="index.php"><img src="images/Log0_Branco.png" alt="Logótipo"></a>
                 <p>A transformar sonhos em realidade!</p>
 
                 <div id="footer_social_media">
@@ -121,7 +99,7 @@ $isLoggedIn = isset($_SESSION['username']);
                     </a>
 
                     <a href="https://www.facebook.com/CompanhiaDaMariposa" target="_blank" class="footer-link"
-                        id="facebook">
+                        id="facebook"></a>
                         <i class='bx bxl-facebook'></i>
                     </a>
 
@@ -145,7 +123,7 @@ $isLoggedIn = isset($_SESSION['username']);
                 <li>
                     <a href="tel:+351934558971" class="footer-link"><i class='bx bxs-phone'></i>+351 933514971</a>
                 </li>
-                <li>
+                <li></li>
                     <a href="#" class="footer-link"><i class='bx bxs-map'></i>Centro Comercial Passerelle</a>
                 </li>
             </ul>
@@ -160,7 +138,7 @@ $isLoggedIn = isset($_SESSION['username']);
                 <li>
                     <a href="#" class="footer-link">Encomendas</a>
                 </li>
-                <li>
+                <li></li>
                     <a href="#" class="footer-link">Carrinho</a>
                 </li>
             </ul>
@@ -171,6 +149,7 @@ $isLoggedIn = isset($_SESSION['username']);
             2025 todos os direitos reservados
         </div>
     </footer>
+    <script src="js/main.js"></script>
 </body>
 
 </html>

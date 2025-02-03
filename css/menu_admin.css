@@ -22,8 +22,6 @@ body {
   position: sticky;
   top: 0;
   width: 350px;
-  border-top-right-radius: 15px;
-  border-bottom-right-radius: 15px;
   background: #c5a880;
   height: 100vh;
   transition: all 0.4s ease;
@@ -74,7 +72,7 @@ body {
 }
 
 .sidebar-header .header-logo img {
-  width: 100px;
+  width: 200px;
   height: 100px;
   object-fit: contain;
 }
