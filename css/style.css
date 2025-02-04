@@ -22,7 +22,7 @@ body {
 
 .container {
     width: 100%;
-    margin-top: 100px;
+    margin-top: 150px;
 }
 
 section {
@@ -32,6 +32,7 @@ section {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100%;
 }
 
 section h1 {
@@ -41,35 +42,6 @@ section h1 {
     font-size: 3em;
     margin-left: 5%;
     margin-right: 5%;
-}
-
-@media (max-width: 1070px) {
-    .container {
-        height: auto;
-        background-size: cover;
-    }
-
-    .titulo {
-        padding: 10px;
-    }
-
-    .titulo h1 {
-        font-size: 3em;
-        margin-left: 10px;
-    }
-
-    section {
-        flex-direction: column;
-        align-items: center;
-        padding: 0;
-    }
-
-    section h1 {
-        font-size: 2em;
-        /* Adjust the font size for smaller screens */
-        margin-left: 0;
-        text-align: center;
-    }
 }
 
 .contentor {
@@ -105,12 +77,6 @@ section h1 {
     min-width: 400px;
     gap: 20px;
     position: relative;
-}
-
-@media (max-width: 520px) {
-    .card-events {
-        min-width: 100%;
-    }
 }
 
 .card-batizado {
@@ -262,20 +228,6 @@ footer {
     font-weight: 100;
 }
 
-@media screen and (max-width: 768px) {
-    #footer_content {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 2rem;
-    }
-}
-
-@media screen and (max-width: 426px) {
-    #footer_content {
-        grid-template-columns: repeat(1, 1fr);
-        padding: 3rem 2rem;
-    }
-}
-
 .gallery {
     display: flex;
     flex-wrap: wrap;
@@ -348,18 +300,6 @@ footer {
     height: 400px;
 }
 
-@media (max-width: 768px) {
-    .gallery {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .gallery div {
-        max-width: 100%;
-        height: auto;
-    }
-}
-
 .gallery-title {
     width: 100%;
     display: flex;
@@ -413,9 +353,9 @@ footer {
     flex-grow: 1;
     max-width: 1000px;
     background-color: #fff;
-    border-radius: 10px;
     box-shadow: 0 0 20px 1px rgba(0, 0, 0, 0.1);
     overflow: hidden;
+    margin-right: 20px;
 }
 
 .contact-form {
@@ -655,92 +595,6 @@ textarea.input {
     opacity: 0.2;
 }
 
-@media (max-width: 850px) {
-    .form {
-        grid-template-columns: 1fr;
-    }
-
-    .contact-info:before {
-        bottom: initial;
-        top: -75px;
-        right: 65px;
-        transform: scale(0.95);
-    }
-
-    .contact-form:before {
-        top: -13px;
-        left: initial;
-        right: 70px;
-    }
-
-    .square {
-        transform: translate(140%, 43%);
-        height: 350px;
-    }
-
-    .big-circle {
-        bottom: 75%;
-        transform: scale(0.9) translate(-40%, 30%);
-        right: 50%;
-    }
-
-    .text {
-        margin: 1rem 0 1.5rem 0;
-    }
-
-    .social-media {
-        padding: 1.5rem 0 0 0;
-    }
-}
-
-@media (max-width: 480px) {
-    .container {
-        padding: 1.5rem;
-    }
-
-    .contact-info:before {
-        display: none;
-    }
-
-    .square,
-    .big-circle {
-        display: none;
-    }
-
-    form,
-    .contact-info {
-        padding: 1.7rem 1.6rem;
-    }
-
-    .text,
-    .information,
-    .social-media p {
-        font-size: 0.8rem;
-    }
-
-    .title {
-        font-size: 1.15rem;
-    }
-
-    .social-icons a {
-        width: 30px;
-        height: 30px;
-        line-height: 30px;
-    }
-
-    .icon {
-        width: 23px;
-    }
-
-    .input {
-        padding: 0.45rem 1.2rem;
-    }
-
-    .btn {
-        padding: 0.45rem 1.2rem;
-    }
-}
-
 .contact-form {
     background-color: var(--color-neutral-30);
     position: relative;
@@ -769,4 +623,63 @@ textarea.input {
     background-color: var(--color-neutral-0);
     background-color: #ebd0a2;
     transform: scale(1.02);
+}
+
+@media (max-width: 1070px) {
+
+    section h1 {
+        margin-top: 100px;
+        margin-right: 0;
+    }
+
+    .form{
+        margin: 0;
+        width: 90%;
+        flex-grow: 0;
+        max-width: 0;
+    }
+}
+
+@media (max-width: 520px) {
+    .card-events {
+        min-width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    #footer_content {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 2rem;
+    }
+
+    section{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .form{
+        margin-right: 0;
+        width: 90%;
+        flex-grow: 0;
+    }
+}
+
+@media screen and (max-width: 426px) {
+    #footer_content {
+        grid-template-columns: repeat(1, 1fr);
+        padding: 3rem 2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    .gallery {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .gallery div {
+        max-width: 100%;
+        height: auto;
+    }
 }

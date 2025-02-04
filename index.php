@@ -27,23 +27,19 @@ $isLoggedIn = isset($_SESSION['username']);
                     <form action="index.html" autocomplete="off">
                         <h3 class="title">Contact us</h3>
                         <div class="input-container">
-                            <input type="text" name="name" class="input" />
-                            <label for="">Username</label>
-                            <span>Username</span>
+                            <input type="text" name="name" class="input" placeholder="Nome" />
+                            <span>Nome</span>
                         </div>
                         <div class="input-container">
-                            <input type="email" name="email" class="input" />
-                            <label for="">Email</label>
+                            <input type="email" name="email" class="input" placeholder="Email" />
                             <span>Email</span>
                         </div>
                         <div class="input-container">
-                            <input type="tel" name="telemovel" class="input" />
-                            <label for="">Telemóvel</label>
+                            <input type="tel" name="telemovel" class="input" placeholder="Telemóvel" />
                             <span>Telemóvel</span>
                         </div>
                         <div class="input-container textarea">
-                            <textarea name="mensagem" class="input"></textarea>
-                            <label for="">Mensagem</label>
+                            <textarea name="mensagem" class="input" placeholder="Mensagem"></textarea>
                             <span>Mensagem</span>
                         </div>
                         <input type="submit" value="Enviar" class="btn" />
@@ -178,7 +174,23 @@ $isLoggedIn = isset($_SESSION['username']);
             2025 todos os direitos reservados
         </div>
     </footer>
-    <script src="js/main.js"></script>
+    <script>
+        const menuToggle = document.getElementById('menu-toggle');
+        const menu = document.getElementById('menu');
+        const menuOverlay = document.getElementById('menu-overlay');
+
+        menuToggle.addEventListener('click', () => {
+            menu.classList.toggle('active');
+            menuOverlay.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+        });
+
+        menuOverlay.addEventListener('click', () => {
+            menu.classList.remove('active');
+            menuOverlay.classList.remove('active');
+            menuToggle.classList.remove('active');
+        });
+    </script>
 </body>
 
 </html>
