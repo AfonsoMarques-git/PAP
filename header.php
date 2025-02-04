@@ -4,6 +4,9 @@ session_start();
 
 // Verifica se o usuário está logado
 $isLoggedIn = isset($_SESSION['username']);
+
+// Verifica se a página atual é galeria.php
+$currentPage = basename($_SERVER['PHP_SELF']);
 ?>
 <link rel="stylesheet" href="../css/header.css">
 <header>
@@ -19,7 +22,7 @@ $isLoggedIn = isset($_SESSION['username']);
         <nav class="menu" id="menu">
             <a href="" class="highlight">Compra e Aluguer</a>
             <a href="https://casamentos.companhiadamariposa.pt/" target="_self">Casamentos</a>
-            <a href="galeria.php">Galeria</a>
+            <a href="galeria.php" class="<?php echo $currentPage == 'galeria.php' ? 'current-page' : ''; ?>">Galeria</a>
             <a href="">Contactos</a>
             <div class="login-registo">
                 <?php if ($isLoggedIn): ?>

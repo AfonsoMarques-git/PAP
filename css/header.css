@@ -69,6 +69,12 @@ header {
     background: #b39f7c;
 }
 
+.menu a.current-page {
+    pointer-events: none;
+    cursor: default;
+    border-bottom: 2px solid #b39f7c;
+}
+
 .actions {
     display: flex;
     align-items: center;

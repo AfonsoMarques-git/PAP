@@ -19,8 +19,39 @@ $isLoggedIn = isset($_SESSION['username']);
     <div class="container">
         <?php include 'header.php'; ?>
         <section>
-            <h1>Organize já <br /> o seu evento</h1>
+            <div class="contact-info">
+                <h1>Organize já o seu evento!</h1>
+            </div>
+            <div class="form">
+                <div class="contact-form">
+                    <form action="index.html" autocomplete="off">
+                        <h3 class="title">Contact us</h3>
+                        <div class="input-container">
+                            <input type="text" name="name" class="input" />
+                            <label for="">Username</label>
+                            <span>Username</span>
+                        </div>
+                        <div class="input-container">
+                            <input type="email" name="email" class="input" />
+                            <label for="">Email</label>
+                            <span>Email</span>
+                        </div>
+                        <div class="input-container">
+                            <input type="tel" name="telemovel" class="input" />
+                            <label for="">Telemóvel</label>
+                            <span>Telemóvel</span>
+                        </div>
+                        <div class="input-container textarea">
+                            <textarea name="mensagem" class="input"></textarea>
+                            <label for="">Mensagem</label>
+                            <span>Mensagem</span>
+                        </div>
+                        <input type="submit" value="Enviar" class="btn" />
+                    </form>
+                </div>
+            </div>
         </section>
+
     </div>
 
     <!-- Full-screen overlay for the menu -->
@@ -99,7 +130,7 @@ $isLoggedIn = isset($_SESSION['username']);
                     </a>
 
                     <a href="https://www.facebook.com/CompanhiaDaMariposa" target="_blank" class="footer-link"
-                        id="facebook"></a>
+                        id="facebook">
                         <i class='bx bxl-facebook'></i>
                     </a>
 
@@ -123,8 +154,7 @@ $isLoggedIn = isset($_SESSION['username']);
                 <li>
                     <a href="tel:+351934558971" class="footer-link"><i class='bx bxs-phone'></i>+351 933514971</a>
                 </li>
-                <li></li>
-                    <a href="#" class="footer-link"><i class='bx bxs-map'></i>Centro Comercial Passerelle</a>
+                <a href="#" class="footer-link"><i class='bx bxs-map'></i>Centro Comercial Passerelle</a>
                 </li>
             </ul>
 
@@ -138,8 +168,7 @@ $isLoggedIn = isset($_SESSION['username']);
                 <li>
                     <a href="#" class="footer-link">Encomendas</a>
                 </li>
-                <li></li>
-                    <a href="#" class="footer-link">Carrinho</a>
+                <a href="#" class="footer-link">Carrinho</a>
                 </li>
             </ul>
         </div>
