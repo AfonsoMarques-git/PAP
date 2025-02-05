@@ -23,7 +23,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             <a href="" class="highlight">Compra e Aluguer</a>
             <a href="https://casamentos.companhiadamariposa.pt/" target="_self">Casamentos</a>
             <a href="galeria.php" class="<?php echo $currentPage == 'galeria.php' ? 'current-page' : ''; ?>">Galeria</a>
-            <a href="">Contactos</a>
+            <a href="contactos.php" class="<?php echo $currentPage == 'contactos.php' ? 'current-page' : ''; ?>">Contactos</a>
             <div class="login-registo">
                 <?php if ($isLoggedIn): ?>
                     <a href="html/perfil.html"><span class="user">Olá,

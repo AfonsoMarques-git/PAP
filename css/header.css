@@ -1,3 +1,10 @@
+:root {
+    --color-neutral-0: #877961;
+    --color-neutral-10: #B39F7C;
+    --color-neutral-30: #ffffff;
+    --color-neutral-40: #f5f5f5;
+}
+
 header {
     width: 100%;
     background: #ffffff;

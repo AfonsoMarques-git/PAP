@@ -9,6 +9,7 @@ $isLoggedIn = isset($_SESSION['username']);
 <head>
     <link rel="stylesheet" type="text/css" href="css/galeria.css">
     <link rel="stylesheet" type="text/css" href="css/header.css">
+    <link rel="stylesheet" type="text/css" href="css/footer.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -77,70 +78,7 @@ $isLoggedIn = isset($_SESSION['username']);
 
     </section>
 
-    <footer>
-        <div id="footer_content">
-            <div id="footer_contacts">
-                <a href="index.php"><img src="images/Log0_Branco.png" alt="Logótipo"></a>
-                <p>A transformar sonhos em realidade!</p>
-
-                <div id="footer_social_media">
-                    <a href="https://www.instagram.com/companhia_da_mariposa.pt/" target="_blank" class="footer-link"
-                        id="instagram">
-                        <i class='bx bxl-instagram'></i>
-                    </a>
-
-                    <a href="https://www.facebook.com/CompanhiaDaMariposa" target="_blank" class="footer-link"
-                        id="facebook">
-                        <i class='bx bxl-facebook'></i>
-                    </a>
-
-                    <a href="https://wa.me/+351933514971" target="_blank" class="footer-link" id="whatsapp">
-                        <i class='bx bxl-whatsapp'></i>
-                    </a>
-                </div>
-            </div>
-
-            <ul>
-
-            </ul>
-
-            <ul class="footer-list">
-                <li>
-                    <h3>Contactos</h3>
-                </li>
-                <li>
-                    <a href="#" class="footer-link"><i class='bx bxl-gmail'></i>info@companhiadamariposa.pt</a>
-                </li>
-                <li>
-                    <a href="tel:+351934558971" class="footer-link"><i class='bx bxs-phone'></i>+351 933514971</a>
-                </li>
-                <li>
-                    <a href="#" class="footer-link"><i class='bx bxs-map'></i>Centro Comercial Passerelle</a>
-                </li>
-            </ul>
-
-            <ul class="footer-list">
-                <li>
-                    <h3>A minha conta</h3>
-                </li>
-                <li>
-                    <a href="#" class="footer-link">Dados da conta</a>
-                </li>
-                <li>
-                    <a href="#" class="footer-link">Encomendas</a>
-                </li>
-                <li>
-                    <a href="#" class="footer-link">Carrinho</a>
-                </li>
-            </ul>
-        </div>
-
-        <div id="footer_copyright">
-            &#169
-            2025 todos os direitos reservados
-        </div>
-    </footer>
-
+    <?php include ('footer.php')?>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>

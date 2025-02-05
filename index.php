@@ -20,11 +20,11 @@ $isLoggedIn = isset($_SESSION['username']);
         <?php include 'header.php'; ?>
         <section>
             <div class="contact-info">
-                <h1>Organize já o seu evento!</h1>
+                <h1>Organize o seu evento!</h1>
             </div>
             <div class="form">
                 <div class="contact-form">
-                    <form action="index.html" autocomplete="off">
+                    <form action="process_form_index.php" autocomplete="off">
                         <h3 class="title">Contact us</h3>
                         <div class="input-container">
                             <input type="text" name="name" class="input" placeholder="Nome" />
@@ -38,6 +38,12 @@ $isLoggedIn = isset($_SESSION['username']);
                             <input type="tel" name="telemovel" class="input" placeholder="Telemóvel" />
                             <span>Telemóvel</span>
                         </div>
+                        <select name="event-option" id="event-option">
+                            <option value="Casamentos">Casamento</option>
+                            <option value="Batizados">Batizado</option>
+                            <option value="Aniversários">Festa de Aniversário</option>
+                            <option value="Empresarial">Empresarial</option>
+                        </select>
                         <div class="input-container textarea">
                             <textarea name="mensagem" class="input" placeholder="Mensagem"></textarea>
                             <span>Mensagem</span>
@@ -107,74 +113,16 @@ $isLoggedIn = isset($_SESSION['username']);
         </div>
 
         <div class="gallery">
-            <a href="php/galeria.php" class="img1"><img src="images/casamento_img2.jpg" alt="Casamento"></a>
-            <a href="php/galeria.php" class="img2"><img src="images/batizado_img3.jpg" alt="Batizado"></a>
-            <a href="php/galeria.php" class="img3"><img src="images/festa_empresarial2.jpg" alt="Festa"></a>
-            <a href="php/galeria.php" class="img4"><img src="images/coracao_faisca.jpg" alt="Aniversário"></a>
+            <a href="galeria.php" class="img1"><img src="images/casamento_img2.jpg" alt="Casamento"></a>
+            <a href="galeria.php" class="img2"><img src="images/batizado_img3.jpg" alt="Batizado"></a>
+            <a href="galeria.php" class="img3"><img src="images/festa_empresarial2.jpg" alt="Festa"></a>
+            <a href="galeria.php" class="img4"><img src="images/coracao_faisca.jpg" alt="Aniversário"></a>
         </div>
     </div>
-    <footer>
-        <div id="footer_content">
-            <div id="footer_contacts">
-                <a href="index.php"><img src="images/Log0_Branco.png" alt="Logótipo"></a>
-                <p>A transformar sonhos em realidade!</p>
-
-                <div id="footer_social_media">
-                    <a href="https://www.instagram.com/companhia_da_mariposa.pt/" target="_blank" class="footer-link"
-                        id="instagram">
-                        <i class='bx bxl-instagram'></i>
-                    </a>
-
-                    <a href="https://www.facebook.com/CompanhiaDaMariposa" target="_blank" class="footer-link"
-                        id="facebook">
-                        <i class='bx bxl-facebook'></i>
-                    </a>
-
-                    <a href="https://wa.me/+351933514971" target="_blank" class="footer-link" id="whatsapp">
-                        <i class='bx bxl-whatsapp'></i>
-                    </a>
-                </div>
-            </div>
-
-            <ul>
-
-            </ul>
-
-            <ul class="footer-list">
-                <li>
-                    <h3>Contactos</h3>
-                </li>
-                <li>
-                    <a href="#" class="footer-link"><i class='bx bxl-gmail'></i>info@companhiadamariposa.pt</a>
-                </li>
-                <li>
-                    <a href="tel:+351934558971" class="footer-link"><i class='bx bxs-phone'></i>+351 933514971</a>
-                </li>
-                <a href="#" class="footer-link"><i class='bx bxs-map'></i>Centro Comercial Passerelle</a>
-                </li>
-            </ul>
-
-            <ul class="footer-list">
-                <li>
-                    <h3>A minha conta</h3>
-                </li>
-                <li>
-                    <a href="#" class="footer-link">Dados da conta</a>
-                </li>
-                <li>
-                    <a href="#" class="footer-link">Encomendas</a>
-                </li>
-                <a href="#" class="footer-link">Carrinho</a>
-                </li>
-            </ul>
-        </div>
-
-        <div id="footer_copyright">
-            &#169
-            2025 todos os direitos reservados
-        </div>
-    </footer>
+    
+    <?php include('footer.php') ?>
     <script>
+        // Menu hamburguer
         const menuToggle = document.getElementById('menu-toggle');
         const menu = document.getElementById('menu');
         const menuOverlay = document.getElementById('menu-overlay');
