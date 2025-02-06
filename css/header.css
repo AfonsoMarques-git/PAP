@@ -41,7 +41,7 @@ header {
 
 .menu a {
     color: rgb(0, 0, 0);
-    font-size: 17px;
+    font-size: 1.2em;
     padding: 10px 20px;
     border-radius: 3px;
     text-decoration: none;
@@ -89,7 +89,7 @@ header {
 
 .login-registo a {
     color: rgb(0, 0, 0);
-    font-size: 17px;
+    font-size: 1.2em;
     padding: 10px 20px;
     border-radius: 3px;
     text-decoration: none;

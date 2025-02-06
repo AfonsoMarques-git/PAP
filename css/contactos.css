@@ -157,7 +157,8 @@ textarea.input {
     transform: translateY(-50%);
     font-size: 0.8rem;
     padding: 0 0.4rem;
-    color: transparent;
+    color: black;
+    background-color: white;
     pointer-events: none;
     z-index: 500;
 }

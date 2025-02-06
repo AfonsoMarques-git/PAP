@@ -18,7 +18,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         // Validar campos
         if (empty($username) || empty($password)) {
             $_SESSION['error_login'] = "É necessário preencher todos os campos.";
-            header("Location: ../php/login-registo.php");
+            header("Location: ../login-registo.php");
             exit;
         }
 

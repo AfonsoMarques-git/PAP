@@ -26,18 +26,16 @@ $isLoggedIn = isset($_SESSION['username']);
                 <div class="contact-form">
                     <form action="process_form_index.php" autocomplete="off">
                         <div class="input-container">
-                            <input type="text" name="name" class="input" placeholder="Nome" />
-                            <span>Nome</span>
+                            <input type="text" name="nome" class="input" placeholder="Nome" required/>
                         </div>
                         <div class="input-container">
-                            <input type="email" name="email" class="input" placeholder="Email" />
-                            <span>Email</span>
+                            <input type="tel" name="telemovel" class="input" placeholder="Telemóvel" required/>
                         </div>
                         <div class="input-container">
-                            <input type="tel" name="telemovel" class="input" placeholder="Telemóvel" />
-                            <span>Telemóvel</span>
+                            <input type="tel" name="telemovel" class="input" placeholder="Contacto Telefónico" required/>
                         </div>
                         <select name="event-option" id="event-option">
+                            <option value="" disabled selected>Tipo de Evento</option>
                             <option value="Casamentos">Casamento</option>
                             <option value="Batizados">Batizado</option>
                             <option value="Aniversários">Festa de Aniversário</option>
@@ -47,7 +45,7 @@ $isLoggedIn = isset($_SESSION['username']);
                             <textarea name="mensagem" class="input" placeholder="Mensagem"></textarea>
                             <span>Mensagem</span>
                         </div>
-                        <input type="submit" value="Enviar" class="btn" />
+                        <input type="submit" value="Enviar" class="btn" onclick="enviarParaWhatsApp()" />
                     </form>
                 </div>
             </div>
@@ -118,7 +116,7 @@ $isLoggedIn = isset($_SESSION['username']);
             <a href="galeria.php" class="img4"><img src="images/coracao_faisca.jpg" alt="Aniversário"></a>
         </div>
     </div>
-    
+
     <?php include('footer.php') ?>
     <script>
         // Menu hamburguer
@@ -137,6 +135,16 @@ $isLoggedIn = isset($_SESSION['username']);
             menuOverlay.classList.remove('active');
             menuToggle.classList.remove('active');
         });
+
+        function enviarParaWhatsApp() {
+            let telemovel = document.querySelector('input[name="telemovel"]').value;
+            let mensagem = document.querySelector('textarea[name="mensagem"]').value;
+            let eventOption = document.querySelector('select[name="event-option"]').value;
+
+            let texto = 'Olá, o meu nome é ${nome}%0AEmail: ${email}%0ATelemóvel: ${telemovel}%0AEvento: ${eventOption}%0AMensagem: ${mensagem}';
+            let url =
+                window.open(url, '_blank');
+        }
     </script>
 </body>
 

@@ -20,7 +20,9 @@ $isLoggedIn = isset($_SESSION['username']);
     <div class="container">
         <?php include 'header.php'; ?>
         <div class="section-head">
-            <p>Página Principal > Galeria</p>
+            <a href="index.php">
+                <p>Página Principal > Galeria</p>
+            </a>
             <h1>Galeria de fotos</h1>
         </div>
     </div>
@@ -78,7 +80,7 @@ $isLoggedIn = isset($_SESSION['username']);
 
     </section>
 
-    <?php include ('footer.php')?>
+    <?php include('footer.php') ?>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
