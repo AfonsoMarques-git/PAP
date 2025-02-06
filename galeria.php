@@ -4,7 +4,7 @@ $isLoggedIn = isset($_SESSION['username']);
 ?>
 
 <!DOCTYPE html>
-<html>
+<html lang="pt-PT">
 
 <head>
     <link rel="stylesheet" type="text/css" href="css/galeria.css">

@@ -22,7 +22,7 @@
             </div>
         </div>
 
-        <ul>
+        <ul class="filler">
 
         </ul>
 
@@ -31,13 +31,13 @@
                 <h3>Contactos</h3>
             </li>
             <li>
-                <a href="#" class="footer-link"><i class='bx bxl-gmail'></i>info@companhiadamariposa.pt</a>
+                <a href="https://mail.google.com/mail/u/0/?pli=1#inbox?compose=CllgCJfrsgSBqSWTHmbGtRHbrsGCvbCbDPdhRLfkhqFSLdgHBFWZvkCxvRvWSDQWrxxMxKVrZVB" target="_blank" class="footer-link"><i class='bx bxl-gmail'></i>info@companhiadamariposa.pt</a>
             </li>
             <li>
-                <a href="tel:+351934558971" class="footer-link"><i class='bx bxs-phone'></i>+351 933514971</a>
+                <a href="tel:+351933514971" class="footer-link"><i class='bx bxs-phone'></i>+351 933514971</a>
             </li>
             <li>
-                <a href="#" class="footer-link"><i class='bx bxs-map'></i>Centro Comercial Passerelle</a>
+                <a href="https://maps.app.goo.gl/hxhHUhrw3URygbw8A" target="_blank" class="footer-link"><i class='bx bxs-map'></i>Centro Comercial Passerelle</a>
             </li>
         </ul>
 
@@ -59,6 +59,6 @@
 
     <div id="footer_copyright">
         &#169
-        2025 todos os direitos reservados
+        2025 Companhia da Mariposa
     </div>
 </footer>

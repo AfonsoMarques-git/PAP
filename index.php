@@ -25,7 +25,6 @@ $isLoggedIn = isset($_SESSION['username']);
             <div class="form">
                 <div class="contact-form">
                     <form action="process_form_index.php" autocomplete="off">
-                        <h3 class="title">Contact us</h3>
                         <div class="input-container">
                             <input type="text" name="name" class="input" placeholder="Nome" />
                             <span>Nome</span>

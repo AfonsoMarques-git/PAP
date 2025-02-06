@@ -36,12 +36,12 @@ body {
 
 .container .section-head {
     max-width: 700px;
-    padding: 40px;
+    padding: 2%;
 }
 
 .section-head h1 {
     margin-left: 20%;
-    font-size: 4em;
+    font-size: 3.8em;
     color: var(--color-neutral-30);
     width: 100%;
 }
