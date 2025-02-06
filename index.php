@@ -24,7 +24,7 @@ $isLoggedIn = isset($_SESSION['username']);
             </div>
             <div class="form">
                 <div class="contact-form">
-                    <form action="process_form_index.php" autocomplete="off">
+                    <form action="https://api.web3forms.com/submit" method="POST" autocomplete="off">
                         <div class="input-container">
                             <input type="text" name="nome" class="input" placeholder="Nome" required/>
                         </div>
@@ -43,9 +43,8 @@ $isLoggedIn = isset($_SESSION['username']);
                         </select>
                         <div class="input-container textarea">
                             <textarea name="mensagem" class="input" placeholder="Mensagem"></textarea>
-                            <span>Mensagem</span>
                         </div>
-                        <input type="submit" value="Enviar" class="btn" onclick="enviarParaWhatsApp()" />
+                        <input type="submit" value="Enviar" class="btn" />
                     </form>
                 </div>
             </div>
@@ -135,16 +134,6 @@ $isLoggedIn = isset($_SESSION['username']);
             menuOverlay.classList.remove('active');
             menuToggle.classList.remove('active');
         });
-
-        function enviarParaWhatsApp() {
-            let telemovel = document.querySelector('input[name="telemovel"]').value;
-            let mensagem = document.querySelector('textarea[name="mensagem"]').value;
-            let eventOption = document.querySelector('select[name="event-option"]').value;
-
-            let texto = 'Olá, o meu nome é ${nome}%0AEmail: ${email}%0ATelemóvel: ${telemovel}%0AEvento: ${eventOption}%0AMensagem: ${mensagem}';
-            let url =
-                window.open(url, '_blank');
-        }
     </script>
 </body>
 

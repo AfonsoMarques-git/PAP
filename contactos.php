@@ -21,6 +21,9 @@
     </div>
     <div class="contact-container">
         <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+            <input type="hidden" name="access_key" value="2cd62894-bead-4900-885d-5039f6430c57">
+            <input type="hidden" name="subject" value="Formulário de Contacto">
+            <input type="hidden" name="from_name" value="Companhia da Mariposa">
             <div class="form">
                 <div class="contact-info">
                     <h3 class="title">Contacte-nos</h3>
@@ -65,20 +68,16 @@
 
                 <div class="contact-form">
                     <div class="input-container">
-                        <input type="text" name="nome" class="input" />
-                        <span>Nome Completo</span>
+                        <input type="text" name="nome" class="input" placeholder="Nome" />
                     </div>
                     <div class="input-container">
-                        <input type="email" name="email" class="input" />
-                        <span>Email</span>
+                        <input type="email" name="email" class="input" placeholder="Email" />
                     </div>
                     <div class="input-container">
-                        <input type="tel" name="telemovel" class="input" />
-                        <span>Contacto Telefónico</span>
+                        <input type="tel" name="telemovel" class="input" placeholder="Contacto Telefónico" />
                     </div>
                     <div class="input-container textarea">
-                        <textarea name="mensagem" class="input"></textarea>
-                        <span>Mensagem</span>
+                        <textarea name="mensagem" class="input" placeholder="Mensagem"></textarea>
                     </div>
                     <input type="submit" value="Send" class="btn" />
                 </div>
@@ -89,8 +88,8 @@
     <div class="map">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2988.8237373471225!2d-8.349519323453272!3d41.486420889845796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24faf0be2d28c9%3A0x2c0a01717d5d2b8!2sCompanhia%20da%20Mariposa!5e0!3m2!1spt-PT!2spt!4v1738838338997!5m2!1spt-PT!2spt"
-            width="100%" height="700px" style="border:0; padding: 100px; background-color: #fafafa;" allowfullscreen=""
-            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            width="100%" height="700px" style="border:0; padding: 100px; background-color: #fafafa;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <!-- Success Message (Hidden by Default) -->
