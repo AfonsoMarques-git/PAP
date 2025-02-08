@@ -68,7 +68,7 @@ unset($_SESSION['success']);
                     <input type="password" name="password" id="password-input-login" placeholder="Password">
                     <i class="fa fa-eye icon" id="btn-password-login" onclick="mostrarPasswordLogin()"></i>
                 </div>
-                <a href="#">Esqueceu-se da sua password?</a>
+                <a href="../request_otp.php">Esqueceu-se da sua password?</a>
                 <button type="submit" name="entrar" id="entrar" class="btn-login">Login</button>
             </form>
         </div>
