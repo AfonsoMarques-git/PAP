@@ -25,24 +25,37 @@ $isLoggedIn = isset($_SESSION['username']);
             <div class="form">
                 <div class="contact-form">
                     <form action="https://api.web3forms.com/submit" method="POST" autocomplete="off">
-                        <div class="input-container">
-                            <input type="text" name="nome" class="input" placeholder="Nome" required/>
-                        </div>
-                        <div class="input-container">
-                            <input type="tel" name="telemovel" class="input" placeholder="Telemóvel" required/>
-                        </div>
-                        <div class="input-container">
-                            <input type="tel" name="telemovel" class="input" placeholder="Contacto Telefónico" required/>
-                        </div>
-                        <select name="event-option" id="event-option">
-                            <option value="" disabled selected>Tipo de Evento</option>
-                            <option value="Casamentos">Casamento</option>
-                            <option value="Batizados">Batizado</option>
-                            <option value="Aniversários">Festa de Aniversário</option>
-                            <option value="Empresarial">Empresarial</option>
-                        </select>
-                        <div class="input-container textarea">
-                            <textarea name="mensagem" class="input" placeholder="Mensagem"></textarea>
+                        <input type="hidden" name="access_key" value="2cd62894-bead-4900-885d-5039f6430c57">
+                        <input type="hidden" name="subject" value="Formuário de Evento">
+                        <input type="hidden" name="from_name" value="Companhia da Mariposa">
+                        <div class="input-boxes">
+                            <div class="input-container">
+                                <input type="text" name="nome" class="input" placeholder="Nome" required />
+                            </div>
+                            <div class="input-container">
+                                <input type="email" name="email" class="input" placeholder="Email" required />
+                            </div>
+                            <div class="input-container">
+                                <input type="tel" name="telemovel" class="input" placeholder="Contacto Telefónico"
+                                    required />
+                            </div>
+                            <select name="event-option" id="event-option">
+                                <option value="" disabled selected>Tipo de Evento</option>
+                                <option value="Casamentos">Casamento</option>
+                                <option value="Batizados">Batizado</option>
+                                <option value="Aniversários">Festa de Aniversário</option>
+                                <option value="Empresarial">Empresarial</option>
+                            </select>
+                            <div class="input-container">
+                                <input type="date" name="data" class="input" placeholder="Data" required />
+                            </div>
+                            <div class="input-container">
+                                <input type="number" name="n_pessoas" class="input" placeholder="Número de Pessoas"
+                                    required />
+                            </div>
+                            <div class="input-container textarea">
+                                <textarea name="mensagem" class="input" placeholder="Mensagem"></textarea>
+                            </div>
                         </div>
                         <input type="submit" value="Enviar" class="btn" />
                     </form>

@@ -273,6 +273,7 @@ section h1 {
     overflow: hidden;
     margin-right: 20px;
     border-radius: 20px;
+    padding: 20px;
 }
 
 .contact-form {
@@ -290,6 +291,13 @@ form {
     position: relative;
 }
 
+.input-boxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+}
+
 .title {
     color: #fff;
     font-weight: 500;
@@ -300,7 +308,12 @@ form {
 
 .input-container {
     position: relative;
-    margin: 1rem 0;
+    flex: 1 1 calc(50% - 12px);
+    width: 100%;
+}
+
+.input-container.full-width {
+    flex: 1 1 100%;
 }
 
 .input {
@@ -345,16 +358,18 @@ textarea.input {
 }
 
 .btn {
-    padding: 0.6rem 1.3rem;
-    background-color: #fff;
-    border: 2px solid #fafafa;
-    font-size: 0.95rem;
-    line-height: 1;
+    display: block;
+    width: 100%;
+    padding: 15px;
+    text-align: center;
+    background-color: #b39f7c;
+    color: white;
     border-radius: 10px;
-    outline: none;
-    cursor: pointer;
-    transition: 0.3s;
-    margin: 0;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.4s, transform 0.4s;
+    border: none;
+    margin-top: 15px;
 }
 
 .input-container span {
@@ -428,7 +443,6 @@ textarea.input {
 }
 
 .contact-form .btn:hover {
-    background-color: var(--color-neutral-0);
     background-color: #ebd0a2;
     transform: scale(1.02);
 }
@@ -533,6 +547,7 @@ option {
 
     .card-events button {
         font-size: 15px;
+        padding: 10px;
     }
 }
 
@@ -548,6 +563,11 @@ option {
         margin-right: 0;
         width: 90%;
         flex-grow: 0;
+    }
+
+    .input-boxes{
+        flex-direction: column;
+        justify-content: center;
     }
 }
 

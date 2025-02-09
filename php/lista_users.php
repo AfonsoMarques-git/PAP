@@ -10,6 +10,16 @@
 </head>
 
 <body>
+    <div class="top-bar">
+        <div class="group">
+            <input id="query" class="input" type="text" placeholder="Procurar..." name="searchbar" />
+            <button onclick="loadRegisto()">
+                <i class='bx bx-plus'></i>
+                <span> Criar </span>
+            </button>
+        </div>
+    </div>
+
     <?php
     // Ligar à base de dados
     $ligacao = new mysqli('localhost', 'root', '', 'gestao_utilizadores');
@@ -20,7 +30,7 @@
     }
 
     // Consultar utilizadores com is_admin diferente de 2
-    $sql_admins = 'SELECT * FROM utilizadores WHERE is_admin != 2 ORDER BY is_admin ASC';
+    $sql_admins = 'SELECT * FROM utilizadores WHERE is_admin != 2 ORDER BY is_admin DESC';
     $consulta_admins = $ligacao->query($sql_admins);
 
     // Verificar se existem utilizadores
@@ -28,13 +38,6 @@
     ?>
 
     <div class="container">
-        <div class="group">
-            <input id="query" class="input" type="text" placeholder="Procurar..." name="searchbar" />
-            <button onclick="loadRegisto()">
-                <i class='bx bx-plus'></i>
-                <span> Criar </span>
-            </button>
-        </div>
         <?php if ($tem_administradores): ?>
             <div class="card-grid">
                 <?php

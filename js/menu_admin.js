@@ -114,38 +114,8 @@ function loadRegisto() {
   xhttp.onload = function () {
     const container = document.getElementById("container");
     container.innerHTML = this.responseText;
-
-    // Reaplicar estilos, caso necessário
-    container.style.margin = "auto";
-    container.style.padding = "auto";
-    container.style.width = "700px";
   };
   xhttp.open("GET", "../php/registo_admin.php");
-  xhttp.send();
-}
-
-function loadElim() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function () {
-    const container = document.getElementById("container");
-    container.innerHTML = this.responseText;
-
-    container.style.margin = "auto";
-    container.style.padding = "auto";
-    container.style.width = "1200px";
-
-    // Garantir que o CSS está carregado
-    const cssId = "elim_user_css"; // ID único para o arquivo CSS
-    if (!document.getElementById(cssId)) {
-      const head = document.head;
-      const link = document.createElement("link");
-      link.id = cssId;
-      link.rel = "stylesheet";
-      link.href = "../css/elim_user.css";
-      head.appendChild(link);
-    }
-  };
-  xhttp.open("GET", "../php/elim_user.php");
   xhttp.send();
 }
 
@@ -154,25 +124,7 @@ function loadVer() {
   xhttp.onload = function () {
     const container = document.getElementById("container");
     container.innerHTML = this.responseText;
-
-    container.style.margin = "auto";
-    container.style.padding = "auto";
-    container.style.width = "1200px";
   };
   xhttp.open("GET", "../php/lista_users.php");
-  xhttp.send();
-}
-
-function loadEdit() {
-  const xhttp = new XMLHttpRequest();
-  xhttp.onload = function () {
-    const container = document.getElementById("container");
-    container.innerHTML = this.responseText;
-
-    container.style.margin = "auto";
-    container.style.padding = "auto";
-    container.style.width = "1200px";
-  };
-  xhttp.open("GET", "../php/alter_user.php");
   xhttp.send();
 }

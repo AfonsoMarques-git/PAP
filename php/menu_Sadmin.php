@@ -57,8 +57,9 @@ if (isset($_SESSION['error_menu'])) {
 
   <aside class="sidebar">
     <header class="sidebar-header">
-      <a href="menu_Sadmin.php" class="header-logo">
-        <img src="../images/Log0_Branco.png" alt="Companhia da Mariposa">
+      <a href="menu_Sadmin.php" class="header-logo" title="Administração">
+        <img src="../images/Logo_branco_p.png" alt="Companhia da Mariposa">
+        <p class="admin-label">Administração</p>
       </a>
       <button class="toggler sidebar-toggler">
         <span class="material-symbols-rounded">chevron_left</span>
