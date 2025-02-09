@@ -59,7 +59,6 @@ if (isset($_SESSION['error_menu'])) {
     <header class="sidebar-header">
       <a href="menu_Sadmin.php" class="header-logo" title="Administração">
         <img src="../images/Logo_branco_p.png" alt="Companhia da Mariposa">
-        <p class="admin-label">Administração</p>
       </a>
       <button class="toggler sidebar-toggler">
         <span class="material-symbols-rounded">chevron_left</span>
@@ -72,8 +71,10 @@ if (isset($_SESSION['error_menu'])) {
       <ul class="nav-list primary-nav">
         <li class="nav-item dropdown">
           <a href="#" class="nav-link">
-            <span class="nav-icon material-symbols-rounded">group</span>
-            <span class="nav-label">Gestão de Utilizadores</span>
+            <div>
+              <span class="nav-icon material-symbols-rounded">group</span>
+              <span class="nav-label">Gestão de Utilizadores</span>
+            </div>
             <span class="dropdown-icon material-symbols-rounded">expand_more</span>
           </a>
           <span class="nav-tooltip">Gestão de Utilizaddores</span>
@@ -84,8 +85,10 @@ if (isset($_SESSION['error_menu'])) {
         </li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link">
-            <span class="nav-icon material-symbols-rounded">work</span>
-            <span class="nav-label">Gestão do website</span>
+            <div>
+              <span class="nav-icon material-symbols-rounded">work</span>
+              <span class="nav-label">Gestão do website</span>
+            </div>
             <span class="dropdown-icon material-symbols-rounded">expand_more</span>
           </a>
           <span class="nav-tooltip">Gestão do website</span>
@@ -97,7 +100,7 @@ if (isset($_SESSION['error_menu'])) {
       </ul>
       <ul class="nav-list secondary-nav">
         <li class="nav-item">
-          <a href="../php/logout.php" class="nav-link">
+          <a href="../php/logout.php" class="nav-link-logout">
             <span class="nav-icon material-symbols-rounded">logout</span>
             <span class="nav-label-logout">Logout</span>
           </a>
