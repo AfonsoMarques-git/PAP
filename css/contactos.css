@@ -28,7 +28,7 @@ body {
 
 .container .section-head {
     max-width: 700px;
-    padding: 20px;
+    padding: 2%;
 }
 
 .section-head h1 {
@@ -38,8 +38,23 @@ body {
     width: 100%;
 }
 
-.section-head p {
+.section-head-path{
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+}
+
+.section-head-path a{
+    text-decoration: none;
+}
+
+.section-head-path a {
     margin-left: 20%;
+    font-size: 20px;
+    color: var(--color-neutral-10);
+}
+
+.section-head-path p{
     font-size: 20px;
     color: var(--color-neutral-10);
 }
@@ -224,7 +239,7 @@ textarea.input {
     font-size: 0.95rem;
 }
 
-i {
+.info i, .social-media i {
     width: 28px;
     margin-right: 0.1em;
 }

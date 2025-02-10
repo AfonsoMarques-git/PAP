@@ -97,6 +97,19 @@ button:hover {
     background-color: #b89470;
 }
 
+.highlight {
+    background-color: var(--accent-color);
+    color: #fff;
+    border: 2px solid var(--accent-color);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.highlight:hover {
+    background-color: #b89470;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
 .input-file-container {
     position: relative;
     width: 100%;
@@ -105,19 +118,6 @@ button:hover {
 
 .input-file-label {
     display: block;
-    background-color: var(--accent-color);
-    color: #fff;
-    font-size: 14px;
-    padding: 12px 20px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-transform: uppercase;
-    text-align: center;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-}
-
-.input-file-label:hover {
     background-color: #b89470;
 }
 
@@ -137,6 +137,7 @@ input[type="file"] {
     gap: 15px;
     margin-top: 20px;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .imagens div {

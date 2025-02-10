@@ -86,25 +86,25 @@ sidebarToggler.addEventListener("click", () => {
 
 const dropdownLinks = document.querySelectorAll('.nav-item.dropdown > a');
 
-    dropdownLinks.forEach(link => {
-      // Adiciona um evento de clique em cada link
-      link.addEventListener('click', function (event) {
-        // Impede que o link seja seguido (evita o comportamento padrão)
-        event.preventDefault();
+dropdownLinks.forEach(link => {
+  // Adiciona um evento de clique em cada link
+  link.addEventListener('click', function (event) {
+    // Impede que o link seja seguido (evita o comportamento padrão)
+    event.preventDefault();
 
-        // Alterna a visibilidade do menu dropdown
-        const dropdownMenu = this.nextElementSibling;
-        dropdownMenu.classList.toggle('show');
+    // Alterna a visibilidade do menu dropdown
+    const dropdownMenu = this.nextElementSibling;
+    dropdownMenu.classList.toggle('show');
 
-        // Alterna o ícone entre expand_more e expand_less
-        const icon = this.querySelector('.dropdown-icon');
-        if (icon.textContent === 'expand_more') {
-          icon.textContent = 'expand_less';
-        } else {
-          icon.textContent = 'expand_more';
-        }
-      });
-    });
+    // Alterna o ícone entre expand_more e expand_less
+    const icon = this.querySelector('.dropdown-icon');
+    if (icon.textContent === 'expand_more') {
+      icon.textContent = 'expand_less';
+    } else {
+      icon.textContent = 'expand_more';
+    }
+  });
+});
 
 // ------------------------------------------------------------------------------------------------------ //
 

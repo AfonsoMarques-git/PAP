@@ -20,9 +20,10 @@ $isLoggedIn = isset($_SESSION['username']);
     <div class="container">
         <?php include 'header.php'; ?>
         <div class="section-head">
-            <a href="index.php">
-                <p>Página Principal > Galeria</p>
-            </a>
+            <div class="section-head-path">
+                <a href="index.php">Página principal</a>
+                <p>> Galeria</p>
+            </div>
             <h1>Galeria de fotos</h1>
         </div>
     </div>

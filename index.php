@@ -11,6 +11,7 @@ $isLoggedIn = isset($_SESSION['username']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/header.css" />
+    <link rel="stylesheet" type="text/css" href="css/calendar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>Página Principal</title>
 </head>
@@ -18,26 +19,26 @@ $isLoggedIn = isset($_SESSION['username']);
 <body>
     <div class="container">
         <?php include 'header.php'; ?>
-        <section>
+        <section style="background: url('images/temp/fundo_home3.jpg?time=<?php echo time(); ?>') no-repeat; background-size: cover;">
             <div class="contact-info">
                 <h1>Organize o seu evento!</h1>
             </div>
             <div class="form">
                 <div class="contact-form">
                     <form action="https://api.web3forms.com/submit" method="POST" autocomplete="off">
-                        <input type="hidden" name="access_key" value="2cd62894-bead-4900-885d-5039f6430c57">
+                        <input type="hidden" name="access_key" value="f0638e0d-8f15-4185-800c-2b72e655a53b">
                         <input type="hidden" name="subject" value="Formuário de Evento">
                         <input type="hidden" name="from_name" value="Companhia da Mariposa">
+                        <input type="hidden" name="selected_date" value="">
                         <div class="input-boxes">
                             <div class="input-container">
-                                <input type="text" name="nome" class="input" placeholder="Nome" required />
+                                <input type="text" name="nome" class="input" placeholder="Nome" required/>
                             </div>
                             <div class="input-container">
-                                <input type="email" name="email" class="input" placeholder="Email" required />
+                                <input type="email" name="email" class="input" placeholder="Email" required/>
                             </div>
                             <div class="input-container">
-                                <input type="tel" name="telemovel" class="input" placeholder="Contacto Telefónico"
-                                    required />
+                                <input type="tel" name="telemovel" class="input" placeholder="Contacto Telefónico" required/>
                             </div>
                             <select name="event-option" id="event-option">
                                 <option value="" disabled selected>Tipo de Evento</option>
@@ -46,12 +47,55 @@ $isLoggedIn = isset($_SESSION['username']);
                                 <option value="Aniversários">Festa de Aniversário</option>
                                 <option value="Empresarial">Empresarial</option>
                             </select>
-                            <div class="input-container">
-                                <input type="date" name="data" class="input" placeholder="Data" required />
+                            <div class="datepicker-container">
+                                <input type="text" class="date-input" placeholder="Escolher data" required/>
+
+                                <div class="datepicker" hidden>
+                                    <!-- .datepicker-header -->
+                                    <div class="datepicker-header">
+                                        <button class="prev"><</button>
+
+                                        <div class="month-year">
+                                            <select class="month-input">
+                                                <option>Janeiro</option>
+                                                <option>Fevereiro</option>
+                                                <option>Março</option>
+                                                <option>Abril</option>
+                                                <option>Maio</option>
+                                                <option>Junho</option>
+                                                <option>Julho</option>
+                                                <option>Agosto</option>
+                                                <option>Setembro</option>
+                                                <option>Outubro</option>
+                                                <option>Novembro</option>
+                                                <option>Dezembro</option>
+                                            </select>
+                                            <input type="number" class="year-input" min="2025" />
+                                        </div>
+
+                                        <button class="next">></button>
+                                    </div>
+                                    <!-- /.datepicker-header -->
+
+                                    <!-- .days -->
+                                    <div class="days">
+                                        <span>Seg</span>
+                                        <span>Ter</span>
+                                        <span>Qua</span>
+                                        <span>Qui</span>
+                                        <span>Sex</span>
+                                        <span>Sab</span>
+                                        <span>Dom</span>
+                                    </div>
+                                    <!-- /.days -->
+
+                                    <!-- .dates -->
+                                    <div class="dates"></div>
+                                    <!-- /.dates -->
+                                </div>
                             </div>
                             <div class="input-container">
-                                <input type="number" name="n_pessoas" class="input" placeholder="Número de Pessoas"
-                                    required />
+                                <input type="number" name="n_pessoas" class="input" placeholder="Número de Pessoas" min="1" required/>
                             </div>
                             <div class="input-container textarea">
                                 <textarea name="mensagem" class="input" placeholder="Mensagem"></textarea>
@@ -146,6 +190,154 @@ $isLoggedIn = isset($_SESSION['username']);
             menu.classList.remove('active');
             menuOverlay.classList.remove('active');
             menuToggle.classList.remove('active');
+        });
+
+        const datepicker = document.querySelector(".datepicker");
+        const dateInput = document.querySelector(".date-input");
+        const yearInput = datepicker.querySelector(".year-input");
+        const monthInput = datepicker.querySelector(".month-input");
+        const nextBtn = datepicker.querySelector(".next");
+        const prevBtn = datepicker.querySelector(".prev");
+        const dates = datepicker.querySelector(".dates");
+
+        let selectedDate = new Date();
+        let year = selectedDate.getFullYear();
+        let month = selectedDate.getMonth();
+
+        // show datepicker
+        dateInput.addEventListener("click", () => {
+            datepicker.hidden = false;
+        });
+
+        // handle next month nav
+        nextBtn.addEventListener("click", () => {
+            if (month === 11) year++;
+            month = (month + 1) % 12;
+            displayDates();
+        });
+
+        // handle prev month nav
+        prevBtn.addEventListener("click", () => {
+            if (month === 0) year--;
+            month = (month - 1 + 12) % 12;
+            displayDates();
+        });
+
+        // handle month input change event
+        monthInput.addEventListener("change", () => {
+            month = monthInput.selectedIndex;
+            displayDates();
+        });
+
+        // handle year input change event
+        yearInput.addEventListener("change", () => {
+            year = yearInput.value;
+            displayDates();
+        });
+
+        const updateYearMonth = () => {
+            monthInput.selectedIndex = month;
+            yearInput.value = year;
+        };
+
+        const handleDateClick = (e) => {
+            const button = e.target;
+
+            // remove the 'selected' class from other buttons
+            const selected = dates.querySelector(".selected");
+            selected && selected.classList.remove("selected");
+
+            // add the 'selected' class to current button
+            button.classList.add("selected");
+
+            // set the selected date
+            selectedDate = new Date(year, month, parseInt(button.textContent));
+
+            // set the selected date to date input
+            dateInput.value = selectedDate.toLocaleDateString("pt-PT", {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+            });
+
+            // set the selected date to hidden input field
+            document.querySelector('input[name="selected_date"]').value = selectedDate.toISOString().split('T')[0];
+
+            // hide datepicker
+            datepicker.hidden = true;
+        };
+
+        // render the dates in the calendar interface
+        const displayDates = () => {
+            // update year & month whenever the dates are updated
+            updateYearMonth();
+
+            // clear the dates
+            dates.innerHTML = "";
+
+            //* display the last week of previous month
+
+            // get the last date of previous month
+            const lastOfPrevMonth = new Date(year, month, 0);
+
+            for (let i = 0; i <= lastOfPrevMonth.getDay(); i++) {
+                const text = lastOfPrevMonth.getDate() - lastOfPrevMonth.getDay() + i;
+                const button = createButton(text, true, -1);
+                dates.appendChild(button);
+            }
+
+            //* display the current month
+
+            // get the last date of the month
+            const lastOfMOnth = new Date(year, month + 1, 0);
+
+            for (let i = 1; i <= lastOfMOnth.getDate(); i++) {
+                const button = createButton(i, false);
+                button.addEventListener("click", handleDateClick);
+                dates.appendChild(button);
+            }
+
+            //* display the first week of next month
+
+            const firstOfNextMonth = new Date(year, month + 1, 1);
+
+            for (let i = firstOfNextMonth.getDay(); i < 7; i++) {
+                const text = firstOfNextMonth.getDate() - firstOfNextMonth.getDay() + i;
+
+                const button = createButton(text, true, 1);
+                dates.appendChild(button);
+            }
+        };
+
+        const createButton = (text, isDisabled = false, type = 0) => {
+            const currentDate = new Date();
+
+            // determine the date to compare based on the button type
+            let comparisonDate = new Date(year, month + type, text);
+
+            // check if the current button is the date today
+            const isToday =
+                currentDate.getDate() === text &&
+                currentDate.getFullYear() === year &&
+                currentDate.getMonth() === month;
+
+            // check if the current button is selected
+            const selected = selectedDate.getTime() === comparisonDate.getTime();
+
+            const button = document.createElement("button");
+            button.textContent = text;
+            button.disabled = isDisabled;
+            button.classList.toggle("today", isToday && !isDisabled);
+            button.classList.toggle("selected", selected);
+            return button;
+        };
+
+        displayDates();
+
+        document.addEventListener('click', (event) => {
+            if (!datepicker.contains(event.target) && event.target !== dateInput) {
+                datepicker.hidden = true;
+            }
         });
     </script>
 </body>

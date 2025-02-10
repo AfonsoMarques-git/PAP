@@ -15,7 +15,10 @@
     <div class="container">
         <?php include 'header.php'; ?>
         <div class="section-head">
-            <p>Página Principal > Contactos</p>
+            <div class="section-head-path">
+                <a href="index.php">Página Principal</a>
+                <p>> Contactos</p>
+            </div>
             <h1>Os nossos contactos</h1>
         </div>
     </div>
@@ -28,8 +31,7 @@
                 <div class="contact-info">
                     <h3 class="title">Contacte-nos</h3>
                     <p class="text">
-                        Se tem alguma dúvida ou quer planear o seu evento com bastantes promenores, preencha o
-                        formulário e nós entraremos em contacto consigo.
+                        Se tem alguma dúvida na parte dos eventos ou nos produtos preencha este formulário e entraremos em contacto assim que possível
                     </p>
 
                     <div class="info">
@@ -50,16 +52,13 @@
                     <div class="social-media">
                         <p>Conecte-se connosco :</p>
                         <div class="social-icons">
-                            <a href="#">
+                            <a href="https://www.facebook.com/CompanhiaDaMariposa">
                                 <i class='bx bxl-facebook'></i>
                             </a>
-                            <a href="#">
-                                <i class='bx bxl-twitter'></i>
-                            </a>
-                            <a href="#">
+                            <a href="https://www.instagram.com/companhia_da_mariposa.pt/">
                                 <i class='bx bxl-instagram'></i>
                             </a>
-                            <a href="#">
+                            <a href="">
                                 <i class='bx bxl-linkedin'></i>
                             </a>
                         </div>
@@ -88,8 +87,8 @@
     <div class="map">
         <iframe
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2988.8237373471225!2d-8.349519323453272!3d41.486420889845796!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xd24faf0be2d28c9%3A0x2c0a01717d5d2b8!2sCompanhia%20da%20Mariposa!5e0!3m2!1spt-PT!2spt!4v1738838338997!5m2!1spt-PT!2spt"
-            width="100%" height="700px" style="border:0; padding: 100px; background-color: #fafafa;" allowfullscreen="" loading="lazy"
-            referrerpolicy="no-referrer-when-downgrade"></iframe>
+            width="100%" height="700px" style="border:0; padding: 100px; background-color: #fafafa;" allowfullscreen=""
+            loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
     <!-- Success Message (Hidden by Default) -->

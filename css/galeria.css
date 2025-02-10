@@ -46,8 +46,23 @@ body {
     width: 100%;
 }
 
-.section-head p {
+.section-head-path{
+    display: flex;
+    justify-content: start;
+    gap: 10px;
+}
+
+.section-head-path a{
+    text-decoration: none;
+}
+
+.section-head-path a {
     margin-left: 20%;
+    font-size: 20px;
+    color: var(--color-neutral-10);
+}
+
+.section-head-path p{
     font-size: 20px;
     color: var(--color-neutral-10);
 }

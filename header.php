@@ -20,7 +20,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             <span></span>
         </div>
         <nav class="menu" id="menu">
-            <a href="" class="highlight">Compra e Aluguer</a>
+            <a href="index-products.php" class="highlight">Compra e Aluguer</a>
             <a href="https://casamentos.companhiadamariposa.pt/" target="_blank">Casamentos</a>
             <a href="galeria.php" class="<?php echo $currentPage == 'galeria.php' ? 'current-page' : ''; ?>">Galeria</a>
             <a href="contactos.php" class="<?php echo $currentPage == 'contactos.php' ? 'current-page' : ''; ?>">Contactos</a>

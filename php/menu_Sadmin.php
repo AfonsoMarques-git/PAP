@@ -79,7 +79,7 @@ if (isset($_SESSION['error_menu'])) {
           </a>
           <span class="nav-tooltip">Gestão de Utilizaddores</span>
           <ul class="dropdown-menu">
-            <li><a onclick="loadRegisto()">Registar</a></li>
+            <li><a id="registar-link" onclick="loadRegisto()">Registar</a></li>
             <li><a onclick="loadVer()">Ver lista</a></li>
           </ul>
         </li>
@@ -95,6 +95,7 @@ if (isset($_SESSION['error_menu'])) {
           <ul class="dropdown-menu">
             <li><a href="#">Manutenção de produtos</a></li>
             <li><a href="gestao_imagens.php">Gestão de imagens</a></li>
+            <li><a href="">Gestão da galeria</a></li>
           </ul>
         </li>
       </ul>

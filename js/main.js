@@ -89,3 +89,32 @@ document.getElementById('enviar').addEventListener('click', function() {
     };
     xhr.send(formData);
 });
+
+const createButton = (text, isDisabled = false, type = 0) => {
+    const currentDate = new Date();
+    const today = new Date(currentDate.getFullYear(), currentDate.getMonth(), currentDate.getDate());
+
+    // determine the date to compare based on the button type
+    let comparisonDate = new Date(year, month + type, text);
+
+    // check if the current button is the date today
+    const isToday =
+        currentDate.getDate() === text &&
+        currentDate.getFullYear() === year &&
+        currentDate.getMonth() === month;
+
+    // check if the current button is selected
+    const selected = selectedDate.getTime() === comparisonDate.getTime();
+
+    // disable dates before today
+    if (comparisonDate < today) {
+        isDisabled = true;
+    }
+
+    const button = document.createElement("button");
+    button.textContent = text;
+    button.disabled = isDisabled;
+    button.classList.toggle("today", isToday && !isDisabled);
+    button.classList.toggle("selected", selected);
+    return button;
+};

@@ -186,8 +186,6 @@ body {
   display: flex;
   justify-content: center;
   padding: 20px;
-  background-color: var(--background-color);
-  box-shadow: 0 4px 6px var(--shadow-color);
   position: sticky;
   top: 0;
   z-index: 1000;
