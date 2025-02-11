@@ -66,7 +66,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 <option value="casamento_card">Casamento</option>
                 <option value="batizado_card">Batizado</option>
                 <option value="outros_eventos_card">Outros Eventos</option>
-                <option value="fundo_home3">Imagem da Section</option> <!-- Added option for section image -->
+                <option value="fundo_home3">Página Principal</option>
             </select>
             <br><br>
             <div class="input-file-container">
@@ -94,7 +94,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     onerror="this.src='<?php echo $diretorio_imagens . 'outros_eventos_card.jpg?time=' . time(); ?>'">
             </div>
             <div>
-                <h3>Imagem da Section</h3>
+                <h3>Página Principal</h3>
                 <img src="<?php echo $diretorio_temp . 'fundo_home3.jpg?time=' . time(); ?>" alt="Imagem da Section"
                     onerror="this.src='<?php echo $diretorio_imagens . 'fundo_home3.jpg?time=' . time(); ?>'">
             </div>
