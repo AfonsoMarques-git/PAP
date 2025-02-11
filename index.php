@@ -13,12 +13,12 @@ $isLoggedIn = isset($_SESSION['username']);
     <link rel="stylesheet" type="text/css" href="css/header.css" />
     <link rel="stylesheet" type="text/css" href="css/calendar.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-    <title>Página Principal</title>
+    <title>Página Principal - Eventos</title>
 </head>
 
 <body>
     <div class="container">
-        <?php include 'header.php'; ?>
+        <?php include 'header-events.php'; ?>
         <section style="background: url('images/temp/fundo_home3.jpg?time=<?php echo time(); ?>') no-repeat; background-size: cover;">
             <div class="contact-info">
                 <h1>Organize o seu evento!</h1>
