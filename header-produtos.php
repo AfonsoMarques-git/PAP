@@ -22,7 +22,7 @@ $currentPage = basename($_SERVER['PHP_SELF']);
         <nav class="menu" id="menu">
             <a href="index.php" class="highlight">Eventos</a>
             <a href="https://casamentos.companhiadamariposa.pt/" target="_blank">Geocaching</a>
-            <a href="galeria.php" class="<?php echo $currentPage == 'galeria.php' ? 'current-page' : ''; ?>">Aluguer</a>
+            <a href="galeria.php" class="<?php echo $currentPage == 'aluguer.php' ? 'current-page' : ''; ?>">Aluguer</a>
             <a href="personalizaveis.php" class="<?php echo $currentPage == 'personalizaveis.php' ? 'current-page' : ''; ?>">Personalizáveis</a>
             <a href="baloes.php" class="<?php echo $currentPage == 'baloes.php' ? 'current-page' : ''; ?>">Balões</a>
             <a href="contactos-products.php" class="<?php echo $currentPage == 'contactos-products.php' ? 'current-page' : ''; ?>">Contactos</a>

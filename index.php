@@ -11,7 +11,6 @@ $isLoggedIn = isset($_SESSION['username']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/header.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <title>Página Principal - Eventos</title>
@@ -20,14 +19,14 @@ $isLoggedIn = isset($_SESSION['username']);
 <body>
     <div class="container">
         <?php include 'header-events.php'; ?>
-        <section
+        <section class="section-banner"
             style="background: url('images/temp/fundo_home3.jpg?time=<?php echo time(); ?>') no-repeat; background-size: cover;">
             <div class="contact-info">
                 <h1>Organize o seu evento!</h1>
             </div>
             <div class="form">
                 <div class="contact-form">
-                    <form action="https://api.web3forms.com/submit" method="POST" autocomplete="off">
+                    <form id="eventForm" action="https://api.web3forms.com/submit" method="POST" autocomplete="off">
                         <input type="hidden" name="access_key" value="f0638e0d-8f15-4185-800c-2b72e655a53b">
                         <input type="hidden" name="subject" value="Formuário de Evento">
                         <input type="hidden" name="from_name" value="Companhia da Mariposa">
@@ -98,8 +97,8 @@ $isLoggedIn = isset($_SESSION['username']);
                                     <!-- /.dates -->
 
                                     <div class="datepicker-footer">
-                                        <button class="today">Hoje</button>
                                         <button class="clear">Limpar</button>
+                                        <button class="today">Hoje</button>
                                     </div>
                                 </div>
                             </div>
@@ -116,7 +115,6 @@ $isLoggedIn = isset($_SESSION['username']);
                 </div>
             </div>
         </section>
-
     </div>
 
     <!-- Full-screen overlay for the menu -->
@@ -182,11 +180,40 @@ $isLoggedIn = isset($_SESSION['username']);
             <a href="galeria.php" class="img4"><img src="images/coracao_faisca.jpg" alt="Aniversário"></a>
         </div>
 
-        div
-
+        <div class="testimonials-head">
+            <h1>O que os nossos clientes dizem!</h1>
+            <p>Veja por si mesmo a experiência que produzimos</p>
+        </div>
+        <section class="testimonials">
+            <div class="testimonial-card">
+                <div class="testimonial-author">
+                    <img src="images/avatar1.jpg" alt="Avatar">
+                    <h1>Maria Silva</h1>
+                </div>
+                <p>"O nosso casamento foi um sonho tornado realidade! A equipa cuidou de todos os detalhes com
+                    profissionalismo e dedicação, tornando o nosso dia ainda mais especial."</p>
+                <h6>Casamento 2023</h6>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-author">
+                    <img src="images/avatar2.jpg" alt="Avatar">
+                    <h1>João Pereira</h1>
+                </div>
+                <p>"O batizado do nosso filho foi um momento inesquecível. A organização impecável e a atenção aos
+                    detalhes fizeram toda a diferença. Recomendamos vivamente!"</p>
+                <h6>Batizado 2024</h6>
+            </div>
+            <div class="testimonial-card">
+                <div class="testimonial-author">
+                    <img src="images/avatar3.jpg" alt="Avatar">
+                    <h1>Rodrigo Pinto</h1>
+                </div>
+                <p>"A minha festa de aniversário foi um sucesso absoluto! A equipa criou um ambiente animado e
+                    divertido, superando todas as minhas expectativas. Obrigada por tornarem este dia tão especial!"</p>
+                <h6>Festa de Aniversário 2025</h6>
+            </div>
+        </section>
     </div>
-
-    <script src="https://cdn.jsdeliver.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <?php include('footer.php') ?>
     <script>
@@ -387,6 +414,24 @@ $isLoggedIn = isset($_SESSION['username']);
             document.querySelector('input[name="selected_date"]').value = "";
             displayDates();
             datepicker.hidden = true;
+        });
+
+        document.getElementById('eventForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+
+            const formData = new FormData(this);
+
+            fetch('php/processos/form_event_process_data.php', {
+                method: 'POST',
+                body: formData
+            }).then(response => response.text())
+              .then(result => {
+                  console.log('Success:', result);
+                  // After successful submission to PHP, submit to Web3Forms
+                  this.submit();
+              }).catch(error => {
+                  console.error('Error:', error);
+              });
         });
     </script>
 </body>

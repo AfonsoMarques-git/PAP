@@ -25,17 +25,17 @@ body {
     margin-top: 150px;
 }
 
-section {
+.section-banner {
     background: url("../images/fundo_home3.jpg") no-repeat;
     background-size: cover;
-    height: 90vh;
+    height: 100vh;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
     width: 100%;
 }
 
-section h1 {
+.section-banner h1 {
     color: white;
     font-weight: bold;
     font-size: 4em;
@@ -317,14 +317,16 @@ form {
     flex: 1 1 100%;
 }
 
-.input, .date-input {
+.input,
+.date-input {
     width: 100%;
     outline: none;
     border: 2px solid #e2e2e2;
     background-color: var(--color-neutral-30);
     background: none;
     padding: 0.6rem 1.2rem;
-    color: #000; /* Change text color to black */
+    color: #000;
+    /* Change text color to black */
     font-weight: 500;
     font-size: 0.95rem;
     letter-spacing: 0.5px;
@@ -486,7 +488,8 @@ option {
 .datepicker {
     position: absolute;
     top: 100%;
-    z-index: 10001; /* Ensure it is above other elements but below the menu */
+    z-index: 10001;
+    /* Ensure it is above other elements but below the menu */
     margin-top: 2px;
     background: white;
     border: 2px solid #eee;
@@ -557,7 +560,7 @@ option {
     border-radius: 5px 5px 0 0;
 }
 
-.month-year{
+.month-year {
     display: flex;
     justify-content: space-evenly;
     width: 100%;
@@ -624,7 +627,7 @@ option {
 
 .datepicker-footer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: space-between;
     gap: 10px;
     padding-top: 10px;
     border-top: 1px solid #eee;
@@ -641,48 +644,74 @@ option {
 }
 
 .testimonials {
-    text-align: center;
-    width: 100%;
-}
-
-.testimonials h1 {
-    font-size: 36px;
-    color: #333;
-}
-
-.testimonial-cards {
     display: flex;
+    justify-content: space-evenly;
     flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 30px;
+    gap: 20px;
+    padding: 50px 0;
+    background-color: var(--color-neutral-40);
 }
 
 .testimonial-card {
-    background-color: #fff;
-    padding: 30px;
+    background-color: var(--color-neutral-30);
     border-radius: 15px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
-    max-width: 350px;
-    text-align: left;
+    width: 30%;
+    height: 350px;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.15);
     transition: transform 0.3s, box-shadow 0.3s;
-}
-
-.testimonial-card:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    justify-content: space-between;
 }
 
 .testimonial-card p {
     font-size: 16px;
-    color: #555;
-    margin-bottom: 15px;
-    line-height: 1.5;
+    color: gray;
+    font-weight: 500;
 }
 
-.testimonial-card h3 {
-    font-size: 18px;
-    color: #333;
+.testimonial-author {
+    margin-bottom: 5px;
+}
+
+.testimonial-author h1 {
+    font-size: 20px;
+    font-weight: 600;
+    color: var(--color-neutral-0);
+    margin-top: 5px;
+}
+
+.testimonial-author img {
+    height: 130px;
+    width: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 4px solid var(--color-neutral-10);
+}
+
+.testimonials-head {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.testimonials-head h1 {
+    font-size: 40px;
+    padding-bottom: 10px;
+}
+
+.testimonials-head p {
+    font-size: 20px;
+}
+
+.testimonial-card h6 {
+    font-size: 17px;
     font-weight: bold;
+    color: gray;
 }
 
 @media (max-width: 1120px) {
@@ -699,32 +728,37 @@ option {
         flex: 1 1 100%;
         max-width: 100%;
     }
+
+    .testimonial-card {
+        width: 45%;
+    }
 }
 
 @media (max-width: 1070px) {
-
-    section h1 {
+    .section-banner h1 {
         margin-top: 100px;
         margin-right: 0;
         font-size: 3em;
         margin-bottom: 10%;
     }
 
-    section {
+    .section-banner {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        height: 100vh;
     }
 
     .form {
         margin: 0;
         width: 90%;
         flex-grow: 0;
+        margin-bottom: 15px;
     }
 
     .card-events {
-        width: 90%;
+        width: 100%;
     }
 
     .event-cards {
@@ -733,9 +767,27 @@ option {
         width: 100%;
         padding: 0;
     }
+
+    .testimonial-card {
+        width: 100%;
+    }
+
+    .section-banner{
+        text-align: center;
+    }
+
+    .testimonials-head{
+        text-align: center;
+    }
+
+    .gallery-title {
+        text-align: center;
+    }
 }
 
 @media (max-width: 520px) {
+
+
     .card-events {
         min-width: 100%;
     }
@@ -752,14 +804,19 @@ option {
         font-size: 15px;
         padding: 10px;
     }
+    
+    .testimonial-card p{
+        font-size: 15px;
+    }
 }
 
 @media screen and (max-width: 768px) {
-    section {
+    .section-banner {
         display: flex;
         flex-direction: column;
         justify-content: center;
         align-items: center;
+        text-align: center;
     }
 
     .form {
@@ -771,20 +828,19 @@ option {
     .input-boxes {
         flex-direction: column;
         justify-content: center;
+        width: 100%;
     }
-}
 
-@media (max-width: 1490px) {
-    section {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
+    select{
+        width: 100%;
+        padding: 10px;
+    }
+
+    .datepicker-container{
+        width: 100%;
+    }
+
+    .testimonials-head {
         align-items: center;
-    }
-
-    .form {
-        margin: 0;
-        width: 90%;
-        flex-grow: 0;
     }
 }
