@@ -13,10 +13,10 @@
 
 <body>
     <div class="container">
-        <?php include 'header-events.php'; ?>
+        <?php include 'header-produtos.php'; ?>
         <div class="section-head">
             <div class="section-head-path">
-                <a href="index.php">Página Principal</a>
+                <a href="index-products.php">Página Principal</a>
                 <p>> Contactos</p>
             </div>
             <h1>Os nossos contactos</h1>

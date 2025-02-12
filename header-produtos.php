@@ -23,9 +23,9 @@ $currentPage = basename($_SERVER['PHP_SELF']);
             <a href="index.php" class="highlight">Eventos</a>
             <a href="https://casamentos.companhiadamariposa.pt/" target="_blank">Geocaching</a>
             <a href="galeria.php" class="<?php echo $currentPage == 'galeria.php' ? 'current-page' : ''; ?>">Aluguer</a>
-            <a href="contactos.php" class="<?php echo $currentPage == 'personalizaveis.php' ? 'current-page' : ''; ?>">Personalizáveis</a>
-            <a href="contactos.php" class="<?php echo $currentPage == 'baloes.php' ? 'current-page' : ''; ?>">Balões</a>
-            <a href="contactos.php" class="<?php echo $currentPage == 'contactos.php' ? 'current-page' : ''; ?>">Contactos</a>
+            <a href="personalizaveis.php" class="<?php echo $currentPage == 'personalizaveis.php' ? 'current-page' : ''; ?>">Personalizáveis</a>
+            <a href="baloes.php" class="<?php echo $currentPage == 'baloes.php' ? 'current-page' : ''; ?>">Balões</a>
+            <a href="contactos-products.php" class="<?php echo $currentPage == 'contactos-products.php' ? 'current-page' : ''; ?>">Contactos</a>
             <div class="login-registo">
                 <?php if ($isLoggedIn): ?>
                     <a href="html/perfil.html"><span class="user">Olá,

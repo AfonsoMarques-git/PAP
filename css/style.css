@@ -593,6 +593,37 @@ option {
 
 .datepicker-footer {
     display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #eee;
+}
+
+.datepicker-footer button {
+    background: rgba(119, 136, 153, 0.1);
+    padding: 3px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.datepicker-footer button:hover {
+    background-color: rgba(119, 136, 153, 0.2);
+}
+
+.datepicker-footer button.today {
+    background: var(--color-neutral-10);
+    color: #fff;
+}
+
+.datepicker-footer button.clear {
+    background: var(--color-neutral-0);
+    color: #fff;
+}
+
+.datepicker-footer {
+    display: flex;
     justify-content: flex-end;
     gap: 10px;
     padding-top: 10px;
@@ -609,6 +640,50 @@ option {
     color: #fff;
 }
 
+.testimonials {
+    text-align: center;
+    width: 100%;
+}
+
+.testimonials h1 {
+    font-size: 36px;
+    color: #333;
+}
+
+.testimonial-cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.testimonial-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    max-width: 350px;
+    text-align: left;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.testimonial-card:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+}
+
+.testimonial-card p {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.testimonial-card h3 {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+}
 
 @media (max-width: 1120px) {
     .gallery a {

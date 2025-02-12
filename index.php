@@ -11,15 +11,17 @@ $isLoggedIn = isset($_SESSION['username']);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="css/style.css" />
     <link rel="stylesheet" type="text/css" href="css/header.css" />
-    <link rel="stylesheet" type="text/css" href="css/calendar.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
     <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" />
     <title>Página Principal - Eventos</title>
 </head>
 
 <body>
     <div class="container">
         <?php include 'header-events.php'; ?>
-        <section style="background: url('images/temp/fundo_home3.jpg?time=<?php echo time(); ?>') no-repeat; background-size: cover;">
+        <section
+            style="background: url('images/temp/fundo_home3.jpg?time=<?php echo time(); ?>') no-repeat; background-size: cover;">
             <div class="contact-info">
                 <h1>Organize o seu evento!</h1>
             </div>
@@ -32,13 +34,14 @@ $isLoggedIn = isset($_SESSION['username']);
                         <input type="hidden" name="selected_date" value="">
                         <div class="input-boxes">
                             <div class="input-container">
-                                <input type="text" name="nome" class="input" placeholder="Nome" required/>
+                                <input type="text" name="nome" class="input" placeholder="Nome" required />
                             </div>
                             <div class="input-container">
-                                <input type="email" name="email" class="input" placeholder="Email" required/>
+                                <input type="email" name="email" class="input" placeholder="Email" required />
                             </div>
                             <div class="input-container">
-                                <input type="tel" name="telemovel" class="input" placeholder="Contacto Telefónico" required/>
+                                <input type="tel" name="telemovel" class="input" placeholder="Contacto Telefónico"
+                                    required />
                             </div>
                             <select name="event-option" id="event-option">
                                 <option value="" disabled selected>Tipo de Evento</option>
@@ -48,32 +51,33 @@ $isLoggedIn = isset($_SESSION['username']);
                                 <option value="Empresarial">Empresarial</option>
                             </select>
                             <div class="datepicker-container">
-                                <input type="text" class="date-input" placeholder="Escolher data" required/>
+                                <input type="text" class="date-input" placeholder="Escolher data" required />
 
                                 <div class="datepicker" hidden>
                                     <!-- .datepicker-header -->
                                     <div class="datepicker-header">
-                                        <button class="prev"><</button>
+                                        <button class="prev">
+                                            < </button>
 
-                                        <div class="month-year">
-                                            <select class="month-input">
-                                                <option>Janeiro</option>
-                                                <option>Fevereiro</option>
-                                                <option>Março</option>
-                                                <option>Abril</option>
-                                                <option>Maio</option>
-                                                <option>Junho</option>
-                                                <option>Julho</option>
-                                                <option>Agosto</option>
-                                                <option>Setembro</option>
-                                                <option>Outubro</option>
-                                                <option>Novembro</option>
-                                                <option>Dezembro</option>
-                                            </select>
-                                            <input type="number" class="year-input" min="2025" />
-                                        </div>
+                                                <div class="month-year">
+                                                    <select class="month-input">
+                                                        <option>Janeiro</option>
+                                                        <option>Fevereiro</option>
+                                                        <option>Março</option>
+                                                        <option>Abril</option>
+                                                        <option>Maio</option>
+                                                        <option>Junho</option>
+                                                        <option>Julho</option>
+                                                        <option>Agosto</option>
+                                                        <option>Setembro</option>
+                                                        <option>Outubro</option>
+                                                        <option>Novembro</option>
+                                                        <option>Dezembro</option>
+                                                    </select>
+                                                    <input type="number" class="year-input" min="2025" />
+                                                </div>
 
-                                        <button class="next">></button>
+                                                <button class="next">></button>
                                     </div>
                                     <!-- /.datepicker-header -->
 
@@ -92,10 +96,16 @@ $isLoggedIn = isset($_SESSION['username']);
                                     <!-- .dates -->
                                     <div class="dates"></div>
                                     <!-- /.dates -->
+
+                                    <div class="datepicker-footer">
+                                        <button class="today">Hoje</button>
+                                        <button class="clear">Limpar</button>
+                                    </div>
                                 </div>
                             </div>
                             <div class="input-container">
-                                <input type="number" name="n_pessoas" class="input" placeholder="Número de Pessoas" min="1" required/>
+                                <input type="number" name="n_pessoas" class="input" placeholder="Número de Pessoas"
+                                    min="1" required />
                             </div>
                             <div class="input-container textarea">
                                 <textarea name="mensagem" class="input" placeholder="Mensagem"></textarea>
@@ -171,11 +181,16 @@ $isLoggedIn = isset($_SESSION['username']);
             <a href="galeria.php" class="img3"><img src="images/festa_empresarial2.jpg" alt="Festa"></a>
             <a href="galeria.php" class="img4"><img src="images/coracao_faisca.jpg" alt="Aniversário"></a>
         </div>
+
+        div
+
     </div>
+
+    <script src="https://cdn.jsdeliver.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <?php include('footer.php') ?>
     <script>
-        // Menu hamburguer
+        /* MENU HAMBURGUER */
         const menuToggle = document.getElementById('menu-toggle');
         const menu = document.getElementById('menu');
         const menuOverlay = document.getElementById('menu-overlay');
@@ -192,6 +207,8 @@ $isLoggedIn = isset($_SESSION['username']);
             menuToggle.classList.remove('active');
         });
 
+
+        /* CALENDARIO PARA EVENTOS */
         const datepicker = document.querySelector(".datepicker");
         const dateInput = document.querySelector(".date-input");
         const yearInput = datepicker.querySelector(".year-input");
@@ -200,9 +217,16 @@ $isLoggedIn = isset($_SESSION['username']);
         const prevBtn = datepicker.querySelector(".prev");
         const dates = datepicker.querySelector(".dates");
 
+        const todayBtn = datepicker.querySelector(".today");
+        const clearBtn = datepicker.querySelector(".clear");
+
         let selectedDate = new Date();
         let year = selectedDate.getFullYear();
         let month = selectedDate.getMonth();
+
+        const currentDate = new Date();
+        const currentYear = currentDate.getFullYear();
+        const currentMonth = currentDate.getMonth();
 
         // show datepicker
         dateInput.addEventListener("click", () => {
@@ -272,6 +296,9 @@ $isLoggedIn = isset($_SESSION['username']);
             // update year & month whenever the dates are updated
             updateYearMonth();
 
+            // disable prev button if current month and year are reached
+            prevBtn.disabled = year === currentYear && month === currentMonth;
+
             // clear the dates
             dates.innerHTML = "";
 
@@ -322,7 +349,7 @@ $isLoggedIn = isset($_SESSION['username']);
                 currentDate.getMonth() === month;
 
             // check if the current button is selected
-            const selected = selectedDate.getTime() === comparisonDate.getTime();
+            const selected = selectedDate && selectedDate.getTime() === comparisonDate.getTime();
 
             const button = document.createElement("button");
             button.textContent = text;
@@ -338,6 +365,28 @@ $isLoggedIn = isset($_SESSION['username']);
             if (!datepicker.contains(event.target) && event.target !== dateInput) {
                 datepicker.hidden = true;
             }
+        });
+
+        todayBtn.addEventListener("click", () => {
+            selectedDate = new Date();
+            year = selectedDate.getFullYear();
+            month = selectedDate.getMonth();
+            displayDates();
+            dateInput.value = selectedDate.toLocaleDateString("pt-PT", {
+                year: "numeric",
+                month: "2-digit",
+                day: "2-digit",
+            });
+            document.querySelector('input[name="selected_date"]').value = selectedDate.toISOString().split('T')[0];
+            datepicker.hidden = true;
+        });
+
+        clearBtn.addEventListener("click", () => {
+            selectedDate = null;
+            dateInput.value = "";
+            document.querySelector('input[name="selected_date"]').value = "";
+            displayDates();
+            datepicker.hidden = true;
         });
     </script>
 </body>
