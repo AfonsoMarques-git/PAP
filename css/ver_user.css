@@ -29,9 +29,8 @@ body {
 }
 
 .card-grid {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 
@@ -40,7 +39,7 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 10px;
   box-shadow: 0 4px 6px var(--shadow-color);
-  width: 400px;
+  width: 100%;
   padding: 20px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
@@ -127,9 +126,9 @@ body {
   height: 45px;
   padding-left: 2.5rem;
   border-radius: 12px;
-  background-color: #e8d2b3;
+  background-color: #8f7a5c;
   outline: none;
-  color: black;
+  color: white;
   transition: all 0.25s cubic-bezier(0.19, 1, 0.22, 1);
   cursor: text;
   z-index: 0;
@@ -143,7 +142,7 @@ body {
 }
 
 .input::placeholder {
-  color: black;
+  color: white;
 }
 
 .group button {
@@ -185,8 +184,62 @@ body {
 .top-bar {
   display: flex;
   justify-content: center;
+  justify-content: center;
   padding: 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
+  height: 150px;
+}
+
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  margin: 20px 0;
+  gap: 10px;
+}
+
+.filter-buttons button {
+  background-color: #8f7a5c;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  /* Add transition for hover effect */
+}
+
+.filter-buttons button:hover {
+  background-color: #756044;
+  /* Darker shade on hover */
+}
+
+.center-title {
+  text-align: center;
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.filter-buttons-card {
+  display: flex;
+  gap: 5px;
+}
+
+.filter-buttons-card button {
+  background-color: #8f7a5c;
+  color: #fff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.filter-buttons-card button:hover {
+  background-color: #756044;
 }

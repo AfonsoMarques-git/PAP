@@ -107,7 +107,7 @@ if (isset($_SESSION['error_menu'])) {
           </ul>
         </li>
         <li class="nav-item">
-          <a href="gestao_emails.php" class="nav-link">
+          <a onclick="loadEmails()" class="nav-link">
             <div>
               <span class="material-symbols-rounded"> mail </span>
               <span class="nav-label">Emails</span>

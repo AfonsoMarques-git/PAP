@@ -23,10 +23,11 @@
         </div>
     </div>
     <div class="contact-container">
-        <form id="contactForm" action="" method="POST" class="contact-form">
+        <form id="contactForm" action="php/processos/processar_formularios.php" method="POST" class="contact-form">
             <input type="hidden" name="access_key" value="2cd62894-bead-4900-885d-5039f6430c57">
             <input type="hidden" name="subject" value="Formulário de Contacto">
             <input type="hidden" name="from_name" value="Companhia da Mariposa">
+            <input type="hidden" name="origem" value="contactos">
             <div class="form">
                 <div class="contact-info">
                     <h3 class="title">Contacte-nos</h3>
@@ -105,7 +106,7 @@
 
             const formData = new FormData(this);
 
-            fetch('php/processos/form_contacto_process_data.php', {
+            fetch('php/processos/processar_formularios.php', {
                 method: 'POST',
                 body: formData
             }).then(response => response.json())

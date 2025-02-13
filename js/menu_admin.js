@@ -128,3 +128,16 @@ function loadVer() {
   xhttp.open("GET", "../php/lista_users.php");
   xhttp.send();
 }
+
+function loadEmails() {
+  const xhttp = new XMLHttpRequest();
+  xhttp.onload = function () {
+    const container = document.getElementById("container");
+    container.innerHTML = this.responseText;
+    const script = document.createElement('script');
+    script.src = '../js/filter_emails.js';
+    document.body.appendChild(script);
+  };
+  xhttp.open("GET", "../php/ver_emails.php");
+  xhttp.send();
+}

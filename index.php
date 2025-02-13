@@ -26,11 +26,12 @@ $isLoggedIn = isset($_SESSION['username']);
             </div>
             <div class="form">
                 <div class="contact-form">
-                    <form id="eventForm" action="" method="POST" autocomplete="off">
+                    <form id="eventForm" action="php/processos/processar_formularios.php" method="POST" autocomplete="off">
                         <input type="hidden" name="access_key" value="f0638e0d-8f15-4185-800c-2b72e655a53b">
                         <input type="hidden" name="subject" value="Formuário de Evento">
                         <input type="hidden" name="from_name" value="Companhia da Mariposa">
                         <input type="hidden" name="selected_date" value="">
+                        <input type="hidden" name="origem" value="eventos">
                         <div class="input-boxes">
                             <div class="input-container">
                                 <input type="text" name="nome" class="input" placeholder="Nome" required />

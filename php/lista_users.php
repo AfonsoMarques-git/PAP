@@ -19,7 +19,6 @@
             </button>
         </div>
     </div>
-
     <?php
     // Ligar à base de dados
     $ligacao = new mysqli('localhost', 'root', '', 'gestao_utilizadores');
@@ -37,7 +36,7 @@
     $tem_administradores = $consulta_admins->num_rows > 0;
     ?>
 
-    <div class="container">
+    <div class="container" style="padding: 30px;">
         <?php if ($tem_administradores): ?>
             <div class="card-grid">
                 <?php
@@ -69,7 +68,7 @@
                 <?php } ?>
             </div>
         <?php else: ?>
-            <p>Não há registos de utilizadores na base de dados.</p>
+            <p>Não há utilizadores registados.</p>
         <?php endif; ?>
 
         <?php
