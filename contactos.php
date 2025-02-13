@@ -23,7 +23,7 @@
         </div>
     </div>
     <div class="contact-container">
-        <form id="contactForm" action="https://api.web3forms.com/submit" method="POST" class="contact-form">
+        <form id="contactForm" action="" method="POST" class="contact-form">
             <input type="hidden" name="access_key" value="2cd62894-bead-4900-885d-5039f6430c57">
             <input type="hidden" name="subject" value="Formulário de Contacto">
             <input type="hidden" name="from_name" value="Companhia da Mariposa">
@@ -31,7 +31,8 @@
                 <div class="contact-info">
                     <h3 class="title">Contacte-nos</h3>
                     <p class="text">
-                        Se tem alguma dúvida na parte dos eventos ou nos produtos preencha este formulário e entraremos em contacto assim que possível
+                        Se tem alguma dúvida na parte dos eventos ou nos produtos preencha este formulário e entraremos
+                        em contacto assim que possível
                     </p>
 
                     <div class="info">
@@ -91,50 +92,41 @@
             loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
     </div>
 
-    <!-- Success Message (Hidden by Default) -->
-    <div id="successMessage"
-        style="display: none; text-align: center; padding: 20px; font-size: 18px; color: green; margin-bottom: 20px">
-        <h2>Thank you!</h2>
-        <p>Your message has been sent successfully.</p>
-        <p>Returning to form in <span id="countdown">3</span> seconds...</p>
+    <!-- Success Message Pop-up -->
+    <div id="success-popup" class="popup">
+        <span class="popup-message">Formulário enviado com sucesso!</span>
+        <button id="close-popup">Fechar</button>
     </div>
-    </div>
+
     <?php include 'footer.php'; ?>
     <script>
-        document.getElementById("contactForm").onsubmit = function (event) {
-            event.preventDefault(); // Prevent default form submission
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault();
 
-            let formData = new FormData(this);
+            const formData = new FormData(this);
 
-            fetch("https://api.web3forms.com/submit", {
-                method: "POST",
+            fetch('php/processos/form_contacto_process_data.php', {
+                method: 'POST',
                 body: formData
-            })
-                .then(response => response.json())
-                .then(data => {
-                    if (data.success) {
-                        document.getElementById("contactForm").style.display = "none"; // Hide form
-                        document.getElementById("successMessage").style.display = "block"; // Show success message
-
-                        let countdown = 3;
-                        let countdownElement = document.getElementById("countdown");
-
-                        let interval = setInterval(function () {
-                            countdown--;
-                            countdownElement.textContent = countdown;
-                            if (countdown <= 0) {
-                                clearInterval(interval);
-                                document.getElementById("successMessage").style.display = "none"; // Hide success message
-                                document.getElementById("contactForm").reset(); // Reset form
-                                document.getElementById("contactForm").style.display = "flex"; // Show form again
-                            }
-                        }, 1000);
+            }).then(response => response.json())
+                .then(result => {
+                    if (result.success) {
+                        document.getElementById("success-popup").style.display = "block"; // Show success pop-up
+                        setTimeout(() => {
+                            location.reload(); // Refresh the page after 3 seconds
+                        }, 3000);
                     } else {
-                        alert("Error submitting the form. Please try again.");
+                        alert(result.message);
                     }
-                })
-                .catch(error => console.error("Error:", error));
-        };
+                }).catch(error => {
+                    console.error('Error:', error);
+                });
+        });
+
+        document.getElementById('close-popup').addEventListener('click', function () {
+            document.getElementById('success-popup').style.display = 'none'; // Hide success pop-up
+            location.reload(); // Refresh the page when the pop-up is closed
+        });
     </script>
 
 </body>

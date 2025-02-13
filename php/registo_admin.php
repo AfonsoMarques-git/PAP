@@ -79,11 +79,13 @@ unset($_SESSION['success_menu']);
 
                 <!-- Botão para Submissão -->
                 <button type="submit" name="enviar" id="enviar" class="btn-criaconta">Registar</button>
+                <button type="button" onclick="window.location.href='../php/menu_Sadmin.php'; loadVer();">Voltar</button>
             </form>
         </div>
     </div>
 
     <script src="../js/main.js"></script>
+    <script src="../js/menu_admin.js"></script>
 </body>
 
 </html>

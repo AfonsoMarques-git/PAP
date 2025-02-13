@@ -18,7 +18,7 @@ $isLoggedIn = isset($_SESSION['username']);
 
 <body>
     <div class="container">
-        <?php include 'header.php'; ?>
+        <?php include 'header-events.php'; ?>
         <div class="section-head">
             <div class="section-head-path">
                 <a href="index.php">Página principal</a>

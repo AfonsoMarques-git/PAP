@@ -14,11 +14,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $password = $_POST['password'] ?? '';
     $confirm_password = $_POST['confirm_password'] ?? '';
     $email = $_POST['email'] ?? '';
-    $tipo_utilizador = $_POST['user-type'];
+    $tipo_utilizador = isset($_POST['user-type']) ? $_POST['user-type'] : null;
 
-    if ($tipo_utilizador == null || !in_array($tipo_utilizador, ['0', '1'])) {
+    if ($tipo_utilizador === null || !in_array($tipo_utilizador, ['0', '1'])) {
         $_SESSION['erro_menu'] = 'Selecione um tipo de utilizador válido';
-        header('../menu_Sadmin.php');
+        header('Location: ../menu_Sadmin.php');
         exit;
     }
 

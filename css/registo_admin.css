@@ -104,13 +104,14 @@ button {
     cursor: pointer;
     width: 100%;
     transition: background-color 0.3s ease;
+    margin-top: 10px;
 }
 
 button:hover {
     background-color: #b89470;
 }
 
-.user-type{
+.user-type {
     display: flex;
     justify-content: space-evenly;
 }
@@ -123,14 +124,14 @@ button:hover {
     position: relative;
     align-items: center;
     color: black;
-  }
-  
-  .radio-button input[type="radio"] {
+}
+
+.radio-button input[type="radio"] {
     position: absolute;
     opacity: 0;
-  }
-  
-  .radio {
+}
+
+.radio {
     position: relative;
     display: inline-block;
     width: 24px;
@@ -140,9 +141,9 @@ button:hover {
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
     transform: translateZ(-25px);
     transition: all 0.3s ease-in-out;
-  }
-  
-  .radio::before {
+}
+
+.radio::before {
     position: absolute;
     content: '';
     width: 10px;
@@ -154,15 +155,14 @@ button:hover {
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
     opacity: 0;
     transition: all 0.3s ease-in-out;
-  }
-  
-  .radio-button input[type="radio"]:checked + .radio {
+}
+
+.radio-button input[type="radio"]:checked+.radio {
     border-color: var(--accent-color);
     transform: translateZ(0px);
     background-color: #fff;
-  }
-  
-  .radio-button input[type="radio"]:checked + .radio::before {
+}
+
+.radio-button input[type="radio"]:checked+.radio::before {
     opacity: 1;
-  }
-  
+}

@@ -33,13 +33,13 @@ body {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
     position: relative;
     overflow: hidden;
-    width: 850px;
+    width: 1000px; /* Increased width */
     max-width: 100%;
-    min-height: 480px;
+    min-height: 600px; /* Increased height */
 }
 
 .container p {
-    font-size: 14px;
+    font-size: 16px; /* Increased text size */
     line-height: 20px;
     letter-spacing: 0.3px;
     margin: 20px 0;
@@ -48,7 +48,7 @@ body {
 
 .container a {
     color: var(--accent-color);
-    font-size: 13px;
+    font-size: 15px; /* Increased link text size */
     text-decoration: none;
     margin: 15px 0 10px;
     font-weight: bold;
@@ -61,8 +61,8 @@ body {
 .container button {
     background-color: var(--accent-color);
     color: #fff;
-    font-size: 12px;
-    padding: 10px 45px;
+    font-size: 14px; /* Increased button text size */
+    padding: 15px 60px; /* Increased button padding */
     border: 1px solid transparent;
     border-radius: 8px;
     font-weight: 600;
@@ -212,12 +212,13 @@ body {
 .input-box input {
     background-color: var(--input-bg-color);
     border: 1px solid var(--border-color);
-    padding: 10px;
-    font-size: 13px;
+    padding: 15px; /* Increased padding */
+    font-size: 16px; /* Increased font size */
     border-radius: 8px;
-    width: 250px;
+    width: 350px; /* Increased input width */
     outline: none;
     color: var(--text-color);
+    padding-right: 35px; /* Espaço extra para o ícone */
 }
 
 .input-box input::placeholder {
@@ -226,12 +227,16 @@ body {
 
 .icon {
     position: absolute;
-    right: 20px;
+    right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 18px;
+    font-size: 24px; /* Increased icon size */
     color: var(--accent-color);
     cursor: pointer;
+}
+
+.icon:hover {
+    color: var(--border-color);
 }
 
 .titulo{
@@ -251,10 +256,10 @@ body {
 .input-box input {
     background-color: var(--input-bg-color);
     border: 1px solid var(--border-color);
-    padding: 10px;
-    font-size: 13px;
+    padding: 15px; /* Increased padding */
+    font-size: 16px; /* Increased font size */
     border-radius: 8px;
-    width: 250px;
+    width: 350px; /* Increased input width */
     outline: none;
     color: var(--text-color);
     padding-right: 35px; /* Espaço extra para o ícone */
@@ -265,7 +270,7 @@ body {
     right: 10px;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 18px;
+    font-size: 24px; /* Increased icon size */
     color: var(--accent-color);
     cursor: pointer;
 }

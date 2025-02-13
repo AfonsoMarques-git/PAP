@@ -38,13 +38,13 @@ body {
     width: 100%;
 }
 
-.section-head-path{
+.section-head-path {
     display: flex;
     justify-content: start;
     gap: 10px;
 }
 
-.section-head-path a{
+.section-head-path a {
     text-decoration: none;
 }
 
@@ -54,7 +54,7 @@ body {
     color: var(--color-neutral-10);
 }
 
-.section-head-path p{
+.section-head-path p {
     font-size: 20px;
     color: var(--color-neutral-10);
 }
@@ -102,7 +102,8 @@ form {
 
 .input-container {
     position: relative;
-    margin: 1.5rem 0; /* Increase margin for better spacing */
+    margin: 1.5rem 0;
+    /* Increase margin for better spacing */
 }
 
 .input {
@@ -110,16 +111,19 @@ form {
     outline: none;
     border: 2px solid #e2e2e2;
     background: none;
-    padding: 0.8rem 1.2rem; /* Increase padding for better spacing */
+    padding: 0.8rem 1.2rem;
+    /* Increase padding for better spacing */
     font-weight: 500;
-    font-size: 1rem; /* Increase font size */
+    font-size: 1rem;
+    /* Increase font size */
     letter-spacing: 0.5px;
     border-radius: 15px;
     transition: 0.3s;
 }
 
 textarea.input {
-    padding: 1rem 1.2rem; /* Increase padding for better spacing */
+    padding: 1rem 1.2rem;
+    /* Increase padding for better spacing */
     min-height: 150px;
     border-radius: 15px;
     resize: none;
@@ -156,7 +160,8 @@ textarea.input {
     cursor: pointer;
     transition: background-color 0.3s, transform 0.2s;
     width: 100%;
-    margin-top: 20px; /* Add margin to separate from other elements */
+    margin-top: 20px;
+    /* Add margin to separate from other elements */
     font-size: 16px;
 }
 
@@ -239,7 +244,8 @@ textarea.input {
     font-size: 0.95rem;
 }
 
-.info i, .social-media i {
+.info i,
+.social-media i {
     width: 28px;
     margin-right: 0.1em;
 }
@@ -271,6 +277,33 @@ textarea.input {
 
 .social-icons a:hover {
     transform: scale(1.05);
+}
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #d4edda;
+    border: 1px solid #c3e6cb;
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    border-radius: 5px;
+    z-index: 1000;
+    font-size: 14px;
+}
+
+.popup-message {
+    margin-right: 10px;
+}
+
+#close-popup {
+    background: none;
+    border: none;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
 }
 
 @media (max-width: 850px) {
@@ -338,19 +371,19 @@ textarea.input {
         padding: 0;
     }
 
-    .section-head{
+    .section-head {
         padding: 0;
     }
 
-    .contact-container{
+    .contact-container {
         padding: 0;
     }
 
-    .map{
+    .map {
         width: 100%;
     }
 
-    .map iframe{
+    .map iframe {
         width: 100%;
     }
 }

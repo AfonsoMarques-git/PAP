@@ -76,7 +76,7 @@ body {
 
 .sidebar-header .header-logo img {
   width: 100px;
-  height: 70px;
+  height: auto;
   object-fit: cover;
 }
 
@@ -88,24 +88,13 @@ body {
   text-decoration: none;
 }
 
-.header-logo .admin-label {
-  font-size: 17px;
-  /* Tamanho do texto */
-  font-weight: 500;
-  /* Peso da fonte */
-  color: white;
-  /* Cor do texto */
-  text-transform: uppercase;
-  /* Texto em maiúsculas */
-}
-
 .sidebar.collapsed .header-logo {
   justify-content: center;
 }
 
 .sidebar.collapsed .header-logo img {
-  width: 80px;
-  height: 80px;
+  width: 70px;
+  height: 70px;
 }
 
 .sidebar-header .sidebar-toggler {
@@ -159,6 +148,7 @@ body {
   align-items: center;
   text-decoration: none;
   transition: 0.4s ease;
+  cursor: pointer;
 }
 
 .sidebar-nav .nav-link div {

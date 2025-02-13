@@ -26,7 +26,7 @@ $isLoggedIn = isset($_SESSION['username']);
             </div>
             <div class="form">
                 <div class="contact-form">
-                    <form id="eventForm" action="https://api.web3forms.com/submit" method="POST" autocomplete="off">
+                    <form id="eventForm" action="" method="POST" autocomplete="off">
                         <input type="hidden" name="access_key" value="f0638e0d-8f15-4185-800c-2b72e655a53b">
                         <input type="hidden" name="subject" value="Formuário de Evento">
                         <input type="hidden" name="from_name" value="Companhia da Mariposa">
@@ -414,24 +414,6 @@ $isLoggedIn = isset($_SESSION['username']);
             document.querySelector('input[name="selected_date"]').value = "";
             displayDates();
             datepicker.hidden = true;
-        });
-
-        document.getElementById('eventForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-
-            const formData = new FormData(this);
-
-            fetch('php/processos/form_event_process_data.php', {
-                method: 'POST',
-                body: formData
-            }).then(response => response.text())
-              .then(result => {
-                  console.log('Success:', result);
-                  // After successful submission to PHP, submit to Web3Forms
-                  this.submit();
-              }).catch(error => {
-                  console.error('Error:', error);
-              });
         });
     </script>
 </body>

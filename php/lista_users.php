@@ -15,7 +15,7 @@
             <input id="query" class="input" type="text" placeholder="Procurar..." name="searchbar" />
             <button onclick="loadRegisto()">
                 <i class='bx bx-plus'></i>
-                <span> Criar </span>
+                <span> Registar </span>
             </button>
         </div>
     </div>

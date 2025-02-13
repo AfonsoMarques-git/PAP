@@ -58,7 +58,7 @@ if (isset($_SESSION['error_menu'])) {
   <aside class="sidebar">
     <header class="sidebar-header">
       <a href="menu_Sadmin.php" class="header-logo" title="Administração">
-        <img src="../images/Logo_branco_p.png" alt="Companhia da Mariposa">
+        <img src="../images/Logo_branco_pe.png" alt="Companhia da Mariposa">
       </a>
       <button class="toggler sidebar-toggler">
         <span class="material-symbols-rounded">chevron_left</span>
@@ -69,34 +69,51 @@ if (isset($_SESSION['error_menu'])) {
     </header>
     <nav class="sidebar-nav">
       <ul class="nav-list primary-nav">
+        <li class="nav-item">
+          <a onclick="loadVer()" class="nav-link">
+            <div>
+              <span class="nav-icon material-symbols-rounded">group</span>
+              <span class="nav-label">Utilizadores</span>
+            </div>
+          </a>
+          <span class="nav-tooltip">Utilizadores</span>
+        </li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link">
             <div>
-              <span class="nav-icon material-symbols-rounded">group</span>
-              <span class="nav-label">Gestão de Utilizadores</span>
+              <span class="nav-icon material-symbols-rounded">celebration</span>
+              <span class="nav-label">Eventos</span>
             </div>
             <span class="dropdown-icon material-symbols-rounded">expand_more</span>
           </a>
-          <span class="nav-tooltip">Gestão de Utilizaddores</span>
+          <span class="nav-tooltip">Eventos</span>
           <ul class="dropdown-menu">
-            <li><a id="registar-link" onclick="loadRegisto()">Registar</a></li>
-            <li><a onclick="loadVer()">Ver lista</a></li>
+            <li><a href="gestao_imagens.php">Gestão de imagens</a></li>
+            <li><a href="">Gestão da galeria</a></li>
           </ul>
         </li>
         <li class="nav-item dropdown">
           <a href="#" class="nav-link">
             <div>
-              <span class="nav-icon material-symbols-rounded">work</span>
-              <span class="nav-label">Gestão do website</span>
+              <span class="nav-icon material-symbols-rounded">inventory_2</span>
+              <span class="nav-label">Produtos</span>
             </div>
             <span class="dropdown-icon material-symbols-rounded">expand_more</span>
           </a>
-          <span class="nav-tooltip">Gestão do website</span>
+          <span class="nav-tooltip">Produtos</span>
           <ul class="dropdown-menu">
-            <li><a href="#">Manutenção de produtos</a></li>
-            <li><a href="gestao_imagens.php">Gestão de imagens</a></li>
-            <li><a href="">Gestão da galeria</a></li>
+            <li><a onclick="loadVer()">Ver</a></li>
+            <li><a href="">Inserir</a></li>
           </ul>
+        </li>
+        <li class="nav-item">
+          <a href="gestao_emails.php" class="nav-link">
+            <div>
+              <span class="material-symbols-rounded"> mail </span>
+              <span class="nav-label">Emails</span>
+            </div>
+          </a>
+          <span class="nav-tooltip">Emails</span>
         </li>
       </ul>
       <ul class="nav-list secondary-nav">
