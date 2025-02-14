@@ -102,7 +102,7 @@ if (isset($_SESSION['error_menu'])) {
           </a>
           <span class="nav-tooltip">Produtos</span>
           <ul class="dropdown-menu">
-            <li><a onclick="loadVer()">Ver</a></li>
+            <li><a href="">Ver</a></li>
             <li><a href="">Inserir</a></li>
           </ul>
         </li>

@@ -49,15 +49,23 @@
                     ?>
 
                     <div class="card" data-origem="<?php echo $origem; ?>">
-                        <p><strong>Nome:</strong> <?php echo $nome; ?></p>
-                        <p><strong>Email:</strong> <?php echo $email_address; ?></p>
-                        <p><strong>Telemóvel:</strong> <?php echo $telemovel; ?></p>
-                        <p><strong>Mensagem:</strong> <?php echo $mensagem; ?></p>
-                        <?php if ($origem == 'eventos'): ?>
-                            <p><strong>Data do Evento:</strong> <?php echo $email['data_evento']; ?></p>
-                            <p><strong>Número de pessoas:</strong> <?php echo $email['n_pessoas']; ?></p>
-                            <p><strong>Tipo de Evento:</strong> <?php echo $email['tipo_evento']; ?></p>
-                        <?php endif; ?>
+                        <div class="text">
+                            <p><strong>Nome:</strong> <?php echo $nome; ?></p>
+                            <p><strong>Email:</strong> <?php echo $email_address; ?></p>
+                            <p><strong>Telemóvel:</strong> <?php echo $telemovel; ?></p>
+                            <p><strong>Mensagem:</strong> <?php echo $mensagem; ?></p>
+                            <?php if ($origem == 'eventos'): ?>
+                                <p><strong>Data do Evento:</strong> <?php echo $email['data_evento']; ?></p>
+                                <p><strong>Número de pessoas:</strong> <?php echo $email['n_pessoas']; ?></p>
+                                <p><strong>Tipo de Evento:</strong> <?php echo $email['tipo_evento']; ?></p>
+                            <?php endif; ?>
+                        </div>
+                        <div class="card-footer">
+                            <a href="processos/processar_eliminar_email.php?id=<?php echo $email['id']; ?>"
+                                onclick="return confirm('Deseja realmente excluir este email?')">
+                                <button class="deleteBtn">Eliminar<i class='bx bxs-trash-alt'></i></button>
+                            </a>
+                        </div>
                     </div>
 
                 <?php } ?>
